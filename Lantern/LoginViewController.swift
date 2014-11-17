@@ -19,18 +19,38 @@ class LoginViewController: UIViewController, UITextViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if (self.usernameTextField && self.passwordTextField) {
-//            
-//            
-//        }
-
+        
         
         
     }
     
     
     @IBAction func loginButtonPressed(sender: UIButton) {
-        
+        // Check if textfields are not empty
+        if self.usernameTextField.text != nil && self.passwordTextField.text != nil {
+            
+            PFUser.logInWithUsernameInBackground(self.usernameTextField.text, password: self.passwordTextField.text, block: { (user: PFUser!, error: NSError!) -> Void in
+                if user != nil {
+                    // If successful login
+                    println("Logged in")
+                    
+                } else {
+                    // If login unsuccessful
+                    var loginErrorAlert = UIAlertController(title: "Error", message: "There was a problem logging in", preferredStyle: UIAlertControllerStyle.Alert)
+                    loginErrorAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+                    self.presentViewController(loginErrorAlert, animated: true, completion: nil)
+                }
+            })
+            
+        }
+        // If textfields are empty show alert
+        else {
+            
+            var incompleteAlert = UIAlertController(title: "Could Not Log In", message: "Please fill out all textfields", preferredStyle: UIAlertControllerStyle.Alert)
+            incompleteAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+            self.presentViewController(incompleteAlert, animated: true, completion: nil)
+        }
+
         
     }
     

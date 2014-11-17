@@ -56,6 +56,9 @@
                                         <include reference="xhP-jI-eCl"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="p0r-l8-1vp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,6 +82,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="gYP-Ff-GmD" id="Omb-Wd-iNi"/>
+                        <outlet property="usernameTextField" destination="W8c-Ix-swl" id="iac-b0-mtM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,14 +10,29 @@ import Foundation
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextViewDelegate
+
+{
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        if (self.usernameTextField && self.passwordTextField) {
+//            
+//            
+//        }
+
+        
+        
     }
     
     
+    @IBAction func loginButtonPressed(sender: UIButton) {
+        
+        
+    }
     
     
 }

@@ -21,8 +21,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
-        
-        
+    
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -35,8 +34,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate
                 self.performSegueWithIdentifier("loginSegue", sender: self)
             }
         }
-
     }
+
+
     
     
     @IBAction func loginButtonPressed(sender: UIButton) {

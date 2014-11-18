@@ -10,11 +10,14 @@ import UIKit
 
 class AvailabilityViewController: UICollectionViewController {
     
+    var peopleInGroup:Array<User> = []
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = UIColor.whiteColor()
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        self.collectionView!.backgroundColor = UIColor.whiteColor()
+        self.collectionView!.dataSource = self
         
     }
     
@@ -24,19 +27,29 @@ class AvailabilityViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
+//        return peopleInGroup.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
         cell.imageView.image = UIImage(named: "person")
         cell.nameLabel.text = "Name"
+        cell.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        
         
         return cell
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        println("registered a selection at \(collectionView.cellForItemAtIndexPath(indexPath))")
+        self.performSegueWithIdentifier("findSelected", sender: (collectionView.cellForItemAtIndexPath(indexPath)))
         
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        segue.destinationViewController
+    }
+    
+
+
 
 }

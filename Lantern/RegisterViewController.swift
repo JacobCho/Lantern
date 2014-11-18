@@ -27,20 +27,13 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.passwordTextField.delegate = self;
         self.confirmPasswordTextField.delegate = self;
         
+        // User default set (user is a iOS Student)
+        user.isIosStudent = true
+        user.isIosTA = false
+        user.isWebStudent = false
+        user.isWebTA = false
     }
     
-    @IBAction func studentTeacherControlChanged(sender: UISegmentedControl) {
-        
-        if sender.selectedSegmentIndex == 0 {
-            user.isIosStudent = true
-        } else if sender.selectedSegmentIndex == 1 {
-            user.isIosTA = true
-        } else if sender.selectedSegmentIndex == 2 {
-            user.isWebStudent = true
-        } else if sender.selectedSegmentIndex == 3 {
-            user.isWebTA = true
-        }
-    }
     
     @IBAction func registerButtonPressed(sender: UIButton) {
         self.checkFieldsComplete()
@@ -82,12 +75,38 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool!, error: NSError!) -> Void in
             if error == nil {
-                // Hooray! Let them use the app now.
+                self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 println(error)
             }
         }
     }
+    
+    @IBAction func studentTeacherControlChanged(sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            user.isIosStudent = true
+            user.isIosTA = false
+            user.isWebStudent = false
+            user.isWebTA = false
+        } else if sender.selectedSegmentIndex == 1 {
+            user.isIosTA = true
+            user.isIosStudent = false
+            user.isWebStudent = false
+            user.isWebTA = false
+        } else if sender.selectedSegmentIndex == 2 {
+            user.isWebStudent = true
+            user.isIosStudent = false
+            user.isIosTA = false
+            user.isWebTA = false
+        } else if sender.selectedSegmentIndex == 3 {
+            user.isWebTA = true
+            user.isIosStudent = false
+            user.isIosTA = false
+            user.isWebStudent = false;
+        }
+    }
+
 
     @IBAction func cancelButtonPressed(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)

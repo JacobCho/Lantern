@@ -288,7 +288,11 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="confirmPasswordTextField" destination="KuV-zZ-Xqq" id="SOB-3O-0gg"/>
+                        <outlet property="emailTextField" destination="3uN-s9-eat" id="RNe-Jc-Zyu"/>
+                        <outlet property="passwordTextField" destination="Qkc-7h-UIr" id="oG5-9i-b2Q"/>
                         <outlet property="pictureImageView" destination="KeS-oj-7be" id="ZZm-rm-yaw"/>
+                        <outlet property="usernameTextField" destination="AzM-Os-3ac" id="otV-gU-vzu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZq-zp-SQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -29,10 +29,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         super.viewDidAppear(animated)
         
         // If user is logged in, go to collection view
-        var user = User.currentUser()
-        if (user.username != nil) {
-            self.performSegueWithIdentifier("loginSegue", sender: self)
+        let user = User.currentUser()
+        if user != nil {
+            if user.username != nil {
+                self.performSegueWithIdentifier("loginSegue", sender: self)
+            }
         }
+
     }
     
     

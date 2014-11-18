@@ -34,6 +34,7 @@ class AvailabilityViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
         cell.imageView.image = UIImage(named: "person")
         cell.nameLabel.text = "Name"
+        cell.layoutMargins = UIEdgeInsets(top: <#CGFloat#>, left: <#CGFloat#>, bottom: <#CGFloat#>, right: <#CGFloat#>)
         
         
         return cell

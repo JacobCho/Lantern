@@ -28,6 +28,10 @@
 		524DC5BF1A1B042800B359C8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */; };
 		524DC5C61A1B14CC00B359C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DC5C51A1B14CC00B359C8 /* User.swift */; };
 		6DE8FDFFF31F9F05C734AE9F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B86A648231773E9ACACB88AB /* libPods.a */; };
+		8490A2551A1AC2540043EF1E /* AvailabilityCollectionViewControllerTWO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490A2541A1AC2540043EF1E /* AvailabilityCollectionViewControllerTWO.swift */; };
+		8490A2621A1AE3100043EF1E /* AvailabilityCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490A2611A1AE3100043EF1E /* AvailabilityCollectionViewController.m */; };
+		8490A2651A1AE34D0043EF1E /* PersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490A2641A1AE34D0043EF1E /* PersonCell.m */; };
+		8490A2671A1AF8C00043EF1E /* PersonCellTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490A2661A1AF8C00043EF1E /* PersonCellTwo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,11 +110,13 @@
 		524DC5701A1A957F00B359C8 = {
 			isa = PBXGroup;
 			children = (
+				8490A25A1A1AE2B40043EF1E /* Obj-c */,
 				524DC57B1A1A957F00B359C8 /* Lantern */,
 				524DC5911A1A958000B359C8 /* LanternTests */,
 				524DC57A1A1A957F00B359C8 /* Products */,
 				C1E8EF947F4E50E4E141EF96 /* Pods */,
 				C1EDD06D04163F32815D51E9 /* Frameworks */,
+				8490A25F1A1AE3100043EF1E /* Lantern-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -357,6 +363,8 @@
 				524DC5BF1A1B042800B359C8 /* RegisterViewController.swift in Sources */,
 				524DC5A11A1AA73600B359C8 /* LoginViewController.swift in Sources */,
 				524DC57F1A1A957F00B359C8 /* AppDelegate.swift in Sources */,
+				8490A2551A1AC2540043EF1E /* AvailabilityCollectionViewControllerTWO.swift in Sources */,
+				8490A2621A1AE3100043EF1E /* AvailabilityCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +488,7 @@
 			baseConfigurationReference = 953525A148D80D3F479B3069 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/test/Documents/Development/Swipr,
@@ -488,6 +497,8 @@
 				INFOPLIST_FILE = Lantern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lantern-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -496,6 +507,7 @@
 			baseConfigurationReference = AD2CF3F58CB022D23F4BA652 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/test/Documents/Development/Swipr,
@@ -504,6 +516,7 @@
 				INFOPLIST_FILE = Lantern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lantern-Bridging-Header.h";
 			};
 			name = Release;
 		};

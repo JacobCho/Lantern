@@ -10,7 +10,7 @@ import UIKit
 
 class PersonCell: UICollectionViewCell {
     
-    let person:User!
+    var person:User!
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!

@@ -25,8 +25,8 @@ class AvailabilityViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
-//        return peopleInGroup.count
+
+        return peopleInGroup.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -35,6 +35,7 @@ class AvailabilityViewController: UICollectionViewController {
         cell.nameLabel.text = "Name"
         cell.person = peopleInGroup[indexPath.row] as User
         
+        
         return cell
     }
 
@@ -42,11 +43,8 @@ class AvailabilityViewController: UICollectionViewController {
         self.performSegueWithIdentifier("findSelected", sender: (collectionView.cellForItemAtIndexPath(indexPath)))
         
     }
-    
-    
 //if a user taps a cell they will be taken to the finder view for that person - set the desitination view to the appropriate user
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         var finderView:FinderViewController = segue.destinationViewController as FinderViewController
         var tappedCell = sender as PersonCell
         

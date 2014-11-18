@@ -17,6 +17,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    var user = User()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,16 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func studentTeacherControlChanged(sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            user.isIosStudent = true
+        } else if sender.selectedSegmentIndex == 1 {
+            user.isIosTA = true
+        } else if sender.selectedSegmentIndex == 2 {
+            user.isWebStudent = true
+        } else if sender.selectedSegmentIndex == 3 {
+            user.isWebTA = true
+        }
     }
     
     @IBAction func registerButtonPressed(sender: UIButton) {
@@ -63,7 +75,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func registerUser() {
-        var user = PFUser()
         user.username = self.usernameTextField.text!
         user.email = self.emailTextField.text!
         user.password = self.passwordTextField.text

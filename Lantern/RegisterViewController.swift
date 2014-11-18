@@ -16,6 +16,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet var pictureImageView: UIImageView!
     
     var user = User()
     

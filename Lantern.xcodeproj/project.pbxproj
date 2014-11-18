@@ -25,6 +25,8 @@
 		524DC5B51A1AA8CA00B359C8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DC5B41A1AA8CA00B359C8 /* SystemConfiguration.framework */; };
 		524DC5BC1A1AB4C600B359C8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DC5BA1A1AB4C600B359C8 /* Bolts.framework */; };
 		524DC5BD1A1AB4C600B359C8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DC5BB1A1AB4C600B359C8 /* Parse.framework */; };
+		524DC5BF1A1B042800B359C8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */; };
+		524DC5C61A1B14CC00B359C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DC5C51A1B14CC00B359C8 /* User.swift */; };
 		6DE8FDFFF31F9F05C734AE9F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B86A648231773E9ACACB88AB /* libPods.a */; };
 		8490A2551A1AC2540043EF1E /* AvailabilityCollectionViewControllerTWO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490A2541A1AC2540043EF1E /* AvailabilityCollectionViewControllerTWO.swift */; };
 		8490A2621A1AE3100043EF1E /* AvailabilityCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490A2611A1AE3100043EF1E /* AvailabilityCollectionViewController.m */; };
@@ -141,7 +143,6 @@
 				8490A2661A1AF8C00043EF1E /* PersonCellTwo.swift */,
 				524DC5A01A1AA73600B359C8 /* LoginViewController.swift */,
 				524DC5851A1A957F00B359C8 /* Images.xcassets */,
-				524DC5871A1A957F00B359C8 /* LaunchScreen.xib */,
 				524DC57C1A1A957F00B359C8 /* Supporting Files */,
 			);
 			path = Lantern;
@@ -150,6 +151,7 @@
 		524DC57C1A1A957F00B359C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				524DC57E1A1A957F00B359C8 /* AppDelegate.swift */,
 				524DC57D1A1A957F00B359C8 /* Info.plist */,
 			);
 			name = "Supporting Files";

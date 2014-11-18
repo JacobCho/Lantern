@@ -36,9 +36,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         }
     }
 
-
-    
-    
     @IBAction func loginButtonPressed(sender: UIButton) {
         // Check if textfields are not empty
         if self.usernameTextField.text != nil && self.passwordTextField.text != nil {

@@ -14,7 +14,7 @@ class User: PFUser, PFSubclassing {
     override class func load() {
         self.registerSubclass()
     }
-
+    
     @NSManaged var isIosStudent: Bool
     @NSManaged var isIosTA: Bool
     @NSManaged var isWebStudent: Bool

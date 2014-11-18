@@ -13,6 +13,8 @@ class AvailabilityViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = UIColor.whiteColor()
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
         
     }
     
@@ -30,6 +32,11 @@ class AvailabilityViewController: UICollectionViewController {
         cell.nameLabel.text = "Name"
         
         return cell
+    }
+
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        println("registered a selection at \(collectionView.cellForItemAtIndexPath(indexPath))")
+        
     }
 
 }

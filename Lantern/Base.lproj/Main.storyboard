@@ -297,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZq-zp-SQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="379" y="1099"/>
+            <point key="canvasLocation" x="1296" y="1075"/>
         </scene>
         <!--Availability View Controller-->
         <scene sceneID="1Wz-HU-ynd">
@@ -323,8 +323,8 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7f-OZ-rZw">
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="125" id="6eI-l6-Unb"/>
-                                                <constraint firstAttribute="width" constant="125" id="bk7-o2-MGX"/>
+                                                <constraint firstAttribute="height" constant="125" id="VD9-gE-dcf"/>
+                                                <constraint firstAttribute="width" constant="125" id="awt-t8-iWj"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEs-cG-B3H">
@@ -338,21 +338,12 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="aEs-cG-B3H" firstAttribute="top" secondItem="m7f-OZ-rZw" secondAttribute="bottom" constant="5" id="29E-Q1-NcB"/>
-                                    <constraint firstAttribute="trailing" secondItem="m7f-OZ-rZw" secondAttribute="trailing" id="8ug-a5-mhY"/>
                                     <constraint firstItem="aEs-cG-B3H" firstAttribute="width" secondItem="m7f-OZ-rZw" secondAttribute="width" id="Muy-Jt-crM"/>
-                                    <constraint firstAttribute="centerX" secondItem="m7f-OZ-rZw" secondAttribute="centerX" id="PKN-h7-Qai"/>
                                     <constraint firstItem="m7f-OZ-rZw" firstAttribute="leading" secondItem="Yb9-ds-Ka6" secondAttribute="leading" id="RqE-j7-tNL"/>
                                     <constraint firstItem="m7f-OZ-rZw" firstAttribute="top" secondItem="Yb9-ds-Ka6" secondAttribute="top" id="V5U-rc-vgp"/>
-                                    <constraint firstAttribute="centerY" secondItem="m7f-OZ-rZw" secondAttribute="centerY" id="sLu-cZ-qAp"/>
-                                    <constraint firstItem="aEs-cG-B3H" firstAttribute="centerX" secondItem="m7f-OZ-rZw" secondAttribute="centerX" constant="-0.5" id="zgH-hU-8hi"/>
+                                    <constraint firstItem="aEs-cG-B3H" firstAttribute="top" secondItem="m7f-OZ-rZw" secondAttribute="bottom" constant="5" id="W71-Tj-pkF"/>
+                                    <constraint firstItem="aEs-cG-B3H" firstAttribute="centerX" secondItem="m7f-OZ-rZw" secondAttribute="centerX" id="zgH-hU-8hi"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="PKN-h7-Qai"/>
-                                        <exclude reference="sLu-cZ-qAp"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <outlet property="imageView" destination="m7f-OZ-rZw" id="OzR-An-Iwa"/>
                                     <outlet property="nameLabel" destination="aEs-cG-B3H" id="pqo-XO-tby"/>

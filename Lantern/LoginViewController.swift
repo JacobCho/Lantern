@@ -21,8 +21,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
-        
-        
+    
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -30,9 +29,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
         // If user is logged in, go to collection view
         var user = User.currentUser()
-        if (user.username != nil) {
-            self.performSegueWithIdentifier("loginSegue", sender: self)
-        }
+//        if (user.username != nil) {
+//            self.performSegueWithIdentifier("loginSegue", sender: self)
+//        }
     }
     
     

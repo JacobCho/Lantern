@@ -41,10 +41,15 @@ class AvailabilityViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        println("registered a selection at \(collectionView.cellForItemAtIndexPath(indexPath))")
+        self.performSegueWithIdentifier("findSelected", sender: (collectionView.cellForItemAtIndexPath(indexPath)))
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        segue.destinationViewController
+    }
+    
+
 
 
 }

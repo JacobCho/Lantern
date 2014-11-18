@@ -69,13 +69,8 @@
 		524DC5B71A1AA8DD00B359C8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Swipr/Parse.framework; sourceTree = "<group>"; };
 		524DC5BA1A1AB4C600B359C8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		524DC5BB1A1AB4C600B359C8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		8490A2541A1AC2540043EF1E /* AvailabilityCollectionViewControllerTWO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityCollectionViewControllerTWO.swift; sourceTree = "<group>"; };
-		8490A25F1A1AE3100043EF1E /* Lantern-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lantern-Bridging-Header.h"; sourceTree = "<group>"; };
-		8490A2601A1AE3100043EF1E /* AvailabilityCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailabilityCollectionViewController.h; sourceTree = "<group>"; };
-		8490A2611A1AE3100043EF1E /* AvailabilityCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailabilityCollectionViewController.m; sourceTree = "<group>"; };
-		8490A2631A1AE34D0043EF1E /* PersonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCell.h; sourceTree = "<group>"; };
-		8490A2641A1AE34D0043EF1E /* PersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCell.m; sourceTree = "<group>"; };
-		8490A2661A1AF8C00043EF1E /* PersonCellTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonCellTwo.swift; path = ../PersonCellTwo.swift; sourceTree = "<group>"; };
+		524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		524DC5C51A1B14CC00B359C8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		953525A148D80D3F479B3069 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AD2CF3F58CB022D23F4BA652 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B86A648231773E9ACACB88AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,11 +132,9 @@
 		524DC57B1A1A957F00B359C8 /* Lantern */ = {
 			isa = PBXGroup;
 			children = (
-				524DC57E1A1A957F00B359C8 /* AppDelegate.swift */,
-				524DC5821A1A957F00B359C8 /* Main.storyboard */,
-				8490A2541A1AC2540043EF1E /* AvailabilityCollectionViewControllerTWO.swift */,
-				8490A2661A1AF8C00043EF1E /* PersonCellTwo.swift */,
-				524DC5A01A1AA73600B359C8 /* LoginViewController.swift */,
+				524DC5C41A1B088600B359C8 /* Model */,
+				524DC5C01A1B04F800B359C8 /* Views */,
+				524DC5C11A1B050100B359C8 /* Controllers */,
 				524DC5851A1A957F00B359C8 /* Images.xcassets */,
 				524DC57C1A1A957F00B359C8 /* Supporting Files */,
 			);
@@ -174,15 +167,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8490A25A1A1AE2B40043EF1E /* Obj-c */ = {
+		524DC5C01A1B04F800B359C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8490A2631A1AE34D0043EF1E /* PersonCell.h */,
-				8490A2641A1AE34D0043EF1E /* PersonCell.m */,
-				8490A2601A1AE3100043EF1E /* AvailabilityCollectionViewController.h */,
-				8490A2611A1AE3100043EF1E /* AvailabilityCollectionViewController.m */,
+				524DC5871A1A957F00B359C8 /* LaunchScreen.xib */,
+				524DC5821A1A957F00B359C8 /* Main.storyboard */,
 			);
-			name = "Obj-c";
+			name = Views;
+			sourceTree = "<group>";
+		};
+		524DC5C11A1B050100B359C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				524DC5A01A1AA73600B359C8 /* LoginViewController.swift */,
+				524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		524DC5C41A1B088600B359C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				524DC5C51A1B14CC00B359C8 /* User.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		C1E8EF947F4E50E4E141EF96 /* Pods */ = {
@@ -351,8 +359,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8490A2651A1AE34D0043EF1E /* PersonCell.m in Sources */,
-				8490A2671A1AF8C00043EF1E /* PersonCellTwo.swift in Sources */,
+				524DC5C61A1B14CC00B359C8 /* User.swift in Sources */,
+				524DC5BF1A1B042800B359C8 /* RegisterViewController.swift in Sources */,
 				524DC5A11A1AA73600B359C8 /* LoginViewController.swift in Sources */,
 				524DC57F1A1A957F00B359C8 /* AppDelegate.swift in Sources */,
 				8490A2551A1AC2540043EF1E /* AvailabilityCollectionViewControllerTWO.swift in Sources */,

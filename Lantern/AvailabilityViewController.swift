@@ -16,8 +16,8 @@ class AvailabilityViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView!.backgroundColor = UIColor.whiteColor()
-        self.collectionView!.dataSource = self
+        self.collectionView.backgroundColor = UIColor.whiteColor()
+        self.collectionView.dataSource = self
         
     }
     

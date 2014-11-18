@@ -9,16 +9,22 @@
 import UIKit
 
 class FinderViewController: UIViewController {
+    
+    
+    var userToBeFound:User = User()
+    
+    
 
     @IBOutlet var tempLabel: UILabel!
-    @IBAction func messageButtonWasPressed(sender: UIButton){
-        
-    }
+
     
     var person:User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tempLabel.text = userToBeFound.name
+        
+        
         
 
         // Do any additional setup after loading the view.

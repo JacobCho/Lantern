@@ -33,7 +33,8 @@ class AvailabilityViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
         cell.imageView.image = UIImage(named: "person")
         cell.nameLabel.text = "Name"
-
+        cell.person = peopleInGroup[indexPath.row] as User
+        
         return cell
     }
 
@@ -45,6 +46,7 @@ class AvailabilityViewController: UICollectionViewController {
     
 //if a user taps a cell they will be taken to the finder view for that person - set the desitination view to the appropriate user
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         var finderView:FinderViewController = segue.destinationViewController as FinderViewController
         var tappedCell = sender as PersonCell
         

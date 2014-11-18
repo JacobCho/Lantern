@@ -25,6 +25,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // If user is logged in, go to collection view
+        var user = User.currentUser()
+        if (user.username != nil) {
+            self.performSegueWithIdentifier("loginSegue", sender: self)
+        }
+    }
+    
     
     @IBAction func loginButtonPressed(sender: UIButton) {
         // Check if textfields are not empty
@@ -33,7 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             PFUser.logInWithUsernameInBackground(self.usernameTextField.text, password: self.passwordTextField.text, block: { (user: PFUser!, error: NSError!) -> Void in
                 if user != nil {
                     // If successful login
-                    println("Logged in")
+                    self.performSegueWithIdentifier("loginSegue", sender: self)
                     
                 } else {
                     // If login unsuccessful

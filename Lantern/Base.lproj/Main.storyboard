@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nEV-1r-NYL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nEV-1r-NYL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -40,7 +40,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdI-vk-JPf">
                                 <rect key="frame" x="366" y="257" width="50" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.1630401172" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.51372549020000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="gNV-Fc-XtZ"/>
                                 </constraints>
@@ -56,9 +56,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6n-WV-jrh">
-                                <rect key="frame" x="186" y="560" width="229" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.1630401172" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Don't have an account?  Register">
+                                <rect key="frame" x="255" y="556" width="91" height="30"/>
+                                <color key="backgroundColor" red="0.12549019607843137" green="0.51372549019607838" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="y1g-0j-haW"/>
+                                </constraints>
+                                <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -72,9 +75,15 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="G1M-zc-s87" kind="show" id="H5r-Mc-o1G"/>
+                                    <segue destination="G1M-zc-s87" kind="show" identifier="loginSegue" id="H5r-Mc-o1G"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Don't have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyu-79-oBf">
+                                <rect key="frame" x="223" y="527" width="154" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -84,11 +93,13 @@
                             <constraint firstAttribute="centerX" secondItem="Y6n-WV-jrh" secondAttribute="centerX" id="RV4-MK-QqG"/>
                             <constraint firstItem="WdI-vk-JPf" firstAttribute="trailing" secondItem="gYP-Ff-GmD" secondAttribute="trailing" id="ZIb-Ds-xNg"/>
                             <constraint firstAttribute="centerX" secondItem="W8c-Ix-swl" secondAttribute="centerX" id="aGn-Tb-lgc"/>
-                            <constraint firstItem="PsI-sd-eKc" firstAttribute="top" secondItem="Y6n-WV-jrh" secondAttribute="bottom" constant="10" id="apj-hW-eDH"/>
+                            <constraint firstItem="PsI-sd-eKc" firstAttribute="top" secondItem="Y6n-WV-jrh" secondAttribute="bottom" constant="14" id="apj-hW-eDH"/>
                             <constraint firstItem="PsI-sd-eKc" firstAttribute="top" secondItem="FD6-wd-d87" secondAttribute="bottom" constant="205" id="kLR-eT-YLf"/>
                             <constraint firstItem="gYP-Ff-GmD" firstAttribute="top" secondItem="W8c-Ix-swl" secondAttribute="bottom" constant="5" id="kOp-Le-ltH"/>
                             <constraint firstItem="WdI-vk-JPf" firstAttribute="top" secondItem="gYP-Ff-GmD" secondAttribute="bottom" constant="10" id="pkQ-Fr-iM9"/>
                             <constraint firstAttribute="centerX" secondItem="gYP-Ff-GmD" secondAttribute="centerX" id="r7c-0w-wuv"/>
+                            <constraint firstAttribute="centerX" secondItem="Uyu-79-oBf" secondAttribute="centerX" id="w4p-lO-hkt"/>
+                            <constraint firstItem="Y6n-WV-jrh" firstAttribute="top" secondItem="Uyu-79-oBf" secondAttribute="bottom" constant="8" id="wPa-og-ehN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lantern" id="j8L-tj-e49"/>
@@ -139,20 +150,6 @@
                                     <constraint firstItem="lbs-Uy-n3k" firstAttribute="leading" secondItem="ICK-fA-16x" secondAttribute="leading" constant="20" id="lcV-Sk-TJY"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpk-oa-oFT">
-                                <rect key="frame" x="455" y="438" width="119" height="30"/>
-                                <color key="backgroundColor" red="0.12549019607843137" green="0.51372549019607838" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="119" id="e41-1d-3RX"/>
-                                </constraints>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="registerButtonPressed:" destination="0vf-wZ-Vy1" eventType="touchUpInside" id="3YT-HV-Pqw"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGt-vV-V62">
                                 <rect key="frame" x="480" y="30" width="119" height="30"/>
                                 <constraints>
@@ -220,6 +217,20 @@
                                     <constraint firstAttribute="width" secondItem="KeS-oj-7be" secondAttribute="height" multiplier="1:1" id="eSn-4H-4Ph"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpk-oa-oFT">
+                                <rect key="frame" x="455" y="438" width="119" height="30"/>
+                                <color key="backgroundColor" red="0.12549019607843137" green="0.51372549019607838" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="e41-1d-3RX"/>
+                                </constraints>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="0vf-wZ-Vy1" eventType="touchUpInside" id="3YT-HV-Pqw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

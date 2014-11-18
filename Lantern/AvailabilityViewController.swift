@@ -12,9 +12,9 @@ class AvailabilityViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = UIColor.whiteColor()
-        collectionView?.dataSource = self
-        collectionView?.delegate = self
+        collectionView.backgroundColor = UIColor.whiteColor()
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
     }
     

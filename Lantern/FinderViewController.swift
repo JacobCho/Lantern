@@ -22,7 +22,8 @@ class FinderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tempLabel.text = userToBeFound.name
+        tempLabel.text = userToBeFound.username
+        
         
         
         

@@ -14,7 +14,7 @@
 
 @implementation OBJCCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"Person";
 
 - (void)viewDidLoad {
     [super viewDidLoad];

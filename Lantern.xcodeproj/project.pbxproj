@@ -143,6 +143,7 @@
 		524DC57B1A1A957F00B359C8 /* Lantern */ = {
 			isa = PBXGroup;
 			children = (
+				8457C2DC1A1BD543000E719E /* OBJ-C testbed */,
 				524DC5C41A1B088600B359C8 /* Model */,
 				524DC5C01A1B04F800B359C8 /* Views */,
 				524DC5C11A1B050100B359C8 /* Controllers */,
@@ -184,13 +185,6 @@
 				524DC5871A1A957F00B359C8 /* LaunchScreen.xib */,
 				8490A2681A1B218B0043EF1E /* PersonCell.swift */,
 				524DC5821A1A957F00B359C8 /* Main.storyboard */,
-				8457C2D11A1BC538000E719E /* ObjC.storyboard */,
-				8457C2D61A1BD309000E719E /* OBJCViewController.h */,
-				8457C2D71A1BD309000E719E /* OBJCViewController.m */,
-				8457C2D91A1BD31B000E719E /* OBJCCollectionViewCell.h */,
-				8457C2DA1A1BD31B000E719E /* OBJCCollectionViewCell.m */,
-				8457C2D31A1BC5C1000E719E /* OBJCCollectionViewController.h */,
-				8457C2D41A1BC5C1000E719E /* OBJCCollectionViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -211,6 +205,20 @@
 				524DC5C51A1B14CC00B359C8 /* User.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		8457C2DC1A1BD543000E719E /* OBJ-C testbed */ = {
+			isa = PBXGroup;
+			children = (
+				8457C2D11A1BC538000E719E /* ObjC.storyboard */,
+				8457C2D61A1BD309000E719E /* OBJCViewController.h */,
+				8457C2D71A1BD309000E719E /* OBJCViewController.m */,
+				8457C2D91A1BD31B000E719E /* OBJCCollectionViewCell.h */,
+				8457C2DA1A1BD31B000E719E /* OBJCCollectionViewCell.m */,
+				8457C2D31A1BC5C1000E719E /* OBJCCollectionViewController.h */,
+				8457C2D41A1BC5C1000E719E /* OBJCCollectionViewController.m */,
+			);
+			name = "OBJ-C testbed";
 			sourceTree = "<group>";
 		};
 		C1E8EF947F4E50E4E141EF96 /* Pods */ = {

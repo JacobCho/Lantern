@@ -43,22 +43,13 @@
                                 <color key="backgroundColor" red="1" green="0.1630401172" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="gNV-Fc-XtZ"/>
-                                    <constraint firstAttribute="width" constant="91" id="xhP-jI-eCl"/>
                                 </constraints>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="xhP-jI-eCl"/>
-                                    </mask>
-                                </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="226" y="279" width="91" height="30"/>
-                                    <mask key="constraints">
-                                        <include reference="xhP-jI-eCl"/>
-                                    </mask>
                                 </variation>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="p0r-l8-1vp"/>
@@ -90,21 +81,15 @@
                             <constraint firstItem="W8c-Ix-swl" firstAttribute="width" secondItem="gYP-Ff-GmD" secondAttribute="width" id="0SJ-gR-RLJ"/>
                             <constraint firstItem="FD6-wd-d87" firstAttribute="leading" secondItem="PQl-WF-y2U" secondAttribute="leadingMargin" constant="10" id="EQJ-zV-GKv"/>
                             <constraint firstItem="W8c-Ix-swl" firstAttribute="top" secondItem="okw-tp-2mw" secondAttribute="bottom" constant="118" id="Kob-G9-dab"/>
-                            <constraint firstItem="FD6-wd-d87" firstAttribute="top" secondItem="WdI-vk-JPf" secondAttribute="bottom" constant="78" id="NTi-ne-hPq"/>
                             <constraint firstAttribute="centerX" secondItem="Y6n-WV-jrh" secondAttribute="centerX" id="RV4-MK-QqG"/>
                             <constraint firstItem="WdI-vk-JPf" firstAttribute="trailing" secondItem="gYP-Ff-GmD" secondAttribute="trailing" id="ZIb-Ds-xNg"/>
-                            <constraint firstItem="WdI-vk-JPf" firstAttribute="leading" secondItem="gYP-Ff-GmD" secondAttribute="leading" constant="-184" id="ZjC-WX-Bcf"/>
                             <constraint firstAttribute="centerX" secondItem="W8c-Ix-swl" secondAttribute="centerX" id="aGn-Tb-lgc"/>
                             <constraint firstItem="PsI-sd-eKc" firstAttribute="top" secondItem="Y6n-WV-jrh" secondAttribute="bottom" constant="10" id="apj-hW-eDH"/>
+                            <constraint firstItem="PsI-sd-eKc" firstAttribute="top" secondItem="FD6-wd-d87" secondAttribute="bottom" constant="205" id="kLR-eT-YLf"/>
                             <constraint firstItem="gYP-Ff-GmD" firstAttribute="top" secondItem="W8c-Ix-swl" secondAttribute="bottom" constant="5" id="kOp-Le-ltH"/>
                             <constraint firstItem="WdI-vk-JPf" firstAttribute="top" secondItem="gYP-Ff-GmD" secondAttribute="bottom" constant="10" id="pkQ-Fr-iM9"/>
                             <constraint firstAttribute="centerX" secondItem="gYP-Ff-GmD" secondAttribute="centerX" id="r7c-0w-wuv"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="ZjC-WX-Bcf"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Lantern" id="j8L-tj-e49"/>
                     <connections>
@@ -306,6 +291,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AhZ-Ee-4nh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UQ6-hS-3CP">
                             <size key="itemSize" width="125" height="162"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>

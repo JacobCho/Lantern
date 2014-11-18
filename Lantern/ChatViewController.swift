@@ -12,7 +12,10 @@ class ChatViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let navBar:UINavigationBar = UINavigationBar(frame:self.view.frame)
+        
+        self.tableView.addSubview(navBar)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -39,6 +42,11 @@ class ChatViewController: UITableViewController {
         return 0
     }
 
+    @IBAction func closeButtonPress(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            println("chat dismissed")
+        })
+    }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell

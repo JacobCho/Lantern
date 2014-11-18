@@ -154,10 +154,23 @@
                                     <segment title="Web Student"/>
                                     <segment title="Web Teacher"/>
                                 </segments>
+                                <color key="tintColor" red="1" green="0.1630401172" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="26" y="379" width="349" height="29"/>
+                                </variation>
                                 <connections>
                                     <action selector="studentTeacherControlChanged:" destination="0vf-wZ-Vy1" eventType="valueChanged" id="4dW-dS-BbG"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you a student or teacher?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4R6-cY-i0u">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="350" width="192" height="21"/>
+                                </variation>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AzM-Os-3ac">
                                 <rect key="frame" x="185" y="71" width="230" height="30"/>
                                 <constraints>
@@ -253,13 +266,33 @@
                                 <variation key="widthClass=compact" constant="73"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="Qkc-7h-UIr" secondAttribute="centerX" id="Y5N-Uy-q5y"/>
+                            <constraint firstItem="4R6-cY-i0u" firstAttribute="leading" secondItem="T51-sA-Ecm" secondAttribute="leadingMargin" id="bXa-yh-mvT"/>
                             <constraint firstItem="KuV-zZ-Xqq" firstAttribute="top" secondItem="Qkc-7h-UIr" secondAttribute="bottom" constant="40" id="dOp-68-M8R"/>
+                            <constraint firstItem="J3p-lF-uvQ" firstAttribute="top" secondItem="4R6-cY-i0u" secondAttribute="bottom" constant="8" id="jf8-ys-o7g"/>
                             <constraint firstAttribute="centerX" secondItem="AzM-Os-3ac" secondAttribute="centerX" id="leS-IO-lj6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yGt-vV-V62" secondAttribute="trailing" constant="104" id="vnj-QC-UJw">
                                 <variation key="widthClass=compact" constant="69"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="3uN-s9-eat" secondAttribute="centerX" id="ztH-OC-1Au"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="4R6-cY-i0u"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="bXa-yh-mvT"/>
+                                <exclude reference="jf8-ys-o7g"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="4R6-cY-i0u"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="bXa-yh-mvT"/>
+                                <include reference="jf8-ys-o7g"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="KuV-zZ-Xqq" id="RZh-XN-kW3"/>

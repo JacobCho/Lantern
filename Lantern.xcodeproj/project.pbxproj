@@ -25,6 +25,7 @@
 		524DC5B51A1AA8CA00B359C8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DC5B41A1AA8CA00B359C8 /* SystemConfiguration.framework */; };
 		524DC5BC1A1AB4C600B359C8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DC5BA1A1AB4C600B359C8 /* Bolts.framework */; };
 		524DC5BD1A1AB4C600B359C8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DC5BB1A1AB4C600B359C8 /* Parse.framework */; };
+		524DC5BF1A1B042800B359C8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */; };
 		6DE8FDFFF31F9F05C734AE9F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B86A648231773E9ACACB88AB /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		524DC5B71A1AA8DD00B359C8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Swipr/Parse.framework; sourceTree = "<group>"; };
 		524DC5BA1A1AB4C600B359C8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		524DC5BB1A1AB4C600B359C8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		953525A148D80D3F479B3069 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AD2CF3F58CB022D23F4BA652 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B86A648231773E9ACACB88AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,11 +124,10 @@
 		524DC57B1A1A957F00B359C8 /* Lantern */ = {
 			isa = PBXGroup;
 			children = (
-				524DC57E1A1A957F00B359C8 /* AppDelegate.swift */,
-				524DC5821A1A957F00B359C8 /* Main.storyboard */,
-				524DC5A01A1AA73600B359C8 /* LoginViewController.swift */,
+				524DC5C41A1B088600B359C8 /* Model */,
+				524DC5C01A1B04F800B359C8 /* Views */,
+				524DC5C11A1B050100B359C8 /* Controllers */,
 				524DC5851A1A957F00B359C8 /* Images.xcassets */,
-				524DC5871A1A957F00B359C8 /* LaunchScreen.xib */,
 				524DC57C1A1A957F00B359C8 /* Supporting Files */,
 			);
 			path = Lantern;
@@ -135,6 +136,7 @@
 		524DC57C1A1A957F00B359C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				524DC57E1A1A957F00B359C8 /* AppDelegate.swift */,
 				524DC57D1A1A957F00B359C8 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -155,6 +157,31 @@
 				524DC5931A1A958000B359C8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		524DC5C01A1B04F800B359C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				524DC5871A1A957F00B359C8 /* LaunchScreen.xib */,
+				524DC5821A1A957F00B359C8 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		524DC5C11A1B050100B359C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				524DC5A01A1AA73600B359C8 /* LoginViewController.swift */,
+				524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		524DC5C41A1B088600B359C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		C1E8EF947F4E50E4E141EF96 /* Pods */ = {
@@ -323,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524DC5BF1A1B042800B359C8 /* RegisterViewController.swift in Sources */,
 				524DC5A11A1AA73600B359C8 /* LoginViewController.swift in Sources */,
 				524DC57F1A1A957F00B359C8 /* AppDelegate.swift in Sources */,
 			);

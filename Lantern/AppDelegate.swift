@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -20,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("Q230SayuCx1mr0l4oSjoWshPvEv6s53fStpXGZLd", clientKey: "U9eCPygvOE13BFW83GlpINGmzUM4HQ2DmHeIaIPl")
         
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
-        
         
         return true
     }

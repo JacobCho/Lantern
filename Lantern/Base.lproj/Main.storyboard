@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nEV-1r-NYL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nEV-1r-NYL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -69,15 +69,6 @@
                                     <segue destination="0vf-wZ-Vy1" kind="presentation" id="kgN-mm-qGT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FD6-wd-d87">
-                                <rect key="frame" x="26" y="365" width="49" height="30"/>
-                                <state key="normal" title="for test">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="G1M-zc-s87" kind="show" identifier="loginSegue" id="H5r-Mc-o1G"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Don't have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyu-79-oBf">
                                 <rect key="frame" x="223" y="527" width="154" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -88,13 +79,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="W8c-Ix-swl" firstAttribute="width" secondItem="gYP-Ff-GmD" secondAttribute="width" id="0SJ-gR-RLJ"/>
-                            <constraint firstItem="FD6-wd-d87" firstAttribute="leading" secondItem="PQl-WF-y2U" secondAttribute="leadingMargin" constant="10" id="EQJ-zV-GKv"/>
                             <constraint firstItem="W8c-Ix-swl" firstAttribute="top" secondItem="okw-tp-2mw" secondAttribute="bottom" constant="118" id="Kob-G9-dab"/>
                             <constraint firstAttribute="centerX" secondItem="Y6n-WV-jrh" secondAttribute="centerX" id="RV4-MK-QqG"/>
                             <constraint firstItem="WdI-vk-JPf" firstAttribute="trailing" secondItem="gYP-Ff-GmD" secondAttribute="trailing" id="ZIb-Ds-xNg"/>
                             <constraint firstAttribute="centerX" secondItem="W8c-Ix-swl" secondAttribute="centerX" id="aGn-Tb-lgc"/>
                             <constraint firstItem="PsI-sd-eKc" firstAttribute="top" secondItem="Y6n-WV-jrh" secondAttribute="bottom" constant="14" id="apj-hW-eDH"/>
-                            <constraint firstItem="PsI-sd-eKc" firstAttribute="top" secondItem="FD6-wd-d87" secondAttribute="bottom" constant="205" id="kLR-eT-YLf"/>
                             <constraint firstItem="gYP-Ff-GmD" firstAttribute="top" secondItem="W8c-Ix-swl" secondAttribute="bottom" constant="5" id="kOp-Le-ltH"/>
                             <constraint firstItem="WdI-vk-JPf" firstAttribute="top" secondItem="gYP-Ff-GmD" secondAttribute="bottom" constant="10" id="pkQ-Fr-iM9"/>
                             <constraint firstAttribute="centerX" secondItem="gYP-Ff-GmD" secondAttribute="centerX" id="r7c-0w-wuv"/>
@@ -106,11 +95,12 @@
                     <connections>
                         <outlet property="passwordTextField" destination="gYP-Ff-GmD" id="Omb-Wd-iNi"/>
                         <outlet property="usernameTextField" destination="W8c-Ix-swl" id="iac-b0-mtM"/>
+                        <segue destination="G1M-zc-s87" kind="show" identifier="loginSegue" id="rMJ-Ft-8M4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1296" y="337"/>
+            <point key="canvasLocation" x="1308" y="337"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="WSn-8y-lzd">
@@ -307,25 +297,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UQ6-hS-3CP">
-                            <size key="itemSize" width="125" height="162"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
+                        <collectionViewLayout key="collectionViewLayout" id="NMI-j5-GFh" customClass="PeopleLayout" customModule="Lantern" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="personCell" id="Yb9-ds-Ka6" customClass="PersonCell" customModule="Lantern" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="125" height="162"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="125" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7f-OZ-rZw">
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="125" id="VD9-gE-dcf"/>
-                                                <constraint firstAttribute="width" constant="125" id="awt-t8-iWj"/>
+                                                <constraint firstAttribute="width" secondItem="m7f-OZ-rZw" secondAttribute="height" multiplier="1:1" id="xl8-DE-OPE"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEs-cG-B3H">
@@ -343,8 +327,10 @@
                                     <constraint firstItem="m7f-OZ-rZw" firstAttribute="leading" secondItem="Yb9-ds-Ka6" secondAttribute="leading" id="RqE-j7-tNL"/>
                                     <constraint firstItem="m7f-OZ-rZw" firstAttribute="top" secondItem="Yb9-ds-Ka6" secondAttribute="top" id="V5U-rc-vgp"/>
                                     <constraint firstItem="aEs-cG-B3H" firstAttribute="top" secondItem="m7f-OZ-rZw" secondAttribute="bottom" constant="5" id="W71-Tj-pkF"/>
+                                    <constraint firstAttribute="trailing" secondItem="m7f-OZ-rZw" secondAttribute="trailing" id="hbg-8K-wCX"/>
                                     <constraint firstItem="aEs-cG-B3H" firstAttribute="centerX" secondItem="m7f-OZ-rZw" secondAttribute="centerX" id="zgH-hU-8hi"/>
                                 </constraints>
+                                <size key="customSize" width="125" height="170"/>
                                 <connections>
                                     <outlet property="imageView" destination="m7f-OZ-rZw" id="OzR-An-Iwa"/>
                                     <outlet property="nameLabel" destination="aEs-cG-B3H" id="pqo-XO-tby"/>
@@ -356,7 +342,13 @@
                             <outlet property="delegate" destination="G1M-zc-s87" id="bXy-xt-Svt"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="rIh-Ky-bkj"/>
+                    <navigationItem key="navigationItem" id="rIh-Ky-bkj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="BSJ-DL-TgG">
+                            <connections>
+                                <action selector="logoutButtonPress:" destination="G1M-zc-s87" id="TAX-AK-We6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="KuV-zZ-Xqq" id="RZh-XN-kW3"/>
                         <outlet property="emailTextField" destination="3uN-s9-eat" id="Fnb-hX-w0A"/>
@@ -433,9 +425,7 @@
                                         <constraint firstAttribute="height" constant="30" id="4Ay-bg-hWQ"/>
                                         <constraint firstAttribute="width" constant="30" id="UYd-v0-ywL"/>
                                     </constraints>
-                                    <state key="normal" title="X">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
+                                    <state key="normal" title="X"/>
                                     <connections>
                                         <action selector="closeButtonPress:" destination="GRP-uj-w12" eventType="touchUpInside" id="noU-Pn-EGw"/>
                                     </connections>

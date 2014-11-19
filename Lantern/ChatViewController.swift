@@ -10,11 +10,10 @@ import UIKit
 
 class ChatViewController: UITableViewController {
 
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let navBar:UINavigationBar = UINavigationBar(frame:self.view.frame)
-        
-        self.tableView.addSubview(navBar)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

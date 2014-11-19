@@ -13,9 +13,11 @@ class PeopleLayout: UICollectionViewFlowLayout {
     
     override func prepareLayout() {
         super.prepareLayout()
-        itemSize = CGSizeMake(125, 200)
+        itemSize = CGSizeMake(100, 140)
         minimumLineSpacing = 15
         minimumInteritemSpacing = 15
+        sectionInset = UIEdgeInsetsMake(30, 50, 30, 50)
+    
     }
    
 }

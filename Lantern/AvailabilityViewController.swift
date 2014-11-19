@@ -30,6 +30,13 @@ class AvailabilityViewController: UICollectionViewController {
         return peopleInGroup.count
     }
     
+    @IBAction func logoutButtonPress(sender: UIBarButtonItem) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+            User.logOut()
+        
+        
+        
+    }
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
         var thisPerson:User = peopleInGroup[indexPath.row] as User

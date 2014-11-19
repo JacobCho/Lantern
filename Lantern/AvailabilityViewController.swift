@@ -19,10 +19,8 @@ class AvailabilityViewController: UICollectionViewController {
         self.collectionView!.backgroundColor = UIColor.whiteColor()
         self.collectionView!.dataSource = self
         self.queryForCoorespondingUsers()
-
-
-
     }
+
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }

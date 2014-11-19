@@ -22,7 +22,8 @@ class FinderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tempLabel.text = userToBeFound.username
+        self.title=userToBeFound.username
+
         
         // Do any additional setup after loading the view.
     }

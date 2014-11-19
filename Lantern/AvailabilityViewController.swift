@@ -16,8 +16,8 @@ class AvailabilityViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView!.backgroundColor = UIColor.whiteColor()
-        self.collectionView!.dataSource = self
+        self.collectionView.backgroundColor = UIColor.whiteColor()
+        self.collectionView.dataSource = self
 
     }
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -33,7 +33,7 @@ class AvailabilityViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
         cell.imageView.image = UIImage(named: "person")
         cell.nameLabel.text = "Name"
-        cell.person = peopleInGroup[indexPath.row] as User
+//        cell.person = peopleInGroup[indexPath.row] as User
         
         return cell
     }

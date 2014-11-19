@@ -19,7 +19,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
     @IBOutlet var pictureImageView: UIImageView!
     
     var user = User()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,11 +62,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
                 println("opening user's saved photos")
             })
             
-        default:
-            println("userCanceled")
-
+        default:()
         }
-
     }
     
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
@@ -153,6 +149,18 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
     /* UITextFieldDelegate method */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        switch textField{
+        case self.usernameTextField:
+            self.emailTextField.becomeFirstResponder()
+        case self.emailTextField:
+            self.passwordTextField.becomeFirstResponder()
+        case self.passwordTextField:
+            self.confirmPasswordTextField.becomeFirstResponder()
+        default:()
+            
+        }
+        
+        
         return true
     }
     

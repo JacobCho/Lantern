@@ -48,6 +48,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="226" y="279" width="91" height="30"/>
                                 </variation>
@@ -211,8 +216,8 @@
                                     <outletCollection property="gestureRecognizers" destination="pAE-Pv-q1A" appends="YES" id="3X0-Tg-OSc"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpk-oa-oFT">
-                                <rect key="frame" x="455" y="438" width="119" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpk-oa-oFT">
+                                <rect key="frame" x="455" y="430" width="119" height="30"/>
                                 <color key="backgroundColor" red="0.12549019607843137" green="0.51372549019607838" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="119" id="e41-1d-3RX"/>
@@ -221,6 +226,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registerButtonPressed:" destination="0vf-wZ-Vy1" eventType="touchUpInside" id="3YT-HV-Pqw"/>
                                 </connections>

@@ -20,7 +20,6 @@ class AvailabilityViewController: UICollectionViewController {
         self.collectionView!.dataSource = self
 
     }
-    
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -36,7 +35,6 @@ class AvailabilityViewController: UICollectionViewController {
         cell.nameLabel.text = "Name"
         cell.person = peopleInGroup[indexPath.row] as User
         
-        
         return cell
     }
 
@@ -51,21 +49,26 @@ class AvailabilityViewController: UICollectionViewController {
         
         finderView.userToBeFound = tappedCell.person
         
-        
-//        segue.destinationViewController
-    }
+}
     
     
 //We need to query parse for the relevant users to display
     func queryForCoorespondingUsers(){
         
         var query = PFQuery(className: "_User")
-        if thisUser.isIosStudent || thisUser.isWebStudent {
-            query.valueForKey("teachers")
+        if thisUser.isIosStudent {
+            query.whereKey("isIosTA", equalTo: true)
         }
-        if thisUser.isWebTA || thisUser.isIosTA{
-            query.valueForKey("students")
+        else if thisUser.isWebStudent {
+            query.whereKey("isWebTA", equalTo: true)
         }
+        else if thisUser.isIosTA {
+            query.whereKey("isIosStudent", equalTo: true)
+        }
+        else if thisUser.isWebTA {
+            query.whereKey("isWebStudent", equalTo: true)
+        }
+        
         
         query.findObjectsInBackgroundWithBlock { (users:[AnyObject]!, error:NSError!) -> Void in
             if (error != nil) {

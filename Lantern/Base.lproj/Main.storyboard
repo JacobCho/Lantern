@@ -201,11 +201,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="KeS-oj-7be">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="KeS-oj-7be">
                                 <rect key="frame" x="29" y="245" width="135" height="135"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KeS-oj-7be" secondAttribute="height" multiplier="1:1" id="eSn-4H-4Ph"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pAE-Pv-q1A" appends="YES" id="3X0-Tg-OSc"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpk-oa-oFT">
                                 <rect key="frame" x="455" y="438" width="119" height="30"/>
@@ -286,6 +290,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZq-zp-SQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="pAE-Pv-q1A">
+                    <connections>
+                        <action selector="photoWasTapped:" destination="0vf-wZ-Vy1" id="Uzc-nR-6kR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1296" y="1067"/>
         </scene>

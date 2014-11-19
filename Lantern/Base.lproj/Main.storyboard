@@ -95,11 +95,12 @@
                     <connections>
                         <outlet property="passwordTextField" destination="gYP-Ff-GmD" id="Omb-Wd-iNi"/>
                         <outlet property="usernameTextField" destination="W8c-Ix-swl" id="iac-b0-mtM"/>
+                        <segue destination="G1M-zc-s87" kind="show" identifier="loginSegue" id="rMJ-Ft-8M4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1296" y="337"/>
+            <point key="canvasLocation" x="1308" y="337"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="WSn-8y-lzd">
@@ -308,8 +309,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7f-OZ-rZw">
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="125" id="VD9-gE-dcf"/>
-                                                <constraint firstAttribute="width" constant="125" id="awt-t8-iWj"/>
+                                                <constraint firstAttribute="width" secondItem="m7f-OZ-rZw" secondAttribute="height" multiplier="1:1" id="xl8-DE-OPE"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEs-cG-B3H">
@@ -327,6 +327,7 @@
                                     <constraint firstItem="m7f-OZ-rZw" firstAttribute="leading" secondItem="Yb9-ds-Ka6" secondAttribute="leading" id="RqE-j7-tNL"/>
                                     <constraint firstItem="m7f-OZ-rZw" firstAttribute="top" secondItem="Yb9-ds-Ka6" secondAttribute="top" id="V5U-rc-vgp"/>
                                     <constraint firstItem="aEs-cG-B3H" firstAttribute="top" secondItem="m7f-OZ-rZw" secondAttribute="bottom" constant="5" id="W71-Tj-pkF"/>
+                                    <constraint firstAttribute="trailing" secondItem="m7f-OZ-rZw" secondAttribute="trailing" id="hbg-8K-wCX"/>
                                     <constraint firstItem="aEs-cG-B3H" firstAttribute="centerX" secondItem="m7f-OZ-rZw" secondAttribute="centerX" id="zgH-hU-8hi"/>
                                 </constraints>
                                 <size key="customSize" width="125" height="170"/>

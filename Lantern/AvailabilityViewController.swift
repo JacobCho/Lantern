@@ -16,8 +16,11 @@ class AvailabilityViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.backgroundColor = UIColor.whiteColor()
-        self.collectionView.dataSource = self
+        self.collectionView!.backgroundColor = UIColor.whiteColor()
+        self.collectionView!.dataSource = self
+        self.queryForCoorespondingUsers()
+
+
 
     }
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -31,9 +34,11 @@ class AvailabilityViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
+        var thisPerson:User = peopleInGroup[indexPath.row] as User
         cell.imageView.image = UIImage(named: "person")
-        cell.nameLabel.text = "Name"
-//        cell.person = peopleInGroup[indexPath.row] as User
+        cell.nameLabel.text = thisPerson.username
+
+        cell.person = thisPerson
         
         return cell
     }
@@ -69,13 +74,14 @@ class AvailabilityViewController: UICollectionViewController {
             query.whereKey("isWebStudent", equalTo: true)
         }
         
-        
         query.findObjectsInBackgroundWithBlock { (users:[AnyObject]!, error:NSError!) -> Void in
-            if (error != nil) {
+            if (error == nil) {
                 self.peopleInGroup = users as [User]
                 println("got some users! \(self.peopleInGroup.count) results")
+                self.collectionView!.reloadData()
+
             } else {
-                NSLog("error:%@", error)
+                println("NOT GOOD\(error)")
             }
         }
     }

@@ -45,6 +45,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate
                     // If successful login
                     self.performSegueWithIdentifier("loginSegue", sender: self)
                     
+                    // Clear out textfields
+                    self.usernameTextField.text = nil
+                    self.passwordTextField.text = nil
+                    
                 } else {
                     // If login unsuccessful
                     var loginErrorAlert = UIAlertController(title: "Error", message: "There was a problem logging in", preferredStyle: UIAlertControllerStyle.Alert)

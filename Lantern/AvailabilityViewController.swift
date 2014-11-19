@@ -19,6 +19,7 @@ class AvailabilityViewController: UICollectionViewController {
         self.collectionView!.backgroundColor = UIColor.whiteColor()
         self.collectionView!.dataSource = self
         self.queryForCoorespondingUsers()
+        self.makeVisibilityButton()
         
 
     }
@@ -44,7 +45,6 @@ class AvailabilityViewController: UICollectionViewController {
         var thisPerson:User = peopleInGroup[indexPath.row] as User
         cell.imageView.image = UIImage(named: "person")
         cell.nameLabel.text = thisPerson.username
-
         cell.person = thisPerson
         
         return cell
@@ -62,6 +62,12 @@ class AvailabilityViewController: UICollectionViewController {
         finderView.userToBeFound = tappedCell.person
         
 }
+    func makeVisibilityButton(){
+        let visButton:UIButton = UIButton(frame: CGRectMake(self.view.frame.width-150, self.view.frame.height-75, 100, 30))
+        visButton.backgroundColor = UIColor(red: 241.0/255.0, green: 196.0/255.0, blue: 15.0/255.0, alpha: 1)
+        self.view.addSubview(visButton)
+        self.view.bringSubviewToFront(visButton)
+        }
     
     
 //We need to query parse for the relevant users to display

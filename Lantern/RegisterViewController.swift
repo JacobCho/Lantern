@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class RegisterViewController: UIViewController, UITextFieldDelegate {
+class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionSheetDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -40,6 +40,43 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.checkFieldsComplete()
         
     }
+    @IBAction func photoWasTapped(sender: UITapGestureRecognizer) {
+        let photoPickerActionSheet:UIActionSheet = UIActionSheet(title: "Take new photo or use existing", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Take new photo", "Use photo from library")
+        photoPickerActionSheet.showInView(self.view)
+    
+    }
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        println("user clicked button at index:\(buttonIndex)")
+        switch buttonIndex{
+        case 1:
+            let newPhotoPicker:UIImagePickerController = UIImagePickerController()
+            newPhotoPicker.delegate=self
+            newPhotoPicker.sourceType = .Camera
+            self.presentViewController(newPhotoPicker, animated: true, completion: { () -> Void in
+                println("opening user's camera")
+            })
+        case 2:
+            let oldPhotoPicker:UIImagePickerController = UIImagePickerController()
+            oldPhotoPicker.delegate = self
+            oldPhotoPicker.sourceType = .SavedPhotosAlbum
+            self.presentViewController(oldPhotoPicker, animated: true, completion: { () -> Void in
+                println("opening user's saved photos")
+            })
+            
+        default:
+            println("userCanceled")
+
+        }
+
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            println("THIS PHOTO")
+        })
+            println("user picked a photo!")
+    }
+    
     
     /* Register Helper Methods */
     func checkFieldsComplete() {

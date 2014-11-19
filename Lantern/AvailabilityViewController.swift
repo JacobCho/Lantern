@@ -18,6 +18,8 @@ class AvailabilityViewController: UICollectionViewController {
         super.viewDidLoad()
         self.collectionView!.backgroundColor = UIColor.whiteColor()
         self.collectionView!.dataSource = self
+        self.queryForCoorespondingUsers()
+        
 
     }
 

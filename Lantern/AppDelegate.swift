@@ -24,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         User.registerSubclass()
         
+        let navigationController:UINavigationController = self.window?.rootViewController as UINavigationController
+        navigationController.navigationBar.tintColor = UIColor(red: 12.0/255.0, green: 45.0/255.0, blue: 61.0/255.0, alpha: 1)
+        
+        
+        
         return true
     }
 

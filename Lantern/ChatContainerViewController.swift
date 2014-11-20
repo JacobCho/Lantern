@@ -40,8 +40,7 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
         message.user = currentUser
         message.senderId = currentUser.objectId
         message.senderName = currentUser.username
-        message.recipientIds = [messageRecipient.objectId]
-        
+        message.recipientId = messageRecipient.objectId
         message.saveInBackgroundWithTarget(nil, selector: nil)
         
         self.chatTextField.text = nil

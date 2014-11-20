@@ -11,7 +11,9 @@ import Parse
 
 class MessageTableViewController: PFQueryTableViewController {
     
+    var messageRecipient : User!
     var thisUser:User = User.currentUser()
+    
     
     override init(style: UITableViewStyle) {
         super.init(style: style)

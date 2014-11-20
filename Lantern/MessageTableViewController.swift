@@ -33,6 +33,19 @@ class MessageTableViewController: PFQueryTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // Filter stuff in your query
+//    override func queryForTable() -> PFQuery! {
+//        var query : PFQuery!
+//        
+//        return query
+//    }
+    
+//    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!, object: PFObject!) -> PFTableViewCell! {
+//        
+//        
+//        
+//    }
 
 
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class ChatContainerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var chatTextField: UITextField!
-    
+    var messageRecipient: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +25,18 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func cancelButtonPressed(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    @IBAction func sendButtonPressed(sender: UIButton) {
+        var currentUser = User.currentUser()
+        
+        var message = Messages()
+        message.message = self.chatTextField.text
+        message.senderId = currentUser.objectId
+        message.senderName = currentUser.username
+        message.recipientIds = [messageRecipient.objectId]
+        message.saveInBackgroundWithTarget(nil, selector: nil)
+        
+        self.chatTextField.text = nil
+        
     }
 }

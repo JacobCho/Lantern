@@ -442,8 +442,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXv-ea-sOo">
-                                        <rect key="frame" x="0.0" y="570" width="400" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.1630401172" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="570" width="337" height="30"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="xff-TK-yiu"/>
                                         </constraints>
@@ -468,10 +468,27 @@
                                             <action selector="cancelButtonPressed:" destination="0hR-YG-B8Z" eventType="touchUpInside" id="CJm-bH-5ye"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xag-1T-HAG">
+                                        <rect key="frame" x="337" y="570" width="63" height="30"/>
+                                        <color key="backgroundColor" red="0.12549019610000001" green="0.51372549020000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="63" id="GjT-Yu-CCC"/>
+                                        </constraints>
+                                        <state key="normal" title="Send">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="0hR-YG-B8Z" eventType="touchUpInside" id="BSc-ZR-ITk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Xag-1T-HAG" secondAttribute="bottom" id="3Ms-6F-atM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xag-1T-HAG" secondAttribute="trailing" id="5YC-ix-H1f"/>
                                     <constraint firstAttribute="trailing" secondItem="v2V-Ja-ahv" secondAttribute="trailing" id="9HF-jh-cHV"/>
                                     <constraint firstItem="v2V-Ja-ahv" firstAttribute="leading" secondItem="mSJ-w3-WeE" secondAttribute="leading" id="BT1-71-QV3"/>
+                                    <constraint firstItem="Xag-1T-HAG" firstAttribute="leading" secondItem="aXv-ea-sOo" secondAttribute="trailing" id="Bqa-c8-Yfv"/>
                                     <constraint firstItem="6ul-R7-wMI" firstAttribute="leading" secondItem="mSJ-w3-WeE" secondAttribute="leading" constant="15" id="DNA-eO-KYK"/>
                                     <constraint firstItem="v2V-Ja-ahv" firstAttribute="top" secondItem="6ul-R7-wMI" secondAttribute="bottom" constant="18" id="Jkn-Np-f1G"/>
                                     <constraint firstAttribute="trailing" secondItem="v2V-Ja-ahv" secondAttribute="trailing" id="Mcb-YD-4CF"/>
@@ -483,6 +500,7 @@
                                     <constraint firstItem="v2V-Ja-ahv" firstAttribute="top" secondItem="mSJ-w3-WeE" secondAttribute="top" constant="75" id="b5M-Zd-Uih"/>
                                     <constraint firstItem="aXv-ea-sOo" firstAttribute="top" secondItem="v2V-Ja-ahv" secondAttribute="bottom" id="boE-O1-Hsy"/>
                                     <constraint firstAttribute="bottom" secondItem="v2V-Ja-ahv" secondAttribute="bottom" constant="30" id="buL-jd-3y0"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xag-1T-HAG" secondAttribute="bottom" constant="1" id="dEf-7e-LHa"/>
                                     <constraint firstItem="v2V-Ja-ahv" firstAttribute="leading" secondItem="mSJ-w3-WeE" secondAttribute="leading" id="hTi-dG-2sE"/>
                                     <constraint firstItem="v2V-Ja-ahv" firstAttribute="leading" secondItem="aXv-ea-sOo" secondAttribute="leading" id="iiD-5g-jeJ"/>
                                     <constraint firstAttribute="bottom" secondItem="aXv-ea-sOo" secondAttribute="bottom" id="oKw-cc-iII"/>
@@ -500,6 +518,7 @@
                                         <exclude reference="ZvT-JN-eBu"/>
                                         <exclude reference="oKw-cc-iII"/>
                                         <exclude reference="uO3-mv-ABs"/>
+                                        <exclude reference="dEf-7e-LHa"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -508,6 +527,7 @@
                         <constraints>
                             <constraint firstItem="GaE-DA-bAi" firstAttribute="top" secondItem="mSJ-w3-WeE" secondAttribute="bottom" id="173-Wb-k0F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mSJ-w3-WeE" secondAttribute="trailing" constant="-16" id="6uW-DR-a5t"/>
+                            <constraint firstItem="GaE-DA-bAi" firstAttribute="top" secondItem="Xag-1T-HAG" secondAttribute="bottom" id="8t1-mN-CiT"/>
                             <constraint firstItem="v2V-Ja-ahv" firstAttribute="width" secondItem="Ye0-bi-wwy" secondAttribute="width" id="JHi-cA-cWd"/>
                             <constraint firstItem="GaE-DA-bAi" firstAttribute="top" secondItem="mSJ-w3-WeE" secondAttribute="bottom" id="M8W-Jl-Lk8"/>
                             <constraint firstItem="mSJ-w3-WeE" firstAttribute="top" secondItem="TKa-0M-hK0" secondAttribute="bottom" constant="-20" id="anP-c8-pzq"/>
@@ -526,6 +546,7 @@
                                 <exclude reference="eK1-I1-zpd"/>
                                 <exclude reference="lox-8C-Eez"/>
                                 <exclude reference="ooh-d5-NNd"/>
+                                <exclude reference="yu1-YX-cjv"/>
                                 <exclude reference="173-Wb-k0F"/>
                                 <exclude reference="M8W-Jl-Lk8"/>
                             </mask>

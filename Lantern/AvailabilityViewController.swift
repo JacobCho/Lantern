@@ -20,7 +20,6 @@ class AvailabilityViewController: UICollectionViewController {
         self.collectionView!.dataSource = self
         self.queryForCoorespondingUsers()
         self.makeVisibilityButton()
-        
 
     }
 
@@ -42,8 +41,23 @@ class AvailabilityViewController: UICollectionViewController {
     }
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
-        var thisPerson:User = peopleInGroup[indexPath.row] as User
-        cell.imageView.image = UIImage(named: "person")
+        
+        let thisPerson:User = peopleInGroup[indexPath.row] as User
+        
+        
+        if let data = thisPerson.profileImage {
+            let actualData:NSData = data.getData()
+            cell.imageView.image = UIImage(data: actualData)
+            
+        } else {
+            cell.imageView.image = UIImage(named: "person")
+        }
+        cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2.0
+        cell.imageView.clipsToBounds = true
+
+        
+        
+//        cell.imageView.image = UIImage(data: thisPerson.profileImage)
         cell.nameLabel.text = thisPerson.username
         cell.person = thisPerson
         
@@ -86,6 +100,7 @@ class AvailabilityViewController: UICollectionViewController {
         else if thisUser.isWebTA {
             query.whereKey("isWebStudent", equalTo: true)
         }
+        query.selectKeys(["username","isIosTA","isWebStudent","isWebTA","profileImage"])
         
         query.findObjectsInBackgroundWithBlock { (users:[AnyObject]!, error:NSError!) -> Void in
             if (error == nil) {

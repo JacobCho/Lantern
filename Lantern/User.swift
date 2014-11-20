@@ -19,7 +19,7 @@ class User: PFUser, PFSubclassing {
     @NSManaged var isIosTA: Bool
     @NSManaged var isWebStudent: Bool
     @NSManaged var isWebTA: Bool
-    @NSManaged var profileImage: NSData
+    @NSManaged var profileImage: PFFile?
    
 
 }

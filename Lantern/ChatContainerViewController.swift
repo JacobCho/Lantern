@@ -43,6 +43,9 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
         message.recipientId = messageRecipient.objectId
         message.saveInBackgroundWithTarget(nil, selector: nil)
         
+        // Push Notification to message recipient
+        pushMessageToUser(messageRecipient.username, andMessage: message.message)
+        
         self.chatTextField.text = nil
         
     }

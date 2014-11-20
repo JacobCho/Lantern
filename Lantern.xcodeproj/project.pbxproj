@@ -31,6 +31,7 @@
 		524DC5BD1A1AB4C600B359C8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DC5BB1A1AB4C600B359C8 /* Parse.framework */; };
 		524DC5BF1A1B042800B359C8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */; };
 		524DC5C61A1B14CC00B359C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DC5C51A1B14CC00B359C8 /* User.swift */; };
+		52DE66931A1EB07B00A37753 /* PushNotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE66921A1EB07B00A37753 /* PushNotificationHelper.swift */; };
 		6DE8FDFFF31F9F05C734AE9F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B86A648231773E9ACACB88AB /* libPods.a */; };
 		8457C2D21A1BC538000E719E /* ObjC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8457C2D11A1BC538000E719E /* ObjC.storyboard */; };
 		8457C2D51A1BC5C1000E719E /* OBJCCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2D41A1BC5C1000E719E /* OBJCCollectionViewController.m */; };
@@ -86,6 +87,7 @@
 		524DC5BB1A1AB4C600B359C8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		524DC5C51A1B14CC00B359C8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		52DE66921A1EB07B00A37753 /* PushNotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationHelper.swift; sourceTree = "<group>"; };
 		8457C2D11A1BC538000E719E /* ObjC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ObjC.storyboard; sourceTree = "<group>"; };
 		8457C2D31A1BC5C1000E719E /* OBJCCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBJCCollectionViewController.h; sourceTree = "<group>"; };
 		8457C2D41A1BC5C1000E719E /* OBJCCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBJCCollectionViewController.m; sourceTree = "<group>"; };
@@ -157,10 +159,11 @@
 		524DC57B1A1A957F00B359C8 /* Lantern */ = {
 			isa = PBXGroup;
 			children = (
-				8457C2DC1A1BD543000E719E /* OBJ-C testbed */,
 				524DC5C41A1B088600B359C8 /* Model */,
 				524DC5C01A1B04F800B359C8 /* Views */,
 				524DC5C11A1B050100B359C8 /* Controllers */,
+				52DE66921A1EB07B00A37753 /* PushNotificationHelper.swift */,
+				8457C2DC1A1BD543000E719E /* OBJ-C testbed */,
 				524DC5851A1A957F00B359C8 /* Images.xcassets */,
 				524DC57C1A1A957F00B359C8 /* Supporting Files */,
 			);
@@ -417,6 +420,7 @@
 				522CB10D1A1D91A500B0FC0B /* Messages.swift in Sources */,
 				8457C2E21A1BF90B000E719E /* PeopleLayout.swift in Sources */,
 				8457C2DE1A1BDFBE000E719E /* FinderViewController.swift in Sources */,
+				52DE66931A1EB07B00A37753 /* PushNotificationHelper.swift in Sources */,
 				8490A26B1A1B21AE0043EF1E /* AvailabilityViewController.swift in Sources */,
 				524DC5A11A1AA73600B359C8 /* LoginViewController.swift in Sources */,
 				524DC57F1A1A957F00B359C8 /* AppDelegate.swift in Sources */,
@@ -485,7 +489,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -527,7 +532,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

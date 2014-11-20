@@ -20,7 +20,7 @@ class Messages: PFObject, PFSubclassing {
     }
     
     @NSManaged var message: String
-    @NSManaged var recipientIds: Array<String>
+    @NSManaged var recipientId: String
     @NSManaged var senderId: String
     @NSManaged var senderName: String
     

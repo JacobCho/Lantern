@@ -464,7 +464,7 @@
                                             <rect key="frame" x="0.0" y="74" width="400" height="495"/>
                                         </variation>
                                         <connections>
-                                            <segue destination="jsJ-pe-sbK" kind="embed" id="usc-Qb-xq3"/>
+                                            <segue destination="jsJ-pe-sbK" kind="embed" identifier="messagesEmbed" id="p0n-1S-IPD"/>
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ul-R7-wMI">

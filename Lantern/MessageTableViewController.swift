@@ -38,6 +38,10 @@ class MessageTableViewController: PFQueryTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 100.0;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        
     }
     
     // Filter stuff in your query
@@ -71,6 +75,7 @@ class MessageTableViewController: PFQueryTableViewController {
             //deque a sent message cell
             var cell = tableView.dequeueReusableCellWithIdentifier(cellIDMessageSent) as MessageTableViewCell?
             cell?.messageTextLabel.text = message.message
+            cell?.sizeToFit()
             if message.senderName != lastMessagePostedBy{
                 if let profileimageFile = thisUser.profileImage{
                     cell?.profileImageView.image = UIImage(data: profileimageFile.getData())
@@ -91,6 +96,8 @@ class MessageTableViewController: PFQueryTableViewController {
             //deque a recieved message cell
             var cell = tableView.dequeueReusableCellWithIdentifier(cellIDMessageRecieved) as MessageTableViewCell?
             cell?.messageTextLabel.text = message.message
+            cell?.sizeToFit()
+
             
             if message.senderName != lastMessagePostedBy {
                 let profileImageQuery:PFQuery = PFQuery(className:"_User")

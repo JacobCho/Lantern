@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var currentInstallation : PFInstallation = PFInstallation.currentInstallation()
         currentInstallation.setDeviceTokenFromData(deviceToken)
-        currentInstallation.channels = ["global"]
+        currentInstallation.channels = ["global", User.currentUser().username]
         currentInstallation.saveInBackgroundWithTarget(nil, selector: nil)
     }
     

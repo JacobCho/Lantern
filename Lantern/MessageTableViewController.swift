@@ -41,11 +41,20 @@ class MessageTableViewController: PFQueryTableViewController {
 //        return query
 //    }
     
-//    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!, object: PFObject!) -> PFTableViewCell! {
-//        
-//        
-//        
-//    }
+    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!, object: PFObject!) -> PFTableViewCell! {
+        
+        var cellIdentifier = "messageCell"
+
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as MessageTableViewCell?
+        
+        var message = object as Messages
+        
+        cell?.senderLabel.text = message.senderName
+        cell?.messageLabel.text = message.message
+        
+        return cell
+        
+    }
 
 
 }

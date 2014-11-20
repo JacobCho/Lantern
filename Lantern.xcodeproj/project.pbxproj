@@ -10,6 +10,7 @@
 		522CB1091A1D20D900B0FC0B /* ChatContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CB1081A1D20D900B0FC0B /* ChatContainerViewController.swift */; };
 		522CB10B1A1D88C000B0FC0B /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CB10A1A1D88C000B0FC0B /* MessageTableViewController.swift */; };
 		522CB10D1A1D91A500B0FC0B /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CB10C1A1D91A500B0FC0B /* Messages.swift */; };
+		522CB10F1A1DB3B100B0FC0B /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CB10E1A1DB3B100B0FC0B /* MessageTableViewCell.swift */; };
 		524DC57F1A1A957F00B359C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DC57E1A1A957F00B359C8 /* AppDelegate.swift */; };
 		524DC5841A1A957F00B359C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524DC5821A1A957F00B359C8 /* Main.storyboard */; };
 		524DC5861A1A957F00B359C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524DC5851A1A957F00B359C8 /* Images.xcassets */; };
@@ -58,6 +59,7 @@
 		522CB1081A1D20D900B0FC0B /* ChatContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatContainerViewController.swift; sourceTree = "<group>"; };
 		522CB10A1A1D88C000B0FC0B /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		522CB10C1A1D91A500B0FC0B /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		522CB10E1A1DB3B100B0FC0B /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		524DC5791A1A957F00B359C8 /* Lantern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lantern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524DC57D1A1A957F00B359C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524DC57E1A1A957F00B359C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				8490A2681A1B218B0043EF1E /* PersonCell.swift */,
 				8457C2E11A1BF90B000E719E /* PeopleLayout.swift */,
 				524DC5821A1A957F00B359C8 /* Main.storyboard */,
+				522CB10E1A1DB3B100B0FC0B /* MessageTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				8490A26B1A1B21AE0043EF1E /* AvailabilityViewController.swift in Sources */,
 				524DC5A11A1AA73600B359C8 /* LoginViewController.swift in Sources */,
 				524DC57F1A1A957F00B359C8 /* AppDelegate.swift in Sources */,
+				522CB10F1A1DB3B100B0FC0B /* MessageTableViewCell.swift in Sources */,
 				8490A2551A1AC2540043EF1E /* (null) in Sources */,
 				8457C2E01A1BE33C000E719E /* ChatViewController.swift in Sources */,
 				8490A2621A1AE3100043EF1E /* (null) in Sources */,

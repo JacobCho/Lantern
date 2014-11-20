@@ -586,7 +586,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatBubbler" translatesAutoresizingMaskIntoConstraints="NO" id="Asc-q3-rkX">
-                                            <rect key="frame" x="302" y="11" width="10" height="10"/>
+                                            <rect key="frame" x="302" y="35" width="10" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="3c7-9g-Wg0"/>
                                                 <constraint firstAttribute="width" constant="10" id="XEo-Za-y4u"/>
@@ -600,7 +600,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czl-tI-h9u">
-                                            <rect key="frame" x="20" y="5" width="282" height="21"/>
+                                            <rect key="frame" x="20" y="5" width="282" height="70"/>
                                             <color key="backgroundColor" red="0.97104414682539686" green="0.758854697710591" blue="0.069299600568367162" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -608,12 +608,14 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Czl-tI-h9u" firstAttribute="top" secondItem="Q46-ze-I2c" secondAttribute="top" constant="5" id="CAs-O2-twL"/>
                                         <constraint firstAttribute="centerY" secondItem="bH1-Oa-ad5" secondAttribute="centerY" constant="5" id="Gss-T8-5ie"/>
                                         <constraint firstItem="Czl-tI-h9u" firstAttribute="top" secondItem="Q46-ze-I2c" secondAttribute="top" constant="5" id="Ldz-Ss-8Yi"/>
                                         <constraint firstItem="Asc-q3-rkX" firstAttribute="leading" secondItem="Czl-tI-h9u" secondAttribute="trailing" id="Yb4-ik-9XB"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="bH1-Oa-ad5" secondAttribute="trailing" constant="5" id="ZQk-EG-MWB"/>
                                         <constraint firstItem="Czl-tI-h9u" firstAttribute="leading" secondItem="Q46-ze-I2c" secondAttribute="leading" constant="20" id="Zlf-3b-pcG"/>
                                         <constraint firstItem="Asc-q3-rkX" firstAttribute="centerY" secondItem="Czl-tI-h9u" secondAttribute="centerY" id="ss7-bs-QxY"/>
+                                        <constraint firstAttribute="bottom" secondItem="Czl-tI-h9u" secondAttribute="bottom" constant="5" id="uSs-u7-7xK"/>
                                         <constraint firstItem="bH1-Oa-ad5" firstAttribute="leading" secondItem="Asc-q3-rkX" secondAttribute="trailing" constant="5" id="wCH-lF-7sL"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -637,14 +639,14 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tB0-nv-Gh7">
-                                            <rect key="frame" x="90" y="5" width="282" height="21"/>
+                                            <rect key="frame" x="90" y="5" width="282" height="70"/>
                                             <color key="backgroundColor" red="0.11764705882352941" green="0.69019607843137254" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatBubblerBlue" translatesAutoresizingMaskIntoConstraints="NO" id="iLs-J1-EZe">
-                                            <rect key="frame" x="80" y="11" width="10" height="10"/>
+                                            <rect key="frame" x="80" y="35" width="10" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="2Za-5e-bxS"/>
                                                 <constraint firstAttribute="width" constant="10" id="Uyo-iA-JF6"/>
@@ -652,6 +654,8 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="tB0-nv-Gh7" firstAttribute="top" secondItem="Y5j-gO-rWV" secondAttribute="top" constant="5" id="39P-zg-1z8"/>
+                                        <constraint firstAttribute="bottom" secondItem="tB0-nv-Gh7" secondAttribute="bottom" constant="5" id="DKi-Z2-mCl"/>
                                         <constraint firstItem="tB0-nv-Gh7" firstAttribute="top" secondItem="Y5j-gO-rWV" secondAttribute="top" constant="5" id="JEh-NM-PTb"/>
                                         <constraint firstItem="lgL-2l-izl" firstAttribute="top" secondItem="Y5j-gO-rWV" secondAttribute="top" constant="5" id="PyE-kk-OHW"/>
                                         <constraint firstAttribute="bottom" secondItem="lgL-2l-izl" secondAttribute="bottom" constant="5" id="S4R-wH-rr9"/>

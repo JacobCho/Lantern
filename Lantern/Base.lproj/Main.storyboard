@@ -541,10 +541,10 @@
             </objects>
             <point key="canvasLocation" x="2660" y="1177"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Message Table View Controller-->
         <scene sceneID="AE1-Nl-iMl">
             <objects>
-                <tableViewController id="jsJ-pe-sbK" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MessageTableViewController" id="jsJ-pe-sbK" customClass="MessageTableViewController" customModule="Lantern" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KWp-ht-8ce">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="495"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -11,17 +11,27 @@ import Parse
 
 class MessageTableViewController: PFQueryTableViewController {
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override init(style: UITableViewStyle) {
+        super.init(style: style)
+        self.parseClassName = Messages.parseClassName()
     }
     
-    override init(className User: String!) {
-        super.init(className: User)
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.parseClassName = Messages.parseClassName()
+    }
+    
+    override init(className Messages: String!) {
+        super.init(className: Messages)
         
-        self.parseClassName = User
-        self.textKey = "YOUR_PARSE_COLUMN_YOU_WANT_TO_SHOW"
+        self.parseClassName = Messages
+        self.textKey = "message"
         self.pullToRefreshEnabled = true
         self.paginationEnabled = false
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 
 

@@ -19,7 +19,7 @@ class AvailabilityViewController: UICollectionViewController {
         self.collectionView!.backgroundColor = UIColor.whiteColor()
         self.collectionView!.dataSource = self
         self.queryForCoorespondingUsers()
-        
+        self.makeVisibilityButton()
 
     }
 
@@ -41,10 +41,24 @@ class AvailabilityViewController: UICollectionViewController {
     }
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
-        var thisPerson:User = peopleInGroup[indexPath.row] as User
-        cell.imageView.image = UIImage(named: "person")
-        cell.nameLabel.text = thisPerson.username
+        
+        let thisPerson:User = peopleInGroup[indexPath.row] as User
+        
+        
+        if let data = thisPerson.profileImage {
+            let actualData:NSData = data.getData()
+            cell.imageView.image = UIImage(data: actualData)
+            
+        } else {
+            cell.imageView.image = UIImage(named: "person")
+        }
+        cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2.0
+        cell.imageView.clipsToBounds = true
 
+        
+        
+//        cell.imageView.image = UIImage(data: thisPerson.profileImage)
+        cell.nameLabel.text = thisPerson.username
         cell.person = thisPerson
         
         return cell
@@ -62,6 +76,12 @@ class AvailabilityViewController: UICollectionViewController {
         finderView.userToBeFound = tappedCell.person
         
 }
+    func makeVisibilityButton(){
+        let visButton:UIButton = UIButton(frame: CGRectMake(self.view.frame.width-150, self.view.frame.height-75, 100, 30))
+        visButton.backgroundColor = UIColor(red: 241.0/255.0, green: 196.0/255.0, blue: 15.0/255.0, alpha: 1)
+        self.view.addSubview(visButton)
+        self.view.bringSubviewToFront(visButton)
+        }
     
     
 //We need to query parse for the relevant users to display
@@ -80,6 +100,7 @@ class AvailabilityViewController: UICollectionViewController {
         else if thisUser.isWebTA {
             query.whereKey("isWebStudent", equalTo: true)
         }
+        query.selectKeys(["username","isIosTA","isWebStudent","isWebTA","profileImage"])
         
         query.findObjectsInBackgroundWithBlock { (users:[AnyObject]!, error:NSError!) -> Void in
             if (error == nil) {

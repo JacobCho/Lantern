@@ -19,15 +19,21 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
     @IBOutlet var pictureImageView: UIImageView!
     
     var user = User()
+    var profileImageData:NSData?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.usernameTextField.delegate = self;
-        self.emailTextField.delegate = self;
-        self.passwordTextField.delegate = self;
-        self.confirmPasswordTextField.delegate = self;
+        usernameTextField.delegate = self;
+        emailTextField.delegate = self;
+        passwordTextField.delegate = self;
+        confirmPasswordTextField.delegate = self;
         
-        // User default set (user is a iOS Student)
+        pictureImageView.layer.cornerRadius = pictureImageView.frame.width/2
+        pictureImageView.clipsToBounds = true
+        
+        
+//         User default set (user is a iOS Student)
         user.isIosStudent = true
         user.isIosTA = false
         user.isWebStudent = false
@@ -70,6 +76,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
             println("THIS PHOTO")
         })
+        profileImageData = UIImageJPEGRepresentation(image, 0.5)
+        pictureImageView.image = image
+        pictureImageView.alpha = 1.0
             println("user picked a photo!")
     }
     
@@ -77,9 +86,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
     /* Register Helper Methods */
     func checkFieldsComplete() {
         // Check if textfields are empty
-        if self.usernameTextField.text.isEmpty || self.emailTextField.text.isEmpty || self.passwordTextField.text.isEmpty || self.confirmPasswordTextField.text.isEmpty {
+        if self.usernameTextField.text.isEmpty || self.emailTextField.text.isEmpty || self.passwordTextField.text.isEmpty || self.confirmPasswordTextField.text.isEmpty || self.profileImageData == nil {
             // Show Alert
-            var incompleteAlert = UIAlertController(title: "Could Not Log In", message: "Please fill out all textfields", preferredStyle: UIAlertControllerStyle.Alert)
+            var incompleteAlert = UIAlertController(title: "Could Not Log In", message: "Please fill out all textfields and add a profile picture", preferredStyle: UIAlertControllerStyle.Alert)
             incompleteAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
             self.presentViewController(incompleteAlert, animated: true, completion: nil)
             
@@ -110,10 +119,18 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
             (succeeded: Bool!, error: NSError!) -> Void in
             if error == nil {
                 self.dismissViewControllerAnimated(true, completion: nil)
+                var profileImageFile:PFFile = PFFile(data: self.profileImageData)
+                self.user.setObject(profileImageFile, forKey: "profileImage")
+                self.user.saveInBackgroundWithBlock({ (succeeded: Bool!, error: NSError!) -> Void in
+                    if error == nil {
+                        println("saved profile pic")
+                    }
+                })
             } else {
                 println(error)
             }
         }
+
     }
     
     @IBAction func studentTeacherControlChanged(sender: UISegmentedControl) {
@@ -145,7 +162,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
     @IBAction func cancelButtonPressed(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if self.profileImageData == nil {
+           pictureImageView.alpha = 0.6
+        }
+    }
     /* UITextFieldDelegate method */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()

@@ -21,7 +21,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
-    
+        
     }
     
     override func viewDidAppear(animated: Bool) {

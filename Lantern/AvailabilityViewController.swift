@@ -29,10 +29,8 @@ class AvailabilityViewController: UICollectionViewController {
     }
     
     func changeWorkStatus (){
-        println("working!")
-        
         if thisUser.isWorking == true {
-            thisUser.isWorking == false
+            thisUser.isWorking = false
         } else if thisUser.isWorking == false{
             thisUser.isWorking = true
         } else {

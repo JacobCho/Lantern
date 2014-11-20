@@ -21,9 +21,8 @@ class AvailabilityViewController: UICollectionViewController {
         self.queryForCoorespondingUsers()
         self.makeVisibilityButton()
         
-        var workingButton:UIBarButtonItem = UIBarButtonItem(title: "start working", style: .Plain , target: self, action: "changeWorkStatus")
-        var navItem = UINavigationItem(title: "working")
-        navItem.rightBarButtonItem = workingButton
+        var workingButton:UIBarButtonItem = UIBarButtonItem(title: "Working", style: .Plain , target: self, action: "changeWorkStatus")
+        
         self.navigationItem.rightBarButtonItem = workingButton
       
 

@@ -29,6 +29,21 @@ class AvailabilityViewController: UICollectionViewController {
     }
     
     func changeWorkStatus (){
+        println("working!")
+        
+        if thisUser.isWorking == true {
+            thisUser.isWorking == false
+        } else if thisUser.isWorking == false{
+            thisUser.isWorking = true
+        } else {
+            thisUser.isWorking = true
+        }
+        
+        thisUser.saveInBackgroundWithBlock {(success:Bool, error:NSError!) -> Void in
+            if success {
+                println("saved user is working \(self.thisUser.isWorking)")
+            }
+        }
         
     }
 
@@ -59,8 +74,10 @@ class AvailabilityViewController: UICollectionViewController {
         }
         if thisPerson.isWorking {
             cell.alpha=1
+            cell.userInteractionEnabled = true
         } else {
             cell.alpha=0.5
+//            cell.userInteractionEnabled = false
         }
         cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2.5
         cell.imageView.clipsToBounds = true

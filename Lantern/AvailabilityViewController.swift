@@ -20,7 +20,17 @@ class AvailabilityViewController: UICollectionViewController {
         self.collectionView!.dataSource = self
         self.queryForCoorespondingUsers()
         self.makeVisibilityButton()
+        
+        var workingButton:UIBarButtonItem = UIBarButtonItem(title: "start working", style: .Plain , target: self, action: "changeWorkStatus")
+        var navItem = UINavigationItem(title: "working")
+        navItem.rightBarButtonItem = workingButton
+        self.navigationItem.rightBarButtonItem = workingButton
+      
 
+    }
+    
+    func changeWorkStatus (){
+        
     }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -35,27 +45,26 @@ class AvailabilityViewController: UICollectionViewController {
     @IBAction func logoutButtonPress(sender: UIBarButtonItem) {
         self.navigationController?.popToRootViewControllerAnimated(true)
             User.logOut()
-        
-        
-        
     }
+    
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
         
         let thisPerson:User = peopleInGroup[indexPath.row] as User
         
-        
         if let data = thisPerson.profileImage {
             let actualData:NSData = data.getData()
             cell.imageView.image = UIImage(data: actualData)
-            
         } else {
             cell.imageView.image = UIImage(named: "person")
         }
-        cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2.0
+        if thisPerson.isWorking {
+            cell.alpha=1
+        } else {
+            cell.alpha=0.5
+        }
+        cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2.5
         cell.imageView.clipsToBounds = true
-
-        
         
 //        cell.imageView.image = UIImage(data: thisPerson.profileImage)
         cell.nameLabel.text = thisPerson.username
@@ -66,6 +75,7 @@ class AvailabilityViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("findSelected", sender: (collectionView.cellForItemAtIndexPath(indexPath)))
+        
         
     }
 //if a user taps a cell they will be taken to the finder view for that person - set the desitination view to the appropriate user
@@ -88,6 +98,7 @@ class AvailabilityViewController: UICollectionViewController {
     func queryForCoorespondingUsers(){
         
         var query = PFQuery(className: "_User")
+        
         if thisUser.isIosStudent {
             query.whereKey("isIosTA", equalTo: true)
         }
@@ -100,7 +111,7 @@ class AvailabilityViewController: UICollectionViewController {
         else if thisUser.isWebTA {
             query.whereKey("isWebStudent", equalTo: true)
         }
-        query.selectKeys(["username","isIosTA","isWebStudent","isWebTA","profileImage"])
+        query.selectKeys(["username","isIosTA","isWebStudent","isWebTA","profileImage","isWorking"])
         
         query.findObjectsInBackgroundWithBlock { (users:[AnyObject]!, error:NSError!) -> Void in
             if (error == nil) {

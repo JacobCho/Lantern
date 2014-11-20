@@ -11,28 +11,21 @@ import UIKit
 import Parse
 
 class LoginViewController: UIViewController, UITextFieldDelegate
-
 {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
-    
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         // If user is logged in, go to collection view
-        let user = User.currentUser()
-        if user != nil {
-            if user.username != nil {
-                self.performSegueWithIdentifier("loginSegue", sender: self)
-            }
+        if let user = User.currentUser() {
+            self.performSegueWithIdentifier("loginSegue", sender: self)
         }
     }
 
@@ -44,11 +37,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate
                 if user != nil {
                     // If successful login
                     self.performSegueWithIdentifier("loginSegue", sender: self)
-                    
                     // Clear out textfields
                     self.usernameTextField.text = nil
                     self.passwordTextField.text = nil
-                    
                 } else {
                     // If login unsuccessful
                     var loginErrorAlert = UIAlertController(title: "Error", message: "There was a problem logging in", preferredStyle: UIAlertControllerStyle.Alert)
@@ -65,7 +56,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             incompleteAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
             self.presentViewController(incompleteAlert, animated: true, completion: nil)
         }
-
         
     }
     

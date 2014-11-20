@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
         
+        var controller:PFQueryTableViewController = PFQueryTableViewController(className: "MessageTableViewController")
+        
         User.registerSubclass()
         
         let navigationController:UINavigationController = self.window?.rootViewController as UINavigationController

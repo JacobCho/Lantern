@@ -23,5 +23,6 @@ class Messages: PFObject, PFSubclassing {
     @NSManaged var recipientIds: Array<String>
     @NSManaged var senderId: String
     @NSManaged var senderName: String
+    @NSManaged var user: User
     
 }

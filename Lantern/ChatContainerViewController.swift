@@ -31,9 +31,11 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
         
         var message = Messages()
         message.message = self.chatTextField.text
+        message.user = currentUser
         message.senderId = currentUser.objectId
         message.senderName = currentUser.username
         message.recipientIds = [messageRecipient.objectId]
+        
         message.saveInBackgroundWithTarget(nil, selector: nil)
         
         self.chatTextField.text = nil

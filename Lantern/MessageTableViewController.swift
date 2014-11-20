@@ -11,6 +11,8 @@ import Parse
 
 class MessageTableViewController: PFQueryTableViewController {
     
+    var thisUser:User = User.currentUser()
+    
     override init(style: UITableViewStyle) {
         super.init(style: style)
         self.parseClassName = Messages.parseClassName()
@@ -43,16 +45,30 @@ class MessageTableViewController: PFQueryTableViewController {
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!, object: PFObject!) -> PFTableViewCell! {
         
-        var cellIdentifier = "messageCell"
-
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as MessageTableViewCell?
-        
+        var cellIDMessageRecieved = "messageCellYou"
+        var cellIDMessageSent = "messageCellMe"
         var message = object as Messages
+    
+        if message.senderName == thisUser.username {
+            //deque a sent message cell
+            var cell = tableView.dequeueReusableCellWithIdentifier(cellIDMessageSent) as MessageTableViewCell?
+            cell?.messageTextLabel.text = message.message
+            
+            return cell
+        } else {
+            //deque a recieved message cell
+            var cell = tableView.dequeueReusableCellWithIdentifier(cellIDMessageRecieved) as MessageTableViewCell?
+            cell?.messageTextLabel.text = message.message
+            cell?.imageView.file = message.user.profileImage
+                        
+            return cell
+        }
+
+
         
-        cell?.senderLabel.text = message.senderName
-        cell?.messageLabel.text = message.message
         
-        return cell
+//        cell?.senderLabel.text = message.senderName
+
         
     }
 

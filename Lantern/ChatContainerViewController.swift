@@ -15,6 +15,12 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.chatTextField.delegate = self
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
     }
     
     /* UITextFieldDelegate Method */
@@ -33,10 +39,18 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
         message.message = self.chatTextField.text
         message.senderId = currentUser.objectId
         message.senderName = currentUser.username
-        message.recipientIds = [messageRecipient.objectId]
+        message.recipientId = messageRecipient.objectId
         message.saveInBackgroundWithTarget(nil, selector: nil)
         
         self.chatTextField.text = nil
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "messagesEmbed" {
+            var messageTableController: MessageTableViewController = segue.destinationViewController as MessageTableViewController
+            messageTableController.messageRecipient = messageRecipient
+            
+        }
     }
 }

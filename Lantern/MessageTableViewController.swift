@@ -11,6 +11,8 @@ import Parse
 
 class MessageTableViewController: PFQueryTableViewController {
     
+    var messageRecipient : User!
+    
     override init(style: UITableViewStyle) {
         super.init(style: style)
         self.parseClassName = Messages.parseClassName()
@@ -35,11 +37,23 @@ class MessageTableViewController: PFQueryTableViewController {
     }
     
     // Filter stuff in your query
-//    override func queryForTable() -> PFQuery! {
-//        var query : PFQuery!
-//        
-//        return query
-//    }
+    override func queryForTable() -> PFQuery! {
+        var query : PFQuery!
+        
+        query = Messages.query()
+        query.whereKey("senderName", containsString: User.currentUser().username)
+        
+        if messageRecipient != nil {
+            // Add query for recipients
+            var recipientQuery = Messages.query()
+            recipientQuery.whereKey("recipientId", containsString: messageRecipient.objectId)
+            
+            //Add subquery to main query
+            query = PFQuery.orQueryWithSubqueries([recipientQuery])
+        }
+        
+        return query
+    }
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!, object: PFObject!) -> PFTableViewCell! {
         

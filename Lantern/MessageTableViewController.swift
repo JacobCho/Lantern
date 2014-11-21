@@ -9,23 +9,20 @@
 import UIKit
 import Parse
 
-private struct Constants {
-    static let cellIDMessageRecieved = "messageCellYou"
-    static let cellIDMessageSent = "messageCellMe"
-}
+//private struct Constants {
+//    static let cellIDMessageRecieved = "messageCellYou"
+//    static let cellIDMessageSent = "messageCellMe"
+//}
 
-final class MessageTableViewController: PFQueryTableViewController {
+class MessageTableViewController: PFQueryTableViewController {
     
     var messageRecipient : User!
     var thisUser:User = User.currentUser()
     var lastMessagePostedBy:String?
     
-
-    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.parseClassName = Messages.parseClassName()
-
     }
     
     override init(className Messages: String!) {
@@ -76,7 +73,7 @@ final class MessageTableViewController: PFQueryTableViewController {
             //deque a sent message cell
             
             Lantern.MessageTableViewCell
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageSent) as MessageTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("messageCellMe") as MessageTableViewCell
             cell.messageTextLabel.text = message.message
 //            cell.sizeToFit()
             if message.senderName != lastMessagePostedBy{
@@ -97,7 +94,7 @@ final class MessageTableViewController: PFQueryTableViewController {
             return cell
         } else {
             //deque a recieved message cell
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageRecieved) as MessageTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("messageCellYou") as MessageTableViewCell
             cell.messageTextLabel.text = message.message
             cell.sizeToFit()
             

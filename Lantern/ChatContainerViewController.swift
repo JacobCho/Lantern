@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ChatContainerViewController: UIViewController, UITextFieldDelegate {
+class ChatContainerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var chatTextField: UITextField!
     
     @IBOutlet var containerView: UIView!
@@ -69,9 +69,8 @@ final class ChatContainerViewController: UIViewController, UITextFieldDelegate {
         var currentUser = User.currentUser()
         
         var message = Messages()
-        if !self.chatTextField.text.isEmpty{
+//        if !self.chatTextField.text.isEmpty{
         message.message = self.chatTextField.text
-//        message.user = currentUser
         message.senderId = currentUser.objectId
         message.senderName = currentUser.username
         message.recipientId = messageRecipient.objectId
@@ -81,7 +80,7 @@ final class ChatContainerViewController: UIViewController, UITextFieldDelegate {
         pushMessageToUser(messageRecipient.username, andMessage: message.message)
         
         self.chatTextField.text = nil
-        }
+//        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

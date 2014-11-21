@@ -14,7 +14,7 @@ private struct Constants {
     static let cellIDMessageSent = "messageCellMe"
 }
 
-class MessageTableViewController: PFQueryTableViewController {
+final class MessageTableViewController: PFQueryTableViewController {
     
     var messageRecipient : User!
     var thisUser:User = User.currentUser()

@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class MessageTableViewCell: PFTableViewCell {
+final class MessageTableViewCell: PFTableViewCell {
 
 //    @IBOutlet weak var messageLabel: UILabel!
 //    @IBOutlet weak var senderLabel: UILabel!

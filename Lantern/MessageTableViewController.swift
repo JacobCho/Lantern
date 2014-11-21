@@ -9,11 +9,18 @@
 import UIKit
 import Parse
 
+private struct Constants {
+    static let cellIDMessageRecieved = "messageCellYou"
+    static let cellIDMessageSent = "messageCellMe"
+}
+
 class MessageTableViewController: PFQueryTableViewController {
     
     var messageRecipient : User!
     var thisUser:User = User.currentUser()
     var lastMessagePostedBy:String?
+    
+
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -38,7 +45,6 @@ class MessageTableViewController: PFQueryTableViewController {
        
         
         
-//        self.tableView.setContentOffset(<#contentOffset: CGPoint#>, animated: <#Bool#>)
         
     }
     
@@ -61,25 +67,18 @@ class MessageTableViewController: PFQueryTableViewController {
         return query
     }
     
-    private struct Constants {
-        static let cellReuseIdentifier = ""
-    }
+
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!, object: PFObject!) -> PFTableViewCell! {
         
-        
-        let cellIDMessageRecieved = "messageCellYou"
-        let cellIDMessageSent = "messageCellMe"
-        
         var message = object as Messages
         var messageCounter:Int = 0
-        
     
         if message.senderName == thisUser.username {
             //deque a sent message cell
             
             Lantern.MessageTableViewCell
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellReuseIdentifier) as MessageTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageSent) as MessageTableViewCell
             cell.messageTextLabel.text = message.message
 //            cell.sizeToFit()
             if message.senderName != lastMessagePostedBy{
@@ -100,10 +99,9 @@ class MessageTableViewController: PFQueryTableViewController {
             return cell
         } else {
             //deque a recieved message cell
-            var cell = tableView.dequeueReusableCellWithIdentifier(cellIDMessageRecieved) as MessageTableViewCell?
-            cell?.messageTextLabel.text = message.message
-            cell?.sizeToFit()
-
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageRecieved) as MessageTableViewCell
+            cell.messageTextLabel.text = message.message
+            cell.sizeToFit()
             
             if message.senderName != lastMessagePostedBy {
                 let profileImageQuery:PFQuery = PFQuery(className:"_User")
@@ -113,25 +111,27 @@ class MessageTableViewController: PFQueryTableViewController {
                             if let userProfileImageFile = user.profileImage{
                                 if let imageData = userProfileImageFile.getData() {
                                     dispatch_async(dispatch_get_main_queue()) {
-                                        cell?.profileImageView.image = UIImage(data: imageData)
-                                        cell?.chatBubbleTail.hidden = false
+                                        cell.profileImageView.image = UIImage(data: imageData)
+                                        cell.chatBubbleTail.hidden = false
                                     }
                                 }
-                                
                             }
                         } else {
-                            cell?.profileImageView.image = UIImage(named: "person")
-                            cell?.chatBubbleTail.hidden = false
+                            cell.profileImageView.image = UIImage(named: "person")
+                            cell.chatBubbleTail.hidden = false
                         }
                     
                 })
             } else {
-                cell?.chatBubbleTail.hidden = true
+                cell.chatBubbleTail.hidden = true
             }
             lastMessagePostedBy = message.senderName
             return cell
         }
+
+        
     }
+
 
 
 }

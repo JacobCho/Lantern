@@ -15,8 +15,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var lightImageView: UIImageView!
-    
     @IBOutlet weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.usernameTextField.delegate = self

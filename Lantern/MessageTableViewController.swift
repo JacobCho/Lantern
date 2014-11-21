@@ -19,6 +19,8 @@ class MessageTableViewController: PFQueryTableViewController {
     var messageRecipient : User!
     var thisUser:User = User.currentUser()
     var lastMessagePostedBy:String?
+    var timer:NSTimer?
+
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -126,7 +128,16 @@ class MessageTableViewController: PFQueryTableViewController {
 
         
     }
-
+    func startCheckingForNewMessages(){
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+    }
+    func update(){
+        self.queryForTable()
+        self.loadObjects()
+    }
+    override func viewWillDisappear(animated: Bool) {
+        self.timer?.invalidate()
+    }
 
 
 }

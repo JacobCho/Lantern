@@ -15,12 +15,6 @@ class MessageTableViewController: PFQueryTableViewController {
     var thisUser:User = User.currentUser()
     var lastMessagePostedBy:String?
     
-    
-//    override init(style: UITableViewStyle) {
-//        super.init(style: style)
-////        self.parseClassName = Messages.parseClassName()
-//    }
-    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.parseClassName = Messages.parseClassName()

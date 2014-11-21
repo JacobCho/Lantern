@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Lantern/LoginViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:Lantern.xcodeproj">
    </FileRef>
    <FileRef

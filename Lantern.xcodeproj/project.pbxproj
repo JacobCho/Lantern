@@ -11,12 +11,12 @@
 		522CB10B1A1D88C000B0FC0B /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CB10A1A1D88C000B0FC0B /* MessageTableViewController.swift */; };
 		522CB10D1A1D91A500B0FC0B /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CB10C1A1D91A500B0FC0B /* Messages.swift */; };
 		522CB10F1A1DB3B100B0FC0B /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CB10E1A1DB3B100B0FC0B /* MessageTableViewCell.swift */; };
+		52439D1A1A1FED8A006E5740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52439D191A1FED8A006E5740 /* LoginViewController.swift */; };
 		524DC57F1A1A957F00B359C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DC57E1A1A957F00B359C8 /* AppDelegate.swift */; };
 		524DC5841A1A957F00B359C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524DC5821A1A957F00B359C8 /* Main.storyboard */; };
 		524DC5861A1A957F00B359C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524DC5851A1A957F00B359C8 /* Images.xcassets */; };
 		524DC5891A1A957F00B359C8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524DC5871A1A957F00B359C8 /* LaunchScreen.xib */; };
 		524DC5951A1A958000B359C8 /* LanternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DC5941A1A958000B359C8 /* LanternTests.swift */; };
-		524DC5A11A1AA73600B359C8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DC5A01A1AA73600B359C8 /* LoginViewController.swift */; };
 		524DC5A31A1AA85A00B359C8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DC5A21A1AA85A00B359C8 /* AudioToolbox.framework */; };
 		524DC5A51A1AA86200B359C8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DC5A41A1AA86200B359C8 /* CFNetwork.framework */; };
 		524DC5A71A1AA86D00B359C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DC5A61A1AA86D00B359C8 /* CoreGraphics.framework */; };
@@ -61,6 +61,7 @@
 		522CB10A1A1D88C000B0FC0B /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		522CB10C1A1D91A500B0FC0B /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		522CB10E1A1DB3B100B0FC0B /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		52439D191A1FED8A006E5740 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		524DC5791A1A957F00B359C8 /* Lantern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lantern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524DC57D1A1A957F00B359C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524DC57E1A1A957F00B359C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +71,6 @@
 		524DC58E1A1A958000B359C8 /* LanternTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanternTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		524DC5931A1A958000B359C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524DC5941A1A958000B359C8 /* LanternTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanternTests.swift; sourceTree = "<group>"; };
-		524DC5A01A1AA73600B359C8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		524DC5A21A1AA85A00B359C8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		524DC5A41A1AA86200B359C8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		524DC5A61A1AA86D00B359C8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -212,7 +212,7 @@
 		524DC5C11A1B050100B359C8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				524DC5A01A1AA73600B359C8 /* LoginViewController.swift */,
+				52439D191A1FED8A006E5740 /* LoginViewController.swift */,
 				524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */,
 				8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */,
 				8457C2DD1A1BDFBE000E719E /* FinderViewController.swift */,
@@ -419,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52439D1A1A1FED8A006E5740 /* LoginViewController.swift in Sources */,
 				524DC5C61A1B14CC00B359C8 /* User.swift in Sources */,
 				524DC5BF1A1B042800B359C8 /* RegisterViewController.swift in Sources */,
 				522CB1091A1D20D900B0FC0B /* ChatContainerViewController.swift in Sources */,
@@ -429,7 +430,6 @@
 				8457C2DE1A1BDFBE000E719E /* FinderViewController.swift in Sources */,
 				52DE66931A1EB07B00A37753 /* PushNotificationHelper.swift in Sources */,
 				8490A26B1A1B21AE0043EF1E /* AvailabilityViewController.swift in Sources */,
-				524DC5A11A1AA73600B359C8 /* LoginViewController.swift in Sources */,
 				524DC57F1A1A957F00B359C8 /* AppDelegate.swift in Sources */,
 				522CB10F1A1DB3B100B0FC0B /* MessageTableViewCell.swift in Sources */,
 				8490A2551A1AC2540043EF1E /* (null) in Sources */,

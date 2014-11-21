@@ -10,7 +10,7 @@ import Foundation
 import Parse
 
 func pushMessageToUser(userName : String, andMessage message : String) {
-    var push : PFPush!
+    var push : PFPush = PFPush()
     push.setChannel(userName)
     push.setMessage(message)
     push.sendPushInBackgroundWithTarget(nil, selector: nil)

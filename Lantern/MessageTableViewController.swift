@@ -76,7 +76,7 @@ class MessageTableViewController: PFQueryTableViewController {
             //deque a sent message cell
             
             Lantern.MessageTableViewCell
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellReuseIdentifier) as MessageTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(cellIDMessageSent) as MessageTableViewCell
             cell.messageTextLabel.text = message.message
 //            cell.sizeToFit()
             if message.senderName != lastMessagePostedBy{

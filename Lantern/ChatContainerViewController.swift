@@ -36,9 +36,7 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
     
     
     func viewSlide(notification:NSNotification) {
-        
-        
-        
+    
         println("we got a notification")
         if let keyboardInfo:Dictionary = notification.userInfo {
             if notification.name == UIKeyboardWillShowNotification {

@@ -16,6 +16,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var lightImageView: UIImageView!
     
+    @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.usernameTextField.delegate = self
@@ -76,9 +77,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     func fadeLight() {
         UIView.animateWithDuration(2.0, delay: 0.1, options: UIViewAnimationOptions.Repeat, animations: { () -> Void in
             self.lightImageView.alpha = 0
+            self.titleLabel.alpha = 0
             }) { (flag: Bool) -> Void in
                 UIView.animateWithDuration(2.0, animations: { () -> Void in
-                    println("fade in")
                     self.lightImageView.alpha = 1
                 })
         }

@@ -44,13 +44,13 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdI-vk-JPf">
                                 <rect key="frame" x="239" y="411" width="50" height="30"/>
-                                <color key="backgroundColor" red="0.12549019610000001" green="0.51372549020000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="SS3-OO-OPV"/>
                                     <constraint firstAttribute="width" constant="50" id="gNV-Fc-XtZ"/>
                                 </constraints>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.12549019610000001" green="0.51372549020000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -67,12 +67,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6n-WV-jrh">
                                 <rect key="frame" x="255" y="556" width="91" height="30"/>
-                                <color key="backgroundColor" red="0.12549019607843137" green="0.51372549019607838" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="y1g-0j-haW"/>
                                 </constraints>
                                 <state key="normal" title="Register">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.12549019610000001" green="0.51372549020000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -106,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12549019610000001" green="0.51372549020000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="W8c-Ix-swl" firstAttribute="width" secondItem="gYP-Ff-GmD" secondAttribute="width" id="0SJ-gR-RLJ"/>
                             <constraint firstItem="kqg-x9-WpY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pt4-ts-aya" secondAttribute="trailing" constant="20" id="2PQ-3G-JIt"/>
@@ -137,6 +137,7 @@
                     <connections>
                         <outlet property="lightImageView" destination="pt4-ts-aya" id="Rd8-RX-F5d"/>
                         <outlet property="passwordTextField" destination="gYP-Ff-GmD" id="Omb-Wd-iNi"/>
+                        <outlet property="titleLabel" destination="BUp-7F-wtl" id="Iu5-EZ-n8Y"/>
                         <outlet property="usernameTextField" destination="W8c-Ix-swl" id="iac-b0-mtM"/>
                         <segue destination="G1M-zc-s87" kind="show" identifier="loginSegue" id="rMJ-Ft-8M4"/>
                     </connections>

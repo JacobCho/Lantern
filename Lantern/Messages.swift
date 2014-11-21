@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-final class Messages: PFObject, PFSubclassing {
+class Messages: PFObject, PFSubclassing {
     
     class func parseClassName() -> String! {
         return "Messages"

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PeopleLayout: UICollectionViewFlowLayout {
+class PeopleLayout: UICollectionViewFlowLayout {
     
     
     override func prepareLayout() {

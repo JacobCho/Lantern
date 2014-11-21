@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 
-final class FinderViewController: UIViewController {
+class FinderViewController: UIViewController {
     
     
     var userToBeFound:User = User()

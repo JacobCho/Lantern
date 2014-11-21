@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-final class PersonCell: UICollectionViewCell {
+class PersonCell: UICollectionViewCell {
     
     var person:User!
     

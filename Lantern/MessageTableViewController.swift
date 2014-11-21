@@ -126,15 +126,6 @@ class MessageTableViewController: PFQueryTableViewController {
             lastMessagePostedBy = message.senderName
             return cell
         }
-        //if this is the first cell from a given user attach a profile image
-//        var queryUserProfileImage
-
-
-        
-        
-//        cell?.senderLabel.text = message.senderName
-
-        
     }
 
 

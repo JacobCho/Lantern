@@ -32,7 +32,6 @@ class MessageTableViewController: PFQueryTableViewController {
         super.init(className: Messages)
         
         self.parseClassName = Messages
-//        self.textKey = "message"
         self.pullToRefreshEnabled = true
         self.paginationEnabled = false
     }
@@ -42,9 +41,6 @@ class MessageTableViewController: PFQueryTableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 100.0;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-       
-        
-        
         
     }
     

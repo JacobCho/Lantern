@@ -9,10 +9,10 @@
 import UIKit
 import Parse
 
-//private struct Constants {
-//    static let cellIDMessageRecieved = "messageCellYou"
-//    static let cellIDMessageSent = "messageCellMe"
-//}
+private struct Constants {
+    static let cellIDMessageRecieved = "messageCellYou"
+    static let cellIDMessageSent = "messageCellMe"
+}
 
 class MessageTableViewController: PFQueryTableViewController {
     
@@ -73,7 +73,7 @@ class MessageTableViewController: PFQueryTableViewController {
             //deque a sent message cell
             
             Lantern.MessageTableViewCell
-            let cell = tableView.dequeueReusableCellWithIdentifier("messageCellMe") as MessageTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageSent) as MessageTableViewCell
             cell.messageTextLabel.text = message.message
 //            cell.sizeToFit()
             if message.senderName != lastMessagePostedBy{
@@ -94,7 +94,7 @@ class MessageTableViewController: PFQueryTableViewController {
             return cell
         } else {
             //deque a recieved message cell
-            let cell = tableView.dequeueReusableCellWithIdentifier("messageCellYou") as MessageTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageRecieved) as MessageTableViewCell
             cell.messageTextLabel.text = message.message
             cell.sizeToFit()
             

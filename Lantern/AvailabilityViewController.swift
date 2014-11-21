@@ -64,8 +64,10 @@ class AvailabilityViewController: UICollectionViewController {
         let thisPerson:User = peopleInGroup[indexPath.row] as User
         
         if let data = thisPerson.profileImage {
-            let actualData:NSData = data.getData()
-            cell.imageView.image = UIImage(data: actualData)
+           data.getDataInBackgroundWithBlock({ (imageData:NSData!, error: NSError!) -> Void in
+                cell.imageView.image = UIImage(data: imageData)
+            })
+
         } else {
             cell.imageView.image = UIImage(named: "person")
         }

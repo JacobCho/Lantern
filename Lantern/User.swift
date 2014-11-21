@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-class User: PFUser, PFSubclassing {
+final class User: PFUser, PFSubclassing {
     
     override class func load() {
         self.registerSubclass()

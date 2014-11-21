@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionSheetDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+final class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionSheetDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!

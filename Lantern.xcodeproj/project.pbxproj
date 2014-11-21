@@ -38,7 +38,6 @@
 		8457C2D81A1BD309000E719E /* OBJCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2D71A1BD309000E719E /* OBJCViewController.m */; };
 		8457C2DB1A1BD31B000E719E /* OBJCCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2DA1A1BD31B000E719E /* OBJCCollectionViewCell.m */; };
 		8457C2DE1A1BDFBE000E719E /* FinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2DD1A1BDFBE000E719E /* FinderViewController.swift */; };
-		8457C2E01A1BE33C000E719E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2DF1A1BE33C000E719E /* ChatViewController.swift */; };
 		8457C2E21A1BF90B000E719E /* PeopleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2E11A1BF90B000E719E /* PeopleLayout.swift */; };
 		8457C2E41A1EBA36000E719E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8457C2E31A1EBA36000E719E /* MapKit.framework */; };
 		8490A2551A1AC2540043EF1E /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -97,7 +96,6 @@
 		8457C2D91A1BD31B000E719E /* OBJCCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBJCCollectionViewCell.h; sourceTree = "<group>"; };
 		8457C2DA1A1BD31B000E719E /* OBJCCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBJCCollectionViewCell.m; sourceTree = "<group>"; };
 		8457C2DD1A1BDFBE000E719E /* FinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinderViewController.swift; sourceTree = "<group>"; };
-		8457C2DF1A1BE33C000E719E /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8457C2E11A1BF90B000E719E /* PeopleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleLayout.swift; sourceTree = "<group>"; };
 		8457C2E31A1EBA36000E719E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8490A2681A1B218B0043EF1E /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 				524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */,
 				8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */,
 				8457C2DD1A1BDFBE000E719E /* FinderViewController.swift */,
-				8457C2DF1A1BE33C000E719E /* ChatViewController.swift */,
 				522CB1081A1D20D900B0FC0B /* ChatContainerViewController.swift */,
 				522CB10A1A1D88C000B0FC0B /* MessageTableViewController.swift */,
 			);
@@ -436,7 +433,6 @@
 				524DC57F1A1A957F00B359C8 /* AppDelegate.swift in Sources */,
 				522CB10F1A1DB3B100B0FC0B /* MessageTableViewCell.swift in Sources */,
 				8490A2551A1AC2540043EF1E /* (null) in Sources */,
-				8457C2E01A1BE33C000E719E /* ChatViewController.swift in Sources */,
 				8490A2621A1AE3100043EF1E /* (null) in Sources */,
 				8490A2691A1B218B0043EF1E /* PersonCell.swift in Sources */,
 				522CB10B1A1D88C000B0FC0B /* MessageTableViewController.swift in Sources */,

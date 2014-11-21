@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 
-class FinderViewController: UIViewController {
+final class FinderViewController: UIViewController {
     
     
     var userToBeFound:User = User()
@@ -20,7 +20,6 @@ class FinderViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
 
     var person:User!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title=userToBeFound.username

@@ -9,11 +9,11 @@
 import UIKit
 import Parse
 
-class AvailabilityViewController: UICollectionViewController {
+final class AvailabilityViewController: UICollectionViewController {
     
-    var peopleInGroup:Array<User> = []
+    lazy var peopleInGroup: [User] = []
     var thisUser:User = User.currentUser()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView!.backgroundColor = UIColor.whiteColor()

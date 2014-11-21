@@ -35,6 +35,10 @@ class MessageTableViewController: PFQueryTableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 100.0;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+       
+        
+        
+//        self.tableView.setContentOffset(<#contentOffset: CGPoint#>, animated: <#Bool#>)
         
     }
     
@@ -60,30 +64,34 @@ class MessageTableViewController: PFQueryTableViewController {
     }
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!, object: PFObject!) -> PFTableViewCell! {
         
-        var cellIDMessageRecieved = "messageCellYou"
-        var cellIDMessageSent = "messageCellMe"
+        
+        let cellIDMessageRecieved = "messageCellYou"
+        let cellIDMessageSent = "messageCellMe"
+        
         var message = object as Messages
         var messageCounter:Int = 0
         
     
         if message.senderName == thisUser.username {
             //deque a sent message cell
-            var cell = tableView.dequeueReusableCellWithIdentifier(cellIDMessageSent) as MessageTableViewCell?
-            cell?.messageTextLabel.text = message.message
-            cell?.sizeToFit()
+            
+            Lantern.MessageTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellReuseIdentifier) as MessageTableViewCell
+            cell.messageTextLabel.text = message.message
+//            cell.sizeToFit()
             if message.senderName != lastMessagePostedBy{
                 if let profileimageFile = thisUser.profileImage{
-                    cell?.profileImageView.image = UIImage(data: profileimageFile.getData())
-                    cell?.chatBubbleTail.hidden = false
+                    cell.profileImageView.image = UIImage(data: profileimageFile.getData())
+                    cell.chatBubbleTail.hidden = false
 
                 } else {
-                    cell?.profileImageView.image = UIImage(named: "person")
-                    cell?.chatBubbleTail.hidden = false
+                    cell.profileImageView.image = UIImage(named: "person")
+                    cell.chatBubbleTail.hidden = false
 
                 }
             } else {
                 //this message is chained - hide word bubble & adjust cell height
-                cell?.chatBubbleTail.hidden = true
+                cell.chatBubbleTail.hidden = true
             }
             lastMessagePostedBy = message.senderName
             return cell
@@ -101,11 +109,10 @@ class MessageTableViewController: PFQueryTableViewController {
                         if let user = stuff.first as? User{
                             if let userProfileImageFile = user.profileImage{
                                 if let imageData = userProfileImageFile.getData() {
-                                    dispatch_async(dispatch_get_main_queue(),{
+                                    dispatch_async(dispatch_get_main_queue()) {
                                         cell?.profileImageView.image = UIImage(data: imageData)
                                         cell?.chatBubbleTail.hidden = false
-                                        return
-                                    });
+                                    }
                                 }
                                 
                             }

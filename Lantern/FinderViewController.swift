@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+
 
 class FinderViewController: UIViewController {
     
@@ -15,25 +17,21 @@ class FinderViewController: UIViewController {
     
     
 
-    @IBOutlet var tempLabel: UILabel!
+    @IBOutlet var mapView: MKMapView!
 
-    
     var person:User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title=userToBeFound.username
 
-        
         // Do any additional setup after loading the view.
     }
 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
-        
-        
+
         
         // Dispose of any resources that can be recreated.
     }

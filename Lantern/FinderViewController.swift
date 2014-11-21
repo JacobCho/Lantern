@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+
 
 class FinderViewController: UIViewController {
     
@@ -15,7 +17,8 @@ class FinderViewController: UIViewController {
     
     
 
-    @IBOutlet var tempLabel: UILabel!
+    @IBOutlet var mapView: MKMapView!
+
 
     
     var person:User!

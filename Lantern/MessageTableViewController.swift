@@ -52,17 +52,19 @@ class MessageTableViewController: PFQueryTableViewController {
     override func queryForTable() -> PFQuery! {
         var query : PFQuery!
         
-        query = Messages.query()
-        query.whereKey("senderName", containsString: User.currentUser().username)
+        // Query if I'm the sender
+        var senderQuery = Messages.query()
+        senderQuery.whereKey("recipientId", containsString: messageRecipient.objectId)
+        senderQuery.whereKey("senderName", containsString: User.currentUser().username)
         
-        if messageRecipient != nil {
-            // Add query for recipients
-            var recipientQuery = Messages.query()
-            recipientQuery.whereKey("recipientId", containsString: messageRecipient.objectId)
-            
-            //Add subquery to main query
-            query = PFQuery.orQueryWithSubqueries([recipientQuery])
-        }
+        // Query if sender is messageRecipient
+        var selfRecipientQuery = Messages.query()
+        selfRecipientQuery.whereKey("recipientId", containsString:User.currentUser().objectId)
+        selfRecipientQuery.whereKey("senderName", containsString:messageRecipient.username)
+        
+        //Add subquery to main query
+        query = PFQuery.orQueryWithSubqueries([senderQuery, selfRecipientQuery])
+        
         
         return query
     }

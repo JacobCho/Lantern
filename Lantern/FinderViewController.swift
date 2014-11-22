@@ -23,8 +23,18 @@ class FinderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title=userToBeFound.username
+        self.configureMap()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func configureMap(){
+        let lighthouseCoordinates = CLLocationCoordinate2D(latitude: 49.2821725, longitude: -123.1080759)
+        let mapSize = MKCoordinateRegion(center: lighthouseCoordinates, span: MKCoordinateSpan(latitudeDelta: 0.00001, longitudeDelta: 0.00001))
+        self.mapView.region = mapSize
+        
+//        self.mapView.camera
+        
     }
 
 

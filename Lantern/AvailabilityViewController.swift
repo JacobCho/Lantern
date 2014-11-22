@@ -76,7 +76,7 @@ class AvailabilityViewController: UICollectionViewController {
             cell.userInteractionEnabled = true
         } else {
             cell.alpha=0.5
-//            cell.userInteractionEnabled = false
+            cell.userInteractionEnabled = false
         }
         cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2.5
         cell.imageView.clipsToBounds = true

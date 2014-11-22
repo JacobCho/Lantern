@@ -74,6 +74,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     }
     
     func fadeLight() {
+        self.lightImageView.alpha = 1
+        self.titleLabel.alpha = 1
         UIView.animateWithDuration(2.0, delay: 0.1, options: UIViewAnimationOptions.Repeat, animations: { () -> Void in
             self.lightImageView.alpha = 0
             self.titleLabel.alpha = 0

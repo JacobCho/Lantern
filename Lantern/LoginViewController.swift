@@ -14,6 +14,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate
 {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var lightImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         if let user = User.currentUser() {
             self.performSegueWithIdentifier("loginSegue", sender: self)
         }
+        
+        self.fadeLight()
     }
 
     @IBAction func loginButtonPressed(sender: UIButton) {
@@ -66,6 +71,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             self.passwordTextField.becomeFirstResponder()
         }
         return true
+    }
+    
+    func fadeLight() {
+        self.lightImageView.alpha = 1
+        self.titleLabel.alpha = 1
+        UIView.animateWithDuration(2.0, delay: 0.1, options: UIViewAnimationOptions.Repeat, animations: { () -> Void in
+            self.lightImageView.alpha = 0
+            self.titleLabel.alpha = 0
+            }) { (flag: Bool) -> Void in
+                UIView.animateWithDuration(2.0, animations: { () -> Void in
+                    self.lightImageView.alpha = 1
+                })
+        }
+        
     }
     
     

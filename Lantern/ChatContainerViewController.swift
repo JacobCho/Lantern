@@ -14,17 +14,25 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var containerView: UIView!
     
     var messageRecipient: User!
+    var messageTableController: MessageTableViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.chatTextField.delegate = self
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "viewSlide:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "viewSlide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "viewSlide:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "viewSlide:", name: UIKeyboardWillHideNotification, object: nil)
 
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        
     }
     /* UITextFieldDelegate Method */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -70,11 +78,13 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
         
         var message = Messages()
         if !self.chatTextField.text.isEmpty{
-        message.message = self.chatTextField.text
-        message.senderId = currentUser.objectId
-        message.senderName = currentUser.username
-        message.recipientId = messageRecipient.objectId
-        message.saveInBackgroundWithTarget(nil, selector: nil)
+            message.message = self.chatTextField.text
+            message.senderId = currentUser.objectId
+            message.senderName = currentUser.username
+            message.recipientId = messageRecipient.objectId
+            message.saveInBackgroundWithTarget(nil, selector: nil)
+            self.messageTableController.loadObjects()
+        
     
         // Push Notification to message recipient
         pushMessageToUser(messageRecipient.username, andMessage: message.message)
@@ -85,9 +95,11 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "messagesEmbed" {
-            var messageTableController: MessageTableViewController = segue.destinationViewController as MessageTableViewController
+            messageTableController = segue.destinationViewController as MessageTableViewController
             messageTableController.messageRecipient = messageRecipient
             
         }
     }
+    
+
 }

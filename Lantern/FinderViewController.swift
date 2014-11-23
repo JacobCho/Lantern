@@ -23,7 +23,7 @@ class FinderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title=userToBeFound.username
-        self.configureMap()
+//        self.configureMap()
 
         // Do any additional setup after loading the view.
     }

@@ -439,9 +439,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVm-Ca-PyR">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                            </mapView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7y-nM-3b4">
+                                <rect key="frame" x="-1" y="1" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lighthouseMapN_1x" translatesAutoresizingMaskIntoConstraints="NO" id="MOD-Ff-HRA">
+                                        <rect key="frame" x="0.0" y="0.0" width="1500" height="1500"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1500" id="E41-Dt-fWY"/>
+                                            <constraint firstAttribute="height" constant="1500" id="UtO-Ek-sOA"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="MOD-Ff-HRA" secondAttribute="bottom" id="3jG-9f-F0d"/>
+                                    <constraint firstAttribute="trailing" secondItem="MOD-Ff-HRA" secondAttribute="trailing" id="bpv-uf-Bpf"/>
+                                    <constraint firstItem="MOD-Ff-HRA" firstAttribute="top" secondItem="n7y-nM-3b4" secondAttribute="top" id="erK-Uq-ssi"/>
+                                    <constraint firstAttribute="bottom" secondItem="MOD-Ff-HRA" secondAttribute="bottom" id="hrC-er-57b"/>
+                                    <constraint firstItem="MOD-Ff-HRA" firstAttribute="leading" secondItem="n7y-nM-3b4" secondAttribute="leading" id="iqG-6G-TYf"/>
+                                </constraints>
+                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFD-yN-PQD">
                                 <rect key="frame" x="470" y="470" width="100" height="100"/>
                                 <constraints>
@@ -458,17 +474,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="AVm-Ca-PyR" secondAttribute="trailing" id="BJO-r3-Fou"/>
-                            <constraint firstItem="AVm-Ca-PyR" firstAttribute="leading" secondItem="qzH-rS-jkL" secondAttribute="leading" id="LRQ-4o-jxN"/>
-                            <constraint firstItem="AVm-Ca-PyR" firstAttribute="top" secondItem="qha-fB-xY8" secondAttribute="bottom" id="LZF-EY-xOB"/>
+                            <constraint firstItem="n7y-nM-3b4" firstAttribute="leading" secondItem="qzH-rS-jkL" secondAttribute="leading" id="2f1-uM-qlC"/>
                             <constraint firstItem="jtf-dc-ouO" firstAttribute="top" secondItem="bFD-yN-PQD" secondAttribute="bottom" constant="30" id="Oe5-lX-DmH"/>
+                            <constraint firstAttribute="bottom" secondItem="n7y-nM-3b4" secondAttribute="bottom" id="PeQ-U1-2ap"/>
                             <constraint firstAttribute="trailing" secondItem="bFD-yN-PQD" secondAttribute="trailing" constant="30" id="PwH-fS-Hu1"/>
-                            <constraint firstItem="jtf-dc-ouO" firstAttribute="top" secondItem="AVm-Ca-PyR" secondAttribute="bottom" id="uGW-A5-Vjq"/>
+                            <constraint firstAttribute="trailing" secondItem="n7y-nM-3b4" secondAttribute="trailing" id="VY6-18-c2a"/>
+                            <constraint firstItem="n7y-nM-3b4" firstAttribute="top" secondItem="qzH-rS-jkL" secondAttribute="top" id="pE8-HG-Jop"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="mapView" destination="AVm-Ca-PyR" id="yId-Jq-gw3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgo-7i-YKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -755,6 +768,7 @@
         <image name="chat" width="200" height="200"/>
         <image name="chatBubbler" width="44" height="50"/>
         <image name="chatBubblerBlue" width="46" height="50"/>
+        <image name="lighthouseMapN_1x" width="1500" height="1500"/>
         <image name="loginLighthouse" width="99" height="260"/>
         <image name="photo" width="200" height="200"/>
     </resources>

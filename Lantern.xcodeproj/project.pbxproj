@@ -110,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524DC5AF1A1AA8B200B359C8 /* QuartzCore.framework in Frameworks */,
 				524DC5A91A1AA89400B359C8 /* CoreLocation.framework in Frameworks */,
 				524DC5BC1A1AB4C600B359C8 /* Bolts.framework in Frameworks */,
 				524DC5BD1A1AB4C600B359C8 /* Parse.framework in Frameworks */,
@@ -117,7 +118,6 @@
 				524DC5B31A1AA8C000B359C8 /* StoreKit.framework in Frameworks */,
 				8457C2E41A1EBA36000E719E /* MapKit.framework in Frameworks */,
 				524DC5B11A1AA8BA00B359C8 /* Security.framework in Frameworks */,
-				524DC5AF1A1AA8B200B359C8 /* QuartzCore.framework in Frameworks */,
 				524DC5AD1A1AA8A800B359C8 /* MobileCoreServices.framework in Frameworks */,
 				524DC5AB1A1AA89D00B359C8 /* libz.dylib in Frameworks */,
 				524DC5A71A1AA86D00B359C8 /* CoreGraphics.framework in Frameworks */,

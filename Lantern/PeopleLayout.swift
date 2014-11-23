@@ -17,7 +17,6 @@ class PeopleLayout: UICollectionViewFlowLayout {
         minimumLineSpacing = 15
         minimumInteritemSpacing = 15
         sectionInset = UIEdgeInsetsMake(30, 50, 30, 50)
-    
+
     }
-   
 }

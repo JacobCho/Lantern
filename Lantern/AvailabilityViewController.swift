@@ -78,7 +78,7 @@ class AvailabilityViewController: UICollectionViewController {
             cell.alpha=0.5
 //            cell.userInteractionEnabled = false
         }
-        cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2.5
+        cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2.6
         cell.imageView.clipsToBounds = true
         
 //        cell.imageView.image = UIImage(data: thisPerson.profileImage)
@@ -86,6 +86,7 @@ class AvailabilityViewController: UICollectionViewController {
         cell.person = thisPerson
         
         return cell
+
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

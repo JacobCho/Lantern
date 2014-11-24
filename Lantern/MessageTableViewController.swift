@@ -20,7 +20,6 @@ class MessageTableViewController: PFQueryTableViewController {
     var thisUser:User = User.currentUser()
     var lastMessagePostedBy:String?
     var timer:NSTimer?
-
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -42,8 +41,8 @@ class MessageTableViewController: PFQueryTableViewController {
         self.startCheckingForNewMessages()
         
     }
+// MARK: parse query stuff
     
-    // Filter stuff in your query
     override func queryForTable() -> PFQuery! {
         var query : PFQuery!
         
@@ -60,11 +59,8 @@ class MessageTableViewController: PFQueryTableViewController {
         //Add subquery to main query
         query = PFQuery.orQueryWithSubqueries([senderQuery, selfRecipientQuery])
         
-        
         return query
     }
-    
-
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!, object: PFObject!) -> PFTableViewCell! {
         

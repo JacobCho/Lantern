@@ -16,6 +16,8 @@ class AvailabilityViewController: UICollectionViewController {
     lazy var lighthouseClass = []
     lazy var teachers:[User] = []
     lazy var students:[User] = []
+    lazy var myCell:[User] = []
+    
     
     var thisUser:User = User.currentUser()
 
@@ -115,6 +117,7 @@ class AvailabilityViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
         self.performSegueWithIdentifier("findSelected", sender: (collectionView.cellForItemAtIndexPath(indexPath)))
         
         
@@ -171,8 +174,6 @@ class AvailabilityViewController: UICollectionViewController {
 //                self.lighthouseClass = [teachers,students]
                 
 
-                self.peopleInClass = results as [User]
-                println("got some users! \(self.peopleInClass.count) results")
                 self.collectionView!.reloadData()
 
             } else {

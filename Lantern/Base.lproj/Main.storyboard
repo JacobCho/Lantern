@@ -363,7 +363,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewLayout key="collectionViewLayout" id="NMI-j5-GFh" customClass="PeopleLayout" customModule="Lantern" customModuleProvider="target"/>
+                        <collectionViewLayout key="collectionViewLayout" id="cIQ-gC-6IX" customClass="PeopleLayout" customModule="Lantern" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="personCell" id="Yb9-ds-Ka6" customClass="PersonCell" customModule="Lantern" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -378,7 +378,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7f-OZ-rZw">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7f-OZ-rZw" customClass="PFImageView">
                                             <rect key="frame" x="3" y="0.0" width="119" height="119"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="m7f-OZ-rZw" secondAttribute="height" multiplier="1:1" id="xl8-DE-OPE"/>
@@ -416,6 +416,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="AhZ-Ee-4nh" id="sgI-ub-Srr"/>
                         <outlet property="confirmPasswordTextField" destination="KuV-zZ-Xqq" id="RZh-XN-kW3"/>
                         <outlet property="emailTextField" destination="3uN-s9-eat" id="Fnb-hX-w0A"/>
                         <outlet property="passwordTextField" destination="Qkc-7h-UIr" id="92f-i4-41C"/>
@@ -424,9 +425,30 @@
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igI-DU-Sf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="axO-Zb-bkd">
+                <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionHeader" id="zbC-0o-ChT" customClass="SectionHeader" customModule="Lantern" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3I-Ji-qte">
+                            <rect key="frame" x="100" y="300" width="300" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWK-LC-dlf">
+                                    <rect key="frame" x="129" y="15" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="AgY-0Z-bS0"/>
+                                <constraint firstAttribute="width" constant="300" id="M6f-Wl-rLd"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <connections>
+                        <outlet property="headerTitleLabel" destination="WWK-LC-dlf" id="xwR-Fh-WPA"/>
+                    </connections>
                 </collectionReusableView>
             </objects>
             <point key="canvasLocation" x="1981" y="337"/>
@@ -530,7 +552,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.058823529409999999" green="0.1529411765" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.16730701922723581" green="0.2311693271712717" blue="0.32483878968253965" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="6ul-R7-wMI" firstAttribute="leading" secondItem="Y1q-uJ-ebH" secondAttribute="leading" constant="15" id="Z7F-nH-vLg"/>
                                     <constraint firstAttribute="centerY" secondItem="6ul-R7-wMI" secondAttribute="centerY" id="dw0-Rq-8jy"/>

@@ -14,13 +14,8 @@ class PersonCell: UICollectionViewCell {
     
     var person:User!
     
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var imageView: PFImageView!
     @IBOutlet var nameLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-//        self.addPulse()
-    }
     
     /* Adds background pulse to imageviews */
     func addPulses(quantity:Float) {
@@ -31,7 +26,6 @@ class PersonCell: UICollectionViewCell {
         pulseView.layer.cornerRadius = self.imageView.frame.width/2
         
         self.addSubview(pulseView)
-        
         self.sendSubviewToBack(pulseView)
         // Add the pulse animation
         let scaleAnimation = CABasicAnimation()

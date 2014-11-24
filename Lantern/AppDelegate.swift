@@ -53,6 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)
+//        let chatContainerViewController : ChatContainerViewController = ChatContainerViewController()
+//        let navigationController:UINavigationController = self.window?.rootViewController as UINavigationController
+//        navigationController.pushViewController(chatContainerViewController, animated: true)
+        
     }
     
 

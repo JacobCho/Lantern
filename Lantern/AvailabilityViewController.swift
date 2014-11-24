@@ -16,8 +16,7 @@ class AvailabilityViewController: UICollectionViewController {
     lazy var peopleInClass: [User] = []
     
     lazy var lighthouseClass = []
-    lazy var teachers:[User] = []
-    lazy var students:[User] = []
+
     lazy var myCell:[User] = []
     
     
@@ -29,9 +28,9 @@ class AvailabilityViewController: UICollectionViewController {
         self.collectionView!.dataSource = self
         self.queryForClass()
         if thisUser.isIosStudent || thisUser.isIosTA {
-            self.title = "iOS cohort"
+            self.title = "\(thisUser.username) - iOS cohort"
         } else if thisUser.isWebStudent || thisUser.isWebTA {
-            self.title = "Web cohort"
+            self.title = "\(thisUser.username) Web cohort"
         }
         var workingButton:UIBarButtonItem = UIBarButtonItem(title: "Working", style: .Plain , target: self, action: "changeWorkStatus")
         
@@ -165,17 +164,24 @@ class AvailabilityViewController: UICollectionViewController {
                 let theClassList:Array<User> = results as Array<User>
                 self.lighthouseClass = theClassList
                 var index:Int
-//                for index = 0; index < results.count; ++index {
-//                    let thisUser:User! = results[index] as User
-//
-//                    println("looping!")
-//
-//                    if thisUser.isWebTA || thisUser.isIosTA {
-//                        self.teachers.append(thisUser)
-//                    } else if thisUser.isIosStudent || thisUser.isWebStudent {
-//                        self.students.append(thisUser)
+                var teachers:[User] = []
+                var students:[User] = []
+                
+                for index = 0; index < results.count; ++index {
+                    
+                    let aPerson:User! = results[index] as User
+
+                    println("looping!")
+                    
+//                    self.lighthouseClass.append(aPerson)
+                    
+                    
+//                    if aPerson.isWebTA || aPerson.isIosTA {
+//                        teachers.append(aPerson)
+//                    } else if aPerson.isIosStudent || aPerson.isWebStudent {
+//                        students.append(aPerson)
 //                    }
-//                }
+                }
 //                self.lighthouseClass = [teachers,students]
                 
 
@@ -187,9 +193,11 @@ class AvailabilityViewController: UICollectionViewController {
         }
     }
     
+    //MARK: - status updates on timer
     func startCheckingForStatusUpdates(){
         timer = NSTimer.scheduledTimerWithTimeInterval(globalConst.updateSpeed, target: self, selector: Selector("queryForClass"), userInfo: nil, repeats: true)
     }
+    
     override func viewWillDisappear(animated: Bool) {
         timer?.invalidate()
     }

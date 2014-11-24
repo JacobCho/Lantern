@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class ProfileViewController: UITableViewController {
 
+    @IBOutlet var profileImage: PFImageView!
+    @IBOutlet var nameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

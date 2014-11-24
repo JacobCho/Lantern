@@ -84,7 +84,6 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
             message.recipientId = messageRecipient.objectId
             message.saveInBackgroundWithTarget(nil, selector: nil)
             self.messageTableController.loadObjects()
-        
     
         // Push Notification to message recipient
         pushMessageToUser(messageRecipient.username, andMessage: message.message)
@@ -92,6 +91,8 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
         self.chatTextField.text = nil
         }
     }
+    
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "messagesEmbed" {

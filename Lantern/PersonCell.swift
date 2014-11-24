@@ -19,19 +19,16 @@ class PersonCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.addPulse()
+//        self.addPulse()
     }
     
     /* Adds background pulse to imageviews */
-    func addPulse() {
+    func addPulses(quantity:Float) {
         // Make the background circle
         let pulseView = UIView()
-        pulseView.frame = CGRectMake(0, 0, 90, 90)
-        pulseView.center = self.imageView.center
-        pulseView.center.x -= 27
-        pulseView.center.y -= 15
-        pulseView.backgroundColor = UIColor(red: 49/255, green: 168/255, blue: 247/255, alpha: 0.8)
-        pulseView.layer.cornerRadius = 45
+        pulseView.frame = self.imageView.frame
+        pulseView.backgroundColor = UIColor(red: 26.0/255.0, green: 188.0/255.0, blue: 156.0/255.0, alpha: 1)
+        pulseView.layer.cornerRadius = self.imageView.frame.width/2
         
         self.addSubview(pulseView)
         
@@ -40,11 +37,10 @@ class PersonCell: UICollectionViewCell {
         let scaleAnimation = CABasicAnimation()
         scaleAnimation.keyPath = "transform.scale"
         scaleAnimation.duration = 0.5
-        scaleAnimation.repeatCount = 500
+        scaleAnimation.repeatCount = quantity
         scaleAnimation.autoreverses = true
         scaleAnimation.fromValue = 1.1
         scaleAnimation.toValue = 0.8
-        
         pulseView.layer.addAnimation(scaleAnimation, forKey: "scale")
         
     }

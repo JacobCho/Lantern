@@ -40,6 +40,8 @@
 		8457C2DE1A1BDFBE000E719E /* FinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2DD1A1BDFBE000E719E /* FinderViewController.swift */; };
 		8457C2E21A1BF90B000E719E /* PeopleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2E11A1BF90B000E719E /* PeopleLayout.swift */; };
 		8457C2E41A1EBA36000E719E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8457C2E31A1EBA36000E719E /* MapKit.framework */; };
+		8457C2E61A22893E000E719E /* IndoorMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2E51A22893E000E719E /* IndoorMapView.swift */; };
+		8457C2E81A22ACE1000E719E /* LanternConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2E71A22ACE1000E719E /* LanternConstants.swift */; };
 		8490A2551A1AC2540043EF1E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8490A2621A1AE3100043EF1E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8490A2691A1B218B0043EF1E /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490A2681A1B218B0043EF1E /* PersonCell.swift */; };
@@ -98,6 +100,8 @@
 		8457C2DD1A1BDFBE000E719E /* FinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinderViewController.swift; sourceTree = "<group>"; };
 		8457C2E11A1BF90B000E719E /* PeopleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleLayout.swift; sourceTree = "<group>"; };
 		8457C2E31A1EBA36000E719E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8457C2E51A22893E000E719E /* IndoorMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndoorMapView.swift; sourceTree = "<group>"; };
+		8457C2E71A22ACE1000E719E /* LanternConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanternConstants.swift; sourceTree = "<group>"; };
 		8490A2681A1B218B0043EF1E /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityViewController.swift; sourceTree = "<group>"; };
 		953525A148D80D3F479B3069 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				524DC5C01A1B04F800B359C8 /* Views */,
 				524DC5C11A1B050100B359C8 /* Controllers */,
 				52DE66921A1EB07B00A37753 /* PushNotificationHelper.swift */,
+				8457C2E71A22ACE1000E719E /* LanternConstants.swift */,
 				8457C2DC1A1BD543000E719E /* OBJ-C testbed */,
 				524DC5851A1A957F00B359C8 /* Images.xcassets */,
 				524DC57C1A1A957F00B359C8 /* Supporting Files */,
@@ -204,6 +209,7 @@
 				8490A2681A1B218B0043EF1E /* PersonCell.swift */,
 				8457C2E11A1BF90B000E719E /* PeopleLayout.swift */,
 				524DC5821A1A957F00B359C8 /* Main.storyboard */,
+				8457C2E51A22893E000E719E /* IndoorMapView.swift */,
 				522CB10E1A1DB3B100B0FC0B /* MessageTableViewCell.swift */,
 			);
 			name = Views;
@@ -336,7 +342,7 @@
 					};
 					524DC58D1A1A958000B359C8 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 4QSJ36RDTB;
+						DevelopmentTeam = 6D3ETKGB5Z;
 						TestTargetID = 524DC5781A1A957F00B359C8;
 					};
 				};
@@ -420,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				524DC5C61A1B14CC00B359C8 /* User.swift in Sources */,
+				8457C2E61A22893E000E719E /* IndoorMapView.swift in Sources */,
 				524DC5BF1A1B042800B359C8 /* RegisterViewController.swift in Sources */,
 				522CB1091A1D20D900B0FC0B /* ChatContainerViewController.swift in Sources */,
 				8457C2D81A1BD309000E719E /* OBJCViewController.m in Sources */,
@@ -432,6 +439,7 @@
 				8490A26B1A1B21AE0043EF1E /* AvailabilityViewController.swift in Sources */,
 				524DC57F1A1A957F00B359C8 /* AppDelegate.swift in Sources */,
 				522CB10F1A1DB3B100B0FC0B /* MessageTableViewCell.swift in Sources */,
+				8457C2E81A22ACE1000E719E /* LanternConstants.swift in Sources */,
 				8490A2551A1AC2540043EF1E /* (null) in Sources */,
 				8490A2621A1AE3100043EF1E /* (null) in Sources */,
 				8490A2691A1B218B0043EF1E /* PersonCell.swift in Sources */,
@@ -563,8 +571,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/test/Documents/Development/Swipr,
@@ -573,7 +581,7 @@
 				INFOPLIST_FILE = Lantern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Lantern-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -586,8 +594,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/test/Documents/Development/Swipr,
@@ -596,7 +604,7 @@
 				INFOPLIST_FILE = Lantern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Lantern-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

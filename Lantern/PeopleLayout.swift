@@ -17,7 +17,7 @@ class PeopleLayout: UICollectionViewFlowLayout {
         minimumLineSpacing = 15
         minimumInteritemSpacing = 15
         sectionInset = UIEdgeInsetsMake(30, 50, 30, 50)
-        headerReferenceSize = CGSizeMake(self.collectionViewContentSize().width,50)
+//        headerReferenceSize = CGSizeMake(self.collectionViewContentSize().width,50)
 //        registerClass(SectionHeader.self, forDecorationViewOfKind: "sectionHeader")
         
 

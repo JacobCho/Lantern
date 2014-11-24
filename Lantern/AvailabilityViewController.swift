@@ -16,6 +16,8 @@ class AvailabilityViewController: UICollectionViewController {
     lazy var lighthouseClass = []
     lazy var teachers:[User] = []
     lazy var students:[User] = []
+    lazy var myCell:[User] = []
+    
     
     var thisUser:User = User.currentUser()
 
@@ -69,13 +71,13 @@ class AvailabilityViewController: UICollectionViewController {
         return lighthouseClass.count
     }
 
-    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        
-        let sectionHeader = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "sectionHeader", forIndexPath: indexPath)
-//        sectionHeader.headerTitleLabel.text = "Section"
-
-        return sectionHeader as UICollectionReusableView
-    }
+//    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+//        
+//        let sectionHeader = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "sectionHeader", forIndexPath: indexPath)
+////        sectionHeader.headerTitleLabel.text = "Section"
+//
+//        return sectionHeader as UICollectionReusableView
+//    }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
@@ -115,6 +117,7 @@ class AvailabilityViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
         self.performSegueWithIdentifier("findSelected", sender: (collectionView.cellForItemAtIndexPath(indexPath)))
         
         
@@ -171,8 +174,6 @@ class AvailabilityViewController: UICollectionViewController {
 //                self.lighthouseClass = [teachers,students]
                 
 
-                self.peopleInClass = results as [User]
-                println("got some users! \(self.peopleInClass.count) results")
                 self.collectionView!.reloadData()
 
             } else {

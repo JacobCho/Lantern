@@ -15,5 +15,5 @@ class MessageTableViewCell: PFTableViewCell {
 //    @IBOutlet weak var senderLabel: UILabel!
     @IBOutlet var messageTextLabel: UILabel!
     @IBOutlet var chatBubbleTail: UIImageView!
-    @IBOutlet var profileImageView: UIImageView!
+    @IBOutlet var profileImageView: PFImageView!
 }

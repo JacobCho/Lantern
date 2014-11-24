@@ -72,25 +72,17 @@ class MessageTableViewController: PFQueryTableViewController {
         var messageCounter:Int = 0
     
         if message.senderName == thisUser.username {
-            //deque a sent message cell
-            
-            Lantern.MessageTableViewCell
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageSent) as MessageTableViewCell
+            
             cell.messageTextLabel.text = message.message
-//            cell.sizeToFit()
+            
             if message.senderName != lastMessagePostedBy{
-                if let profileimageFile = thisUser.profileImage{
-                    cell.profileImageView.image = UIImage(data: profileimageFile.getData())
-                    cell.chatBubbleTail.hidden = false
-
+                    cell.profileImageView.file = thisUser.profileImage?
+                    cell.profileImageView.loadInBackground(nil)
+                    self.hideOrUnhideCellContent(cell, hide: false)
                 } else {
-                    cell.profileImageView.image = UIImage(named: "person")
-                    cell.chatBubbleTail.hidden = false
-
-                }
-            } else {
-                //this message is chained - hide word bubble & adjust cell height
-                cell.chatBubbleTail.hidden = true
+                //this message is chained 
+                    self.hideOrUnhideCellContent(cell, hide: true)
             }
             lastMessagePostedBy = message.senderName
             return cell
@@ -98,36 +90,20 @@ class MessageTableViewController: PFQueryTableViewController {
             //deque a recieved message cell
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageRecieved) as MessageTableViewCell
             cell.messageTextLabel.text = message.message
-            cell.sizeToFit()
             
             if message.senderName != lastMessagePostedBy {
-                let profileImageQuery:PFQuery = PFQuery(className:"_User")
-                profileImageQuery.whereKey("username", equalTo: messageRecipient.username)
-                profileImageQuery.findObjectsInBackgroundWithBlock({(stuff:[AnyObject]!, error:NSError!) -> Void in
-                        if let user = stuff.first as? User{
-                            if let userProfileImageFile = user.profileImage{
-                                if let imageData = userProfileImageFile.getData() {
-                                    dispatch_async(dispatch_get_main_queue()) {
-                                        cell.profileImageView.image = UIImage(data: imageData)
-                                        cell.chatBubbleTail.hidden = false
-                                    }
-                                }
-                            }
-                        } else {
-                            cell.profileImageView.image = UIImage(named: "person")
-                            cell.chatBubbleTail.hidden = false
-                        }
-                    
-                })
+                cell.profileImageView.file = self.messageRecipient.profileImage?
+                cell.profileImageView.loadInBackground(nil)
+                self.hideOrUnhideCellContent(cell, hide: false)
+            
             } else {
-                cell.chatBubbleTail.hidden = true
+                self.hideOrUnhideCellContent(cell, hide: true)
             }
             lastMessagePostedBy = message.senderName
             return cell
         }
-
-        
     }
+
     func startCheckingForNewMessages(){
         timer = NSTimer.scheduledTimerWithTimeInterval(globalConst.updateSpeed, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
@@ -137,9 +113,18 @@ class MessageTableViewController: PFQueryTableViewController {
         self.queryForTable()
         self.loadObjects()
     }
+    
     override func viewWillDisappear(animated: Bool) {
         self.timer?.invalidate()
     }
+    
+    func hideOrUnhideCellContent(cell:MessageTableViewCell, hide:Bool){
 
+        cell.profileImageView.hidden = hide
+        cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.size.width/2
+        cell.profileImageView.clipsToBounds = true
+        cell.chatBubbleTail.hidden = hide
+
+    }
 
 }

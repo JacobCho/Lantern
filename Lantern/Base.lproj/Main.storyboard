@@ -643,7 +643,7 @@
                                                 <constraint firstAttribute="width" constant="10" id="XEo-Za-y4u"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bH1-Oa-ad5">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="bH1-Oa-ad5" customClass="PFImageView">
                                             <rect key="frame" x="317" y="5" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="m7a-lN-3N7"/>
@@ -703,7 +703,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bsA-g9-gB8" id="Y5j-gO-rWV">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lgL-2l-izl">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="lgL-2l-izl" customClass="PFImageView">
                                             <rect key="frame" x="5" y="5" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="5n3-gF-crR"/>
@@ -801,6 +801,7 @@
         <image name="chatBubblerBlue" width="46" height="50"/>
         <image name="lighthouseMapN_1x" width="1500" height="1500"/>
         <image name="loginLighthouse" width="99" height="260"/>
+        <image name="person" width="200" height="200"/>
         <image name="photo" width="200" height="200"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

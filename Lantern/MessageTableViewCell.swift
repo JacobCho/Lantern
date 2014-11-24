@@ -18,4 +18,12 @@ class MessageTableViewCell: PFTableViewCell {
     @IBOutlet var chatBubbleTail: UIImageView!
     @IBOutlet var profileImageView: PFImageView!
     
+     override func layoutSubviews() {
+        super.layoutSubviews()
+        
+//        println("laying out the subviews for this cell:\(messageTextLabel.text)")
+        
+        
+    }
+    //TODO: find callback
 }

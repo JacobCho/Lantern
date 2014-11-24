@@ -123,5 +123,7 @@ class MessageTableViewController: PFQueryTableViewController {
         cell.chatBubbleTail.hidden = hide
 
     }
+    
+    
 
 }

@@ -153,18 +153,8 @@ class AvailabilityViewController: UICollectionViewController {
             if (error == nil) {
 
                 var index:Int
-                for index = 0; index < results.count; ++index {
-                    let thisUser:User! = results[index] as User
-
-                    println("looping!")
-
-                    if thisUser.isWebTA || thisUser.isIosTA {
-                        self.teachers.append(thisUser)
-                    } else if thisUser.isIosStudent || thisUser.isWebStudent {
-                        self.students.append(thisUser)
-                    }
-                }
-                self.lighthouseClass = [self.teachers,self.students]
+                var teachers:[User] = []
+                var students:[User] = []
                 
                 for index = 0; index < results.count; ++index {
                     

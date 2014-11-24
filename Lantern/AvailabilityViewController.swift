@@ -31,6 +31,7 @@ class AvailabilityViewController: UICollectionViewController {
         var workingButton:UIBarButtonItem = UIBarButtonItem(title: "Working", style: .Plain , target: self, action: "changeWorkStatus")
         
         self.navigationItem.rightBarButtonItem = workingButton
+        self.addListButton()
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -122,6 +123,16 @@ class AvailabilityViewController: UICollectionViewController {
         finderView.userToBeFound = tappedCell.person
         
 }
+    
+    func addListButton(){
+        let listButton:UIButton = UIButton()
+        listButton.layer.anchorPoint = CGPointMake(1, 1)
+        listButton.frame = CGRectMake(self.view.frame.width-140, self.view.frame.height-100, 140, 100)
+        listButton.imageView?.image = UIImage(named: "peopleIcon_1x")
+        self.view.addSubview(listButton)
+
+//        self.view.sendSubviewToBack(self.collectionView!)
+    }
     
 //We need to query parse for the relevant users to display
     func queryForClass(){

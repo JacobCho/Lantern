@@ -174,12 +174,18 @@
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="20" y="82" width="760" height="42"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lantern is an app written by Lighthouse Labs students..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8G-nG-6Ui">
                                         <rect key="frame" x="20" y="134" width="560" height="20"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="20" y="134" width="760" height="20"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -191,6 +197,9 @@
                                     <constraint firstAttribute="trailing" secondItem="lbs-Uy-n3k" secondAttribute="trailing" constant="20" id="e3D-gC-JM8"/>
                                     <constraint firstItem="lbs-Uy-n3k" firstAttribute="leading" secondItem="ICK-fA-16x" secondAttribute="leading" constant="20" id="lcV-Sk-TJY"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="800" height="245"/>
+                                </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGt-vV-V62">
                                 <rect key="frame" x="480" y="30" width="119" height="30"/>
@@ -215,6 +224,9 @@
                                     <segment title="Web"/>
                                 </segments>
                                 <color key="tintColor" red="0.14307313050000001" green="0.734354332" blue="0.53924260869999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="174" y="385" width="600" height="31"/>
+                                </variation>
                                 <connections>
                                     <action selector="studentTeacherControlChanged:" destination="0vf-wZ-Vy1" eventType="valueChanged" id="4dW-dS-BbG"/>
                                 </connections>
@@ -226,6 +238,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="174" y="245" width="600" height="30"/>
+                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3uN-s9-eat">
                                 <rect key="frame" x="174" y="280" width="400" height="30"/>
@@ -234,6 +249,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="174" y="280" width="600" height="30"/>
+                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qkc-7h-UIr">
                                 <rect key="frame" x="174" y="315" width="400" height="30"/>
@@ -242,6 +260,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="174" y="315" width="600" height="30"/>
+                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KuV-zZ-Xqq">
                                 <rect key="frame" x="174" y="350" width="400" height="30"/>
@@ -250,6 +271,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="174" y="350" width="600" height="30"/>
+                                </variation>
                             </textField>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="KeS-oj-7be">
                                 <rect key="frame" x="29" y="245" width="135" height="135"/>
@@ -344,12 +368,12 @@
                         </constraints>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
-                                <exclude reference="KE3-mW-6Gb"/>
-                                <exclude reference="Ps2-FY-v8N"/>
-                                <exclude reference="MN0-vQ-hMg"/>
-                                <exclude reference="0hf-4T-xLQ"/>
-                                <exclude reference="iBO-9y-kPp"/>
-                                <exclude reference="pw0-Ok-IHs"/>
+                                <include reference="KE3-mW-6Gb"/>
+                                <include reference="Ps2-FY-v8N"/>
+                                <include reference="MN0-vQ-hMg"/>
+                                <include reference="0hf-4T-xLQ"/>
+                                <include reference="iBO-9y-kPp"/>
+                                <include reference="pw0-Ok-IHs"/>
                             </mask>
                         </variation>
                         <connections>
@@ -453,7 +477,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3I-Ji-qte">
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3I-Ji-qte">
                             <rect key="frame" x="100" y="300" width="300" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWK-LC-dlf">

@@ -165,18 +165,18 @@ class AvailabilityViewController: UICollectionViewController {
                 let theClassList:Array<User> = results as Array<User>
                 self.lighthouseClass = theClassList
                 var index:Int
-//                for index = 0; index < results.count; ++index {
-//                    let thisUser:User! = results[index] as User
-//
-//                    println("looping!")
-//
-//                    if thisUser.isWebTA || thisUser.isIosTA {
-//                        self.teachers.append(thisUser)
-//                    } else if thisUser.isIosStudent || thisUser.isWebStudent {
-//                        self.students.append(thisUser)
-//                    }
-//                }
-//                self.lighthouseClass = [teachers,students]
+                for index = 0; index < results.count; ++index {
+                    let thisUser:User! = results[index] as User
+
+                    println("looping!")
+
+                    if thisUser.isWebTA || thisUser.isIosTA {
+                        self.teachers.append(thisUser)
+                    } else if thisUser.isIosStudent || thisUser.isWebStudent {
+                        self.students.append(thisUser)
+                    }
+                }
+                self.lighthouseClass = [self.teachers,self.students]
                 
 
                 self.collectionView!.reloadData()

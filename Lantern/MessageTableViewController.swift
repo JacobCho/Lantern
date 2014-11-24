@@ -29,7 +29,6 @@ class MessageTableViewController: PFQueryTableViewController {
     
     override init(className Messages: String!) {
         super.init(className: Messages)
-        
         self.parseClassName = Messages
         self.pullToRefreshEnabled = true
         self.paginationEnabled = false
@@ -40,6 +39,7 @@ class MessageTableViewController: PFQueryTableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 100.0;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.startCheckingForNewMessages()
         
     }
     
@@ -129,7 +129,7 @@ class MessageTableViewController: PFQueryTableViewController {
         
     }
     func startCheckingForNewMessages(){
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(globalConst.updateSpeed, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
     func update(){
         self.queryForTable()

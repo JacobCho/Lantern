@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet var pictureImageView: UIImageView!
+    @IBOutlet var teacher: UIButton!
     
     var user = User()
     var profileImageData:NSData?
@@ -28,7 +29,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
         emailTextField.delegate = self;
         passwordTextField.delegate = self;
         confirmPasswordTextField.delegate = self;
-        
+        teacher.hidden = true
         pictureImageView.layer.cornerRadius = pictureImageView.frame.width/2
         pictureImageView.clipsToBounds = true
         
@@ -44,6 +45,22 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
     @IBAction func registerButtonPressed(sender: UIButton) {
         self.checkFieldsComplete()
         
+    }
+    @IBAction func teacherGesture(sender: UILongPressGestureRecognizer) {
+        if sender.state == .Began {
+            self.teacher.hidden = false
+            if user.isIosStudent{
+                user.isWebTA = false
+                user.isIosStudent = false
+                user.isIosTA = true
+                user.isWebStudent = false;
+            } else if user.isWebStudent {
+                user.isWebTA = true
+                user.isIosStudent = false
+                user.isIosTA = false
+                user.isWebStudent = false;
+            }
+        }
     }
     @IBAction func photoWasTapped(sender: UITapGestureRecognizer) {
         let photoPickerActionSheet:UIActionSheet = UIActionSheet(title: "Take new photo or use existing", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Take new photo", "Use photo from library")
@@ -141,21 +158,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
             user.isWebStudent = false
             user.isWebTA = false
         } else if sender.selectedSegmentIndex == 1 {
-            user.isIosTA = true
+            user.isIosTA = false
             user.isIosStudent = false
-            user.isWebStudent = false
-            user.isWebTA = false
-        } else if sender.selectedSegmentIndex == 2 {
             user.isWebStudent = true
-            user.isIosStudent = false
-            user.isIosTA = false
             user.isWebTA = false
-        } else if sender.selectedSegmentIndex == 3 {
-            user.isWebTA = true
-            user.isIosStudent = false
-            user.isIosTA = false
-            user.isWebStudent = false;
-        }
+        } 
     }
 
 
@@ -180,7 +187,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
         default:()
             
         }
-        
         
         return true
     }

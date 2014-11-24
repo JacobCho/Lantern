@@ -39,6 +39,7 @@ class MessageTableViewController: PFQueryTableViewController {
         self.tableView.estimatedRowHeight = 100.0;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.startCheckingForNewMessages()
+//        self.tableView.contentOffset 
         
     }
 // MARK: parse query stuff

@@ -175,7 +175,7 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lantern is an app writen by Lighthouse Labs students..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8G-nG-6Ui">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lantern is an app written by Lighthouse Labs students..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8G-nG-6Ui">
                                         <rect key="frame" x="20" y="134" width="560" height="20"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -717,7 +717,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wR3-Ve-uaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2660" y="1177"/>
+            <point key="canvasLocation" x="2673" y="1067"/>
         </scene>
         <!--Message Table View Controller-->
         <scene sceneID="AE1-Nl-iMl">
@@ -871,7 +871,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXL-uc-Qsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3190" y="1177"/>
+            <point key="canvasLocation" x="3202" y="1067"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DF7-Nx-LKq">

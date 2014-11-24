@@ -11,6 +11,8 @@ import Parse
 
 class AvailabilityViewController: UICollectionViewController {
     
+    var timer:NSTimer?
+    
     lazy var peopleInClass: [User] = []
     
     lazy var lighthouseClass = []
@@ -34,7 +36,10 @@ class AvailabilityViewController: UICollectionViewController {
         var workingButton:UIBarButtonItem = UIBarButtonItem(title: "Working", style: .Plain , target: self, action: "changeWorkStatus")
         
         self.navigationItem.rightBarButtonItem = workingButton
-    
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.startCheckingForStatusUpdates()
     }
     
     @IBAction func logoutButtonPress(sender: UIBarButtonItem) {
@@ -181,4 +186,14 @@ class AvailabilityViewController: UICollectionViewController {
             }
         }
     }
+    
+    func startCheckingForStatusUpdates(){
+        timer = NSTimer.scheduledTimerWithTimeInterval(globalConst.updateSpeed, target: self, selector: Selector("queryForClass"), userInfo: nil, repeats: true)
+    }
+    override func viewWillDisappear(animated: Bool) {
+        timer?.invalidate()
+    }
+    
+
+    
 }

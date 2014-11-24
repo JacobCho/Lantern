@@ -11,7 +11,7 @@ import Parse
 
 class AvailabilityViewController: UICollectionViewController {
     
-    lazy var peopleInGroup: [User] = []
+    lazy var peopleInClass: [User] = []
     var thisUser:User = User.currentUser()
 
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ class AvailabilityViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return peopleInGroup.count
+        return peopleInClass.count
     }
     
     @IBAction func logoutButtonPress(sender: UIBarButtonItem) {
@@ -61,7 +61,7 @@ class AvailabilityViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
         
-        let thisPerson:User = peopleInGroup[indexPath.row] as User
+        let thisPerson:User = peopleInClass[indexPath.row] as User
         
         if let data = thisPerson.profileImage {
            data.getDataInBackgroundWithBlock({ (imageData:NSData!, error: NSError!) -> Void in
@@ -74,11 +74,12 @@ class AvailabilityViewController: UICollectionViewController {
         if thisPerson.isWorking {
             cell.alpha=1
             cell.userInteractionEnabled = true
+            cell.addPulses(2.6)
         } else {
             cell.alpha=0.5
             cell.userInteractionEnabled = false
         }
-        cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2.6
+        cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2
         cell.imageView.clipsToBounds = true
         
 //        cell.imageView.image = UIImage(data: thisPerson.profileImage)
@@ -126,8 +127,8 @@ class AvailabilityViewController: UICollectionViewController {
         
         query.findObjectsInBackgroundWithBlock { (users:[AnyObject]!, error:NSError!) -> Void in
             if (error == nil) {
-                self.peopleInGroup = users as [User]
-                println("got some users! \(self.peopleInGroup.count) results")
+                self.peopleInClass = users as [User]
+                println("got some users! \(self.peopleInClass.count) results")
                 self.collectionView!.reloadData()
 
             } else {

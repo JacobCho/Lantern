@@ -132,6 +132,8 @@ class MessageTableViewController: PFQueryTableViewController {
         timer = NSTimer.scheduledTimerWithTimeInterval(globalConst.updateSpeed, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
     func update(){
+        println("checking for some updates")
+        
         self.queryForTable()
         self.loadObjects()
     }

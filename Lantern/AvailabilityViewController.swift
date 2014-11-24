@@ -12,25 +12,41 @@ import Parse
 class AvailabilityViewController: UICollectionViewController {
     
     lazy var peopleInClass: [User] = []
+    
+    lazy var lighthouseClass = []
+    lazy var teachers:[User] = []
+    lazy var students:[User] = []
+    
     var thisUser:User = User.currentUser()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView!.backgroundColor = UIColor.whiteColor()
         self.collectionView!.dataSource = self
-        self.queryForCoorespondingUsers()
-        
+        self.queryForClass()
+        if thisUser.isIosStudent || thisUser.isIosTA {
+            self.title = "iOS cohort"
+        } else if thisUser.isWebStudent || thisUser.isWebTA {
+            self.title = "Web cohort"
+        }
         var workingButton:UIBarButtonItem = UIBarButtonItem(title: "Working", style: .Plain , target: self, action: "changeWorkStatus")
         
         self.navigationItem.rightBarButtonItem = workingButton
-      
-
+    
     }
+    
+    @IBAction func logoutButtonPress(sender: UIBarButtonItem) {
+        
+        //TODO: alert user to confirm that they want to log out
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        User.logOut()
+    }
+    
     
     func changeWorkStatus (){
         if thisUser.isWorking == true {
             thisUser.isWorking = false
-        } else if thisUser.isWorking == false{
+        } else if thisUser.isWorking == false {
             thisUser.isWorking = true
         } else {
             thisUser.isWorking = true
@@ -49,28 +65,37 @@ class AvailabilityViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        return peopleInClass.count
+//        var thisSection:AnyObject = lighthouseClass[section]
+        return lighthouseClass.count
     }
-    
-    @IBAction func logoutButtonPress(sender: UIBarButtonItem) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
-            User.logOut()
+
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        let sectionHeader = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "sectionHeader", forIndexPath: indexPath)
+//        sectionHeader.headerTitleLabel.text = "Section"
+
+        return sectionHeader as UICollectionReusableView
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
         
-        let thisPerson:User = peopleInClass[indexPath.row] as User
+//        let thisSection: Array = lighthouseClass[indexPath.section] as Array <User>
+//        let thisPerson: User! = thisSection[indexPath.row] as User
+        let thisPerson:User! = lighthouseClass[indexPath.row] as User
         
-        if let data = thisPerson.profileImage {
-           data.getDataInBackgroundWithBlock({ (imageData:NSData!, error: NSError!) -> Void in
-                cell.imageView.image = UIImage(data: imageData)
-            })
-
-        } else {
+        
+//        if let data = thisPerson.profileImage {
             cell.imageView.image = UIImage(named: "person")
-        }
+
+            cell.imageView.file = thisPerson.profileImage?
+            cell.imageView.loadInBackground(nil)
+        
+
+//        } else {
+//            cell.imageView.image = UIImage(named: "person")
+//        }
+        
         if thisPerson.isWorking {
             cell.alpha=1
             cell.userInteractionEnabled = true
@@ -82,7 +107,6 @@ class AvailabilityViewController: UICollectionViewController {
         cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2
         cell.imageView.clipsToBounds = true
         
-//        cell.imageView.image = UIImage(data: thisPerson.profileImage)
         cell.nameLabel.text = thisPerson.username
         cell.person = thisPerson
         
@@ -103,31 +127,51 @@ class AvailabilityViewController: UICollectionViewController {
         finderView.userToBeFound = tappedCell.person
         
 }
-
-    
     
 //We need to query parse for the relevant users to display
-    func queryForCoorespondingUsers(){
+    func queryForClass(){
         
         var query = PFQuery(className: "_User")
         
-        if thisUser.isIosStudent {
-            query.whereKey("isIosTA", equalTo: true)
+        if thisUser.isIosStudent || thisUser.isIosTA {
+            let studentsQuery = PFQuery(className: "_User")
+            studentsQuery.whereKey("isIosStudent", equalTo: true)
+            let teachersQuery = PFQuery(className: "_User")
+            teachersQuery.whereKey("isIosTA", equalTo: true)
+            query = PFQuery.orQueryWithSubqueries([studentsQuery,teachersQuery])
+        }   else if thisUser.isWebStudent || thisUser.isWebTA {
+            let studentsQuery = PFQuery(className: "_User")
+            studentsQuery.whereKey("isWebStudent", equalTo: true)
+            let teachersQuery = PFQuery(className: "_User")
+            teachersQuery.whereKey("isWebTA", equalTo: true)
+            query = PFQuery.orQueryWithSubqueries([studentsQuery,teachersQuery])
         }
-        else if thisUser.isWebStudent {
-            query.whereKey("isWebTA", equalTo: true)
-        }
-        else if thisUser.isIosTA {
-            query.whereKey("isIosStudent", equalTo: true)
-        }
-        else if thisUser.isWebTA {
-            query.whereKey("isWebStudent", equalTo: true)
-        }
+        
         query.selectKeys(["username","isIosTA","isWebStudent","isWebTA","profileImage","isWorking"])
         
-        query.findObjectsInBackgroundWithBlock { (users:[AnyObject]!, error:NSError!) -> Void in
+        query.findObjectsInBackgroundWithBlock { (results:[AnyObject]!, error:NSError!) -> Void in
             if (error == nil) {
-                self.peopleInClass = users as [User]
+                
+
+                
+                let theClassList:Array<User> = results as Array<User>
+                self.lighthouseClass = theClassList
+                var index:Int
+//                for index = 0; index < results.count; ++index {
+//                    let thisUser:User! = results[index] as User
+//
+//                    println("looping!")
+//
+//                    if thisUser.isWebTA || thisUser.isIosTA {
+//                        self.teachers.append(thisUser)
+//                    } else if thisUser.isIosStudent || thisUser.isWebStudent {
+//                        self.students.append(thisUser)
+//                    }
+//                }
+//                self.lighthouseClass = [teachers,students]
+                
+
+                self.peopleInClass = results as [User]
                 println("got some users! \(self.peopleInClass.count) results")
                 self.collectionView!.reloadData()
 

@@ -67,12 +67,12 @@ class AvailabilityViewController: UICollectionViewController {
     }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return self.lighthouseClass.count
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        var thisSection:AnyObject = lighthouseClass[section]
-        return lighthouseClass.count
+        var thisSection:AnyObject = lighthouseClass[section]
+        return thisSection.count
     }
 
 //    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
@@ -86,21 +86,14 @@ class AvailabilityViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell
         
-//        let thisSection: Array = lighthouseClass[indexPath.section] as Array <User>
-//        let thisPerson: User! = thisSection[indexPath.row] as User
-        let thisPerson:User! = lighthouseClass[indexPath.row] as User
+        let thisSection: Array = lighthouseClass[indexPath.section] as Array <User>
+        let thisPerson: User! = thisSection[indexPath.row] as User
+//        let thisPerson:User! = lighthouseClass[indexPath.row] as User
         
-        
-//        if let data = thisPerson.profileImage {
             cell.imageView.image = UIImage(named: "person")
-
             cell.imageView.file = thisPerson.profileImage?
             cell.imageView.loadInBackground(nil)
         
-
-//        } else {
-//            cell.imageView.image = UIImage(named: "person")
-//        }
         
         if thisPerson.isWorking {
             cell.alpha=1
@@ -154,15 +147,11 @@ class AvailabilityViewController: UICollectionViewController {
             query = PFQuery.orQueryWithSubqueries([studentsQuery,teachersQuery])
         }
         
-        query.selectKeys(["username","isIosTA","isWebStudent","isWebTA","profileImage","isWorking"])
+        query.selectKeys(["username","isIosStudent","isIosTA","isWebStudent","isWebTA","profileImage","isWorking"])
         
         query.findObjectsInBackgroundWithBlock { (results:[AnyObject]!, error:NSError!) -> Void in
             if (error == nil) {
-                
 
-                
-                let theClassList:Array<User> = results as Array<User>
-                self.lighthouseClass = theClassList
                 var index:Int
                 var teachers:[User] = []
                 var students:[User] = []
@@ -173,18 +162,15 @@ class AvailabilityViewController: UICollectionViewController {
 
                     println("looping!")
                     
-//                    self.lighthouseClass.append(aPerson)
                     
-                    
-//                    if aPerson.isWebTA || aPerson.isIosTA {
-//                        teachers.append(aPerson)
-//                    } else if aPerson.isIosStudent || aPerson.isWebStudent {
-//                        students.append(aPerson)
-//                    }
+                    if aPerson.isWebTA || aPerson.isIosTA {
+                        teachers.append(aPerson)
+                    } else if aPerson.isIosStudent || aPerson.isWebStudent {
+                        students.append(aPerson)
+                    }
                 }
-//                self.lighthouseClass = [teachers,students]
+                self.lighthouseClass = [teachers,students]
                 
-
                 self.collectionView!.reloadData()
 
             } else {

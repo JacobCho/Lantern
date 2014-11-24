@@ -550,11 +550,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="GXV-tC-yjX" customClass="ProfileHeaderView" customModule="Lantern" customModuleProvider="target">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="GXV-tC-yjX">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="211"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dTU-a4-CG1">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dTU-a4-CG1" customClass="PFImageView">
                                     <rect key="frame" x="8" y="48" width="155" height="155"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="dTU-a4-CG1" secondAttribute="height" multiplier="1:1" id="Nwx-hj-IVU"/>
@@ -607,6 +607,10 @@
                             <outlet property="delegate" destination="zoE-Ud-6fr" id="JnF-wx-uLh"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="nameLabel" destination="RZn-iQ-xNN" id="mtm-70-ltL"/>
+                        <outlet property="profileImage" destination="dTU-a4-CG1" id="Gnl-Fg-2Zf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6Q-88-LVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -636,9 +640,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1q-uJ-ebH">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ul-R7-wMI">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ul-R7-wMI">
                                         <rect key="frame" x="15" y="25" width="48" height="30"/>
-                                        <state key="normal" title="Cancel">
+                                        <state key="normal" title="Back">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -646,7 +650,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.16730701922723581" green="0.2311693271712717" blue="0.32483878968253965" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.039215686274509803" green="0.12549019607843137" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="6ul-R7-wMI" firstAttribute="leading" secondItem="Y1q-uJ-ebH" secondAttribute="leading" constant="15" id="Z7F-nH-vLg"/>
                                     <constraint firstAttribute="centerY" secondItem="6ul-R7-wMI" secondAttribute="centerY" id="dw0-Rq-8jy"/>
@@ -867,7 +871,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXL-uc-Qsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3154" y="1176.5"/>
+            <point key="canvasLocation" x="3190" y="1177"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DF7-Nx-LKq">

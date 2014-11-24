@@ -13,11 +13,7 @@ class AvailabilityViewController: UICollectionViewController {
     
     var timer:NSTimer?
     
-    lazy var peopleInClass: [User] = []
-    
     lazy var lighthouseClass = []
-
-    lazy var myCell:[User] = []
     
     
     var thisUser:User = User.currentUser()
@@ -88,11 +84,10 @@ class AvailabilityViewController: UICollectionViewController {
         
         let thisSection: Array = lighthouseClass[indexPath.section] as Array <User>
         let thisPerson: User! = thisSection[indexPath.row] as User
-//        let thisPerson:User! = lighthouseClass[indexPath.row] as User
         
-            cell.imageView.image = UIImage(named: "person")
-            cell.imageView.file = thisPerson.profileImage?
-            cell.imageView.loadInBackground(nil)
+        cell.imageView.image = UIImage(named: "person")
+        cell.imageView.file = thisPerson.profileImage?
+        cell.imageView.loadInBackground(nil)
         
         
         if thisPerson.isWorking {
@@ -146,8 +141,7 @@ class AvailabilityViewController: UICollectionViewController {
             teachersQuery.whereKey("isWebTA", equalTo: true)
             query = PFQuery.orQueryWithSubqueries([studentsQuery,teachersQuery])
         }
-        
-        query.selectKeys(["username","isIosStudent","isIosTA","isWebStudent","isWebTA","profileImage","isWorking"])
+        query.selectKeys(["username","isIosStudent","isIosTA","isWebStudent","isWebTA","profileImage","isWorking","room"])
         
         query.findObjectsInBackgroundWithBlock { (results:[AnyObject]!, error:NSError!) -> Void in
             if (error == nil) {
@@ -155,21 +149,20 @@ class AvailabilityViewController: UICollectionViewController {
                 var index:Int
                 var teachers:[User] = []
                 var students:[User] = []
-                
+                var me:[User] = []
+
                 for index = 0; index < results.count; ++index {
                     
                     let aPerson:User! = results[index] as User
-
-                    println("looping!")
-                    
-                    
-                    if aPerson.isWebTA || aPerson.isIosTA {
+                    if aPerson.objectId == self.thisUser.objectId{
+                        me.append(aPerson)
+                    } else if aPerson.isWebTA || aPerson.isIosTA {
                         teachers.append(aPerson)
                     } else if aPerson.isIosStudent || aPerson.isWebStudent {
                         students.append(aPerson)
                     }
                 }
-                self.lighthouseClass = [teachers,students]
+                self.lighthouseClass = [teachers,students,me]
                 
                 self.collectionView!.reloadData()
 

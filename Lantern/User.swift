@@ -20,6 +20,7 @@ class User: PFUser, PFSubclassing {
     @NSManaged var isWebStudent: Bool
     @NSManaged var isWebTA: Bool
     @NSManaged var isWorking: Bool
+    @NSManaged var room:String?
     @NSManaged var profileImage: PFFile?
    
 

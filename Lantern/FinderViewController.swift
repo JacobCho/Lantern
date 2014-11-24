@@ -34,7 +34,6 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
     let exitIcon2 = UIImageView(image: UIImage(named: "ExitIcon_1x"))
     let kitchenIcon = UIImageView(image: UIImage(named: "KitchenIcon_1x"))
 
-    
     var userToBeFound:User = User()
     var person:User!
     

@@ -11,6 +11,9 @@ import CoreLocation
 
 class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     let lighthouseLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 49.2821103475302, longitude: -123.108108533195)
+    
+    // Initialize work room beacon
+    let workRoomBeacon : Beacon = Beacon(identifier: "workRoom", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 1964, minorValue: 44674)
 
     func startTracking(manager: CLLocationManager!){
         if CLLocationManager.locationServicesEnabled() {
@@ -27,7 +30,7 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
             
             if status == CLAuthorizationStatus.Authorized {
                 
-                let beaconRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString:"f7826da6-4fa2-4e98-8024-bc5b71e0893e"), identifier: "workRoom")
+                let beaconRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString:workRoomBeacon.UUID), identifier: workRoomBeacon.identifier)
                 manager.startRangingBeaconsInRegion(beaconRegion)
                 
                 manager.startUpdatingLocation()
@@ -68,12 +71,39 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var currentLocation:CLLocation = locations[0] as CLLocation
         
-        println("updated location!:\(currentLocation.coordinate.longitude, currentLocation.coordinate.latitude)")
+//        println("updated location!:\(currentLocation.coordinate.longitude, currentLocation.coordinate.latitude)")
         
     
     }
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
+//        println("Got beacons! \(beacons[0])")
+    
+        for beacon in beacons {
+            if workRoomBeacon.isEqualToBeacon(beacon as CLBeacon) {
+                println("Found work room beacon")
+                switch beacon.proximity {
+                    
+                case CLProximity.Immediate:
+                    println("You are in immediate proximity")
+                    
+                case CLProximity.Near:
+                    println("You are in near proximity")
+                    
+                    
+                }
+
+           }
+        }
         
+
+    }
+    
+    func locationManager(manager: CLLocationManager!, monitoringDidFailForRegion region: CLRegion!, withError error: NSError!) {
+        println(error)
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println(error)
     }
     
     

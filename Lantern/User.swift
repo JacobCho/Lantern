@@ -22,6 +22,8 @@ class User: PFUser, PFSubclassing {
     @NSManaged var isWorking: Bool
     @NSManaged var room:String?
     @NSManaged var profileImage: PFFile?
+//    @NSManaged var secondsAtWork: NSNumber?
+    
    
 
 }

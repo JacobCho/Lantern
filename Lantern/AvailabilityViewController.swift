@@ -90,7 +90,6 @@ class AvailabilityViewController: UICollectionViewController {
         cell.imageView.file = thisPerson.profileImage?
         cell.imageView.loadInBackground(nil)
         
-        
         if thisPerson.isWorking {
             cell.alpha=1
             cell.userInteractionEnabled = true
@@ -103,53 +102,79 @@ class AvailabilityViewController: UICollectionViewController {
         cell.imageView.clipsToBounds = true
         
         cell.nameLabel.text = thisPerson.username
-        cell.person = thisPerson
+        cell.person = thisPerson!
         
         return cell
 
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
-        self.performSegueWithIdentifier("findSelected", sender: (collectionView.cellForItemAtIndexPath(indexPath)))
-        
+        var cell = collectionView.cellForItemAtIndexPath(indexPath) as PersonCell
+        if cell.person.objectId == thisUser.objectId {
+            self.performSegueWithIdentifier("profileView", sender: (collectionView.cellForItemAtIndexPath(indexPath)))
+
+        } else {
+            self.performSegueWithIdentifier("findSelected", sender: (collectionView.cellForItemAtIndexPath(indexPath)))
+        }
         
     }
 //if a user taps a cell they will be taken to the finder view for that person - set the desitination view to the appropriate user
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var finderView:FinderViewController = segue.destinationViewController as FinderViewController
-        var tappedCell = sender as PersonCell
         
-        finderView.userToBeFound = tappedCell.person
+        if segue.identifier == "findSelected" {
+            var finderView:FinderViewController = segue.destinationViewController as FinderViewController
+            var tappedCell = sender as PersonCell
+            finderView.userToBeFound = tappedCell.person
+        } else if segue.identifier == "profileView" {
+            var profileView:ProfileViewController = segue.destinationViewController as ProfileViewController
+        } else if segue.identifier == "roomTable" {
+            var roomView:RoomTableViewController = segue.destinationViewController as RoomTableViewController
+            roomView.lighthouseClass = self.lighthouseClass
+        }
+
         
 }
     
     func addListButton(){
         let listButton:UIButton = UIButton()
         listButton.layer.anchorPoint = CGPointMake(1, 1)
-        listButton.frame = CGRectMake(self.view.frame.width-140, self.view.frame.height-100, 140, 100)
-        listButton.imageView?.image = UIImage(named: "peopleIcon_1x")
+        listButton.frame = CGRectMake(self.view.frame.width-100, self.view.frame.height-30, 100, 60)
+        listButton.addTarget(self, action: "peopleButtonPress:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        listButton.setImage(UIImage(named: "peopleIcon_1x"), forState: .Normal)
+//        listButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        
         self.view.addSubview(listButton)
 
 //        self.view.sendSubviewToBack(self.collectionView!)
     }
-    
+    func peopleButtonPress(sender:UIButton){
+        self.performSegueWithIdentifier("roomTable", sender: nil)
+        
+    }
+
 //We need to query parse for the relevant users to display
     func queryForClass(){
         
         var query = PFQuery(className: "_User")
         
         if thisUser.isIosStudent || thisUser.isIosTA {
+            
             let studentsQuery = PFQuery(className: "_User")
             studentsQuery.whereKey("isIosStudent", equalTo: true)
+            
             let teachersQuery = PFQuery(className: "_User")
             teachersQuery.whereKey("isIosTA", equalTo: true)
+            
             query = PFQuery.orQueryWithSubqueries([studentsQuery,teachersQuery])
         }   else if thisUser.isWebStudent || thisUser.isWebTA {
+            
             let studentsQuery = PFQuery(className: "_User")
             studentsQuery.whereKey("isWebStudent", equalTo: true)
+            
             let teachersQuery = PFQuery(className: "_User")
             teachersQuery.whereKey("isWebTA", equalTo: true)
+            
             query = PFQuery.orQueryWithSubqueries([studentsQuery,teachersQuery])
         }
         query.selectKeys(["username","isIosStudent","isIosTA","isWebStudent","isWebTA","profileImage","isWorking","room"])
@@ -182,6 +207,7 @@ class AvailabilityViewController: UICollectionViewController {
             }
         }
     }
+
     
     //MARK: - status updates on timer
     func startCheckingForStatusUpdates(){
@@ -191,7 +217,5 @@ class AvailabilityViewController: UICollectionViewController {
     override func viewWillDisappear(animated: Bool) {
         timer?.invalidate()
     }
-    
-
     
 }

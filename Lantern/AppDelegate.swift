@@ -13,11 +13,11 @@ import CoreLocation
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate  {
+class AppDelegate: UIResponder, UIApplicationDelegate  {
 
     var window: UIWindow?
     let locationManager:CLLocationManager = CLLocationManager()
-    let lighthouseLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 49.2818768, longitude: 123.1082173)
+    let locationManagerDelegate = LocationManagerDelegate()
 
 
 
@@ -43,12 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         navigationController.navigationBar.tintColor = UIColor.whiteColor()
         application.setStatusBarStyle(.LightContent, animated: true)
         
-        let locationManagerDelegate = LocationManagerDelegate()
-        locationManager.delegate = self
+        locationManager.delegate = locationManagerDelegate
         locationManager.requestAlwaysAuthorization()
-//        let lighthouseRegion = CLCircularRegion(center: lighthouseLocation, radius: <#CLLocationDistance#>, identifier: <#String!#>)
-//        lighthouseRegion.
-//        locationManager.startMonitoringForRegion(<#region: CLRegion!#>)
+
 
         
         return true
@@ -69,20 +66,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 //        navigationController.pushViewController(chatContainerViewController, animated: true)
         
     }
-     func locationManager(manager: CLLocationManager!,
-        didChangeAuthorizationStatus status: CLAuthorizationStatus){
-            println("updated location manager status")
-            if status == CLAuthorizationStatus.Authorized {
-                self.locationManager.startUpdatingLocation()
-                self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-            } else if status == .Denied {
-                //TODO: show allert that location services wont be working
-            }
-    }
-    
-
-    
-    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

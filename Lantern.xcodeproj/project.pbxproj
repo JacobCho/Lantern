@@ -178,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				524DC57E1A1A957F00B359C8 /* AppDelegate.swift */,
-				846DCB081A2425FB006416BE /* LocationManagerDelegate.swift */,
 				524DC57D1A1A957F00B359C8 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -226,6 +225,7 @@
 				846DCB061A2425DA006416BE /* RoomTableViewCell.swift */,
 				8457C2DD1A1BDFBE000E719E /* FinderViewController.swift */,
 				522CB1081A1D20D900B0FC0B /* ChatContainerViewController.swift */,
+				846DCB081A2425FB006416BE /* LocationManagerDelegate.swift */,
 				522CB10A1A1D88C000B0FC0B /* MessageTableViewController.swift */,
 			);
 			name = Controllers;

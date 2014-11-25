@@ -9,7 +9,7 @@
 import Foundation
 
 struct globalConst {
-    static let updateSpeed:NSTimeInterval = NSTimeInterval(5)
+    static let updateSpeed:NSTimeInterval = NSTimeInterval(20)
     
     
 }

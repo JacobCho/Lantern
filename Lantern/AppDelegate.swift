@@ -8,13 +8,16 @@
 
 import UIKit
 import Parse
+import CoreLocation
+
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate  {
 
     var window: UIWindow?
     let locationManager:CLLocationManager = CLLocationManager()
+    let lighthouseLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 49.2818768, longitude: 123.1082173)
 
 
 
@@ -25,9 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
         
         // Register for Push Notifications
-        var types: UIUserNotificationType = UIUserNotificationType.Badge |
-            UIUserNotificationType.Alert |
-            UIUserNotificationType.Sound
+        var types: UIUserNotificationType = UIUserNotificationType.Badge | UIUserNotificationType.Alert | UIUserNotificationType.Sound
         
         var settings: UIUserNotificationSettings = UIUserNotificationSettings( forTypes: types, categories: nil )
         
@@ -43,8 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.setStatusBarStyle(.LightContent, animated: true)
         
         let locationManagerDelegate = LocationManagerDelegate()
-        locationManager.delegate = locationManagerDelegate
+        locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
+//        let lighthouseRegion = CLCircularRegion(center: lighthouseLocation, radius: <#CLLocationDistance#>, identifier: <#String!#>)
+//        lighthouseRegion.
+//        locationManager.startMonitoringForRegion(<#region: CLRegion!#>)
 
         
         return true
@@ -65,6 +69,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        navigationController.pushViewController(chatContainerViewController, animated: true)
         
     }
+     func locationManager(manager: CLLocationManager!,
+        didChangeAuthorizationStatus status: CLAuthorizationStatus){
+            println("updated location manager status")
+            if status == CLAuthorizationStatus.Authorized {
+                self.locationManager.startUpdatingLocation()
+                self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+            } else if status == .Denied {
+                //TODO: show allert that location services wont be working
+            }
+    }
+    
+
+    
     
 
     func applicationWillResignActive(application: UIApplication) {

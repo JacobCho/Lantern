@@ -34,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         
         application.registerUserNotificationSettings( settings )
         application.registerForRemoteNotifications()
+    
+        // Clear Notification Badge Number on App entry
+        application.applicationIconBadgeNumber = 0
+        application.cancelAllLocalNotifications()
         
         User.registerSubclass()
         Messages.registerSubclass()
@@ -65,11 +69,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        PFPush.handlePush(userInfo)
-//        let chatContainerViewController : ChatContainerViewController = ChatContainerViewController()
-//        let navigationController:UINavigationController = self.window?.rootViewController as UINavigationController
-//        navigationController.pushViewController(chatContainerViewController, animated: true)
-        
+
+        if let message = userInfo["aps"]?["alert"] as String? {
+            println(message)
+            
+            var alertView = UIAlertView(title: "New Message", message: message, delegate: nil, cancelButtonTitle: "Cancel")
+            alertView.show()
+            
+        }
+
     }
 
     func applicationWillResignActive(application: UIApplication) {

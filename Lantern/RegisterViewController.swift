@@ -34,7 +34,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
         pictureImageView.clipsToBounds = true
         
         
-//         User default set (user is a iOS Student)
+        // User default set (user is a iOS Student)
         user.isIosStudent = true
         user.isIosTA = false
         user.isWebStudent = false

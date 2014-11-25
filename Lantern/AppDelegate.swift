@@ -8,13 +8,16 @@
 
 import UIKit
 import Parse
+import CoreLocation
+
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate  {
 
     var window: UIWindow?
     let locationManager:CLLocationManager = CLLocationManager()
+    let locationManagerDelegate = LocationManagerDelegate()
 
 
 
@@ -25,9 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
         
         // Register for Push Notifications
-        var types: UIUserNotificationType = UIUserNotificationType.Badge |
-            UIUserNotificationType.Alert |
-            UIUserNotificationType.Sound
+        var types: UIUserNotificationType = UIUserNotificationType.Badge | UIUserNotificationType.Alert | UIUserNotificationType.Sound
         
         var settings: UIUserNotificationSettings = UIUserNotificationSettings( forTypes: types, categories: nil )
         
@@ -45,10 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.barTintColor = UIColor(red: 12.0/255.0, green: 45.0/255.0, blue: 61.0/255.0, alpha: 1)
         navigationController.navigationBar.tintColor = UIColor.whiteColor()
         application.setStatusBarStyle(.LightContent, animated: true)
-        let locationManagerDelegate = LocationManagerDelegate()
+        
         locationManager.delegate = locationManagerDelegate
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
+
 
         
         return true
@@ -77,7 +78,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
     }
-    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

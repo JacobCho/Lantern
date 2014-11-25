@@ -40,6 +40,9 @@
 		8457C2E81A22ACE1000E719E /* LanternConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2E71A22ACE1000E719E /* LanternConstants.swift */; };
 		8457C2EA1A22C962000E719E /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2E91A22C962000E719E /* SectionHeader.swift */; };
 		8457C2EC1A22FD08000E719E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457C2EB1A22FD07000E719E /* ProfileViewController.swift */; };
+		846DCB051A242579006416BE /* RoomTableViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCB041A242579006416BE /* RoomTableViewConroller.swift */; };
+		846DCB071A2425DA006416BE /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCB061A2425DA006416BE /* RoomTableViewCell.swift */; };
+		846DCB091A2425FB006416BE /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCB081A2425FB006416BE /* LocationManagerDelegate.swift */; };
 		8490A2551A1AC2540043EF1E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8490A2621A1AE3100043EF1E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8490A2691A1B218B0043EF1E /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490A2681A1B218B0043EF1E /* PersonCell.swift */; };
@@ -95,6 +98,9 @@
 		8457C2E71A22ACE1000E719E /* LanternConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanternConstants.swift; sourceTree = "<group>"; };
 		8457C2E91A22C962000E719E /* SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		8457C2EB1A22FD07000E719E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		846DCB041A242579006416BE /* RoomTableViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTableViewConroller.swift; sourceTree = "<group>"; };
+		846DCB061A2425DA006416BE /* RoomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
+		846DCB081A2425FB006416BE /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		8490A2681A1B218B0043EF1E /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityViewController.swift; sourceTree = "<group>"; };
 		953525A148D80D3F479B3069 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -215,9 +221,12 @@
 				524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */,
 				8457C2EB1A22FD07000E719E /* ProfileViewController.swift */,
 				8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */,
+				846DCB041A242579006416BE /* RoomTableViewConroller.swift */,
+				846DCB061A2425DA006416BE /* RoomTableViewCell.swift */,
 				8457C2DD1A1BDFBE000E719E /* FinderViewController.swift */,
 				522CB1081A1D20D900B0FC0B /* ChatContainerViewController.swift */,
 				522CB10A1A1D88C000B0FC0B /* MessageTableViewController.swift */,
+				846DCB081A2425FB006416BE /* LocationManagerDelegate.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -407,10 +416,12 @@
 				524DC5C61A1B14CC00B359C8 /* User.swift in Sources */,
 				8457C2E61A22893E000E719E /* IndoorMapView.swift in Sources */,
 				524DC5BF1A1B042800B359C8 /* RegisterViewController.swift in Sources */,
+				846DCB071A2425DA006416BE /* RoomTableViewCell.swift in Sources */,
 				522CB1091A1D20D900B0FC0B /* ChatContainerViewController.swift in Sources */,
 				52439D1C1A20061B006E5740 /* LoginViewController.swift in Sources */,
 				522CB10D1A1D91A500B0FC0B /* Messages.swift in Sources */,
 				8457C2E21A1BF90B000E719E /* PeopleLayout.swift in Sources */,
+				846DCB051A242579006416BE /* RoomTableViewConroller.swift in Sources */,
 				8457C2DE1A1BDFBE000E719E /* FinderViewController.swift in Sources */,
 				52DE66931A1EB07B00A37753 /* PushNotificationHelper.swift in Sources */,
 				8457C2EC1A22FD08000E719E /* ProfileViewController.swift in Sources */,
@@ -421,6 +432,7 @@
 				8490A2551A1AC2540043EF1E /* (null) in Sources */,
 				8490A2621A1AE3100043EF1E /* (null) in Sources */,
 				8457C2EA1A22C962000E719E /* SectionHeader.swift in Sources */,
+				846DCB091A2425FB006416BE /* LocationManagerDelegate.swift in Sources */,
 				8490A2691A1B218B0043EF1E /* PersonCell.swift in Sources */,
 				522CB10B1A1D88C000B0FC0B /* MessageTableViewController.swift in Sources */,
 			);

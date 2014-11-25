@@ -21,6 +21,8 @@ class MessageTableViewController: PFQueryTableViewController {
     var lastMessagePostedBy:String?
     var timer:NSTimer?
     
+    let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.parseClassName = Messages.parseClassName()
@@ -39,6 +41,10 @@ class MessageTableViewController: PFQueryTableViewController {
         self.tableView.estimatedRowHeight = 100.0;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.startCheckingForNewMessages()
+
+//        appDel.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        
+        
 //        self.tableView.contentOffset 
         
     }

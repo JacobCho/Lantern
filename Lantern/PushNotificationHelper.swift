@@ -9,43 +9,42 @@
 import Foundation
 import Parse
 
-func pushMessageToUser(userName : String, andMessage message : String) {
-    
-    var push : PFPush = PFPush()
-    push.setChannel(userName)
-    push.setMessage(userName + ": " + message)
-    push.sendPushInBackgroundWithTarget(nil, selector: nil)
-    
-}
-
-func getUserFromMessage(message : String) -> User {
-    
-    var userName : String = ""
-    var user : User = User()
-    
-    // Added all the letters to userName from message before message gets to ":"
-    for letter in message {
+    func pushMessageToUser(userName : String, andMessage message : String) {
         
-        if letter == ":" {
-            break
-        }
-        
-        else {
-            userName.append(letter)
-        }
+        var push : PFPush = PFPush()
+        push.setChannel(userName)
+        push.setMessage(userName + ": " + message)
+        push.sendPushInBackgroundWithTarget(nil, selector: nil)
         
     }
-    
-    // query for username
-    var query : PFQuery = User.query()
-    query.whereKey("username", equalTo: userName)
-    query.findObjectsInBackgroundWithBlock { (users: [AnyObject]!, error: NSError!) -> Void in
-        if (error == nil) {
-        var user: User = users[0] as User
-            println(user.username)
+
+    func handlePushMessage(message : String) {
+        
+        var userName : String = ""
+        var user : User = User()
+        
+        // Added all the letters to userName from message before message gets to ":"
+        for letter in message {
+            
+            if letter == ":" {
+                break
+            }
+            
+            else {
+                userName.append(letter)
+            }
+            
         }
         
-    }
-    return user
+        // query for username
+        var query : PFQuery = User.query()
+        query.whereKey("username", equalTo: userName)
+        query.findObjectsInBackgroundWithBlock { (users: [AnyObject]!, error: NSError!) -> Void in
+            if (error == nil) {
+            var user: User = users[0] as User
+                println(user.username)
 
-}
+            }
+            
+        }
+    }

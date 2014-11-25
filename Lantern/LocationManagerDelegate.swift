@@ -7,10 +7,15 @@
 //
 
 import UIKit
-import CoreLocation
 
 class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
    
+    optional func locationManager(manager: CLLocationManager!,
+        didChangeAuthorizationStatus status: CLAuthorizationStatus){
+        println("you did something!")
+            
+            
+    }
     
     
     

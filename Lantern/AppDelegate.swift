@@ -63,16 +63,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        PFPush.handlePush(userInfo)
+//        PFPush.handlePush(userInfo)
+        
+        
 
         if let message = userInfo["aps"]?["alert"] as String? {
             println(message)
             var sender : User = getUserFromMessage(message)
+            var messageAlert = UIAlertController(title: "New Message", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            messageAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+            self.presentViewController(messageAlert, animated: true, completion: nil)
 
         }
-        
-        
-        
+
     }
     
 

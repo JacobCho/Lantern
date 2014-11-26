@@ -468,10 +468,10 @@
             </objects>
             <point key="canvasLocation" x="2287" y="-463"/>
         </scene>
-        <!--View Controller-->
+        <!--Availability Table Controller-->
         <scene sceneID="9rE-Yy-MY4">
             <objects>
-                <viewController id="bLY-4o-JJ8" sceneMemberID="viewController">
+                <viewController id="bLY-4o-JJ8" customClass="AvailabilityTableController" customModule="Lantern" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="35J-AB-7kK"/>
                         <viewControllerLayoutGuide type="bottom" id="DqP-Bw-BA7"/>
@@ -518,6 +518,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bLY-4o-JJ8" id="Rll-kg-rgZ"/>
+                                    <outlet property="delegate" destination="bLY-4o-JJ8" id="uOc-L6-efd"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBW-2V-GKx">
                                 <rect key="frame" x="500" y="540" width="100" height="60"/>

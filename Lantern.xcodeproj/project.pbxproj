@@ -219,6 +219,7 @@
 				8457C2E51A22893E000E719E /* IndoorMapView.swift */,
 				522CB10E1A1DB3B100B0FC0B /* MessageTableViewCell.swift */,
 				8490E02E1A257EF200E4F3B9 /* MapOverlay.swift */,
+				846DCB061A2425DA006416BE /* RoomTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -232,7 +233,6 @@
 				8457C2EB1A22FD07000E719E /* ProfileViewController.swift */,
 				8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */,
 				846DCB041A242579006416BE /* RoomTableViewConroller.swift */,
-				846DCB061A2425DA006416BE /* RoomTableViewCell.swift */,
 				8457C2DD1A1BDFBE000E719E /* FinderViewController.swift */,
 				522CB1081A1D20D900B0FC0B /* ChatContainerViewController.swift */,
 				522CB10A1A1D88C000B0FC0B /* MessageTableViewController.swift */,
@@ -578,8 +578,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/test/Documents/Development/Swipr,
@@ -588,7 +588,7 @@
 				INFOPLIST_FILE = Lantern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
 				SWIFT_OBJC_BRIDGING_HEADER = "Lantern-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -601,8 +601,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/test/Documents/Development/Swipr,
@@ -611,7 +611,7 @@
 				INFOPLIST_FILE = Lantern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
 				SWIFT_OBJC_BRIDGING_HEADER = "Lantern-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -621,8 +621,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -634,7 +634,7 @@
 				INFOPLIST_FILE = LanternTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lantern.app/Lantern";
 			};
 			name = Debug;
@@ -643,8 +643,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -652,7 +652,7 @@
 				INFOPLIST_FILE = LanternTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lantern.app/Lantern";
 			};
 			name = Release;

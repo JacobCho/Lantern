@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nEV-1r-NYL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nEV-1r-NYL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -768,7 +768,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3I-Ji-qte">
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3I-Ji-qte">
                             <rect key="frame" x="100" y="300" width="300" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWK-LC-dlf">
@@ -1090,7 +1090,7 @@
                                             <rect key="frame" x="20" y="5" width="282" height="70"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czl-tI-h9u">
-                                                    <rect key="frame" x="10" y="1" width="262" height="68"/>
+                                                    <rect key="frame" x="10" y="8" width="262" height="54"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1105,9 +1105,9 @@
                                             <color key="backgroundColor" red="1" green="0.74912875009163926" blue="0.078369313591178935" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Czl-tI-h9u" secondAttribute="trailing" constant="10" id="DTd-Nz-P1a"/>
-                                                <constraint firstItem="Czl-tI-h9u" firstAttribute="top" secondItem="uMG-I6-eT8" secondAttribute="top" constant="1" id="MU5-68-MfO"/>
+                                                <constraint firstItem="Czl-tI-h9u" firstAttribute="top" secondItem="uMG-I6-eT8" secondAttribute="top" constant="8" id="MU5-68-MfO"/>
                                                 <constraint firstItem="Czl-tI-h9u" firstAttribute="leading" secondItem="uMG-I6-eT8" secondAttribute="leading" constant="10" id="gtt-Jp-bec"/>
-                                                <constraint firstAttribute="bottom" secondItem="Czl-tI-h9u" secondAttribute="bottom" constant="1" id="mUy-qE-gtj"/>
+                                                <constraint firstAttribute="bottom" secondItem="Czl-tI-h9u" secondAttribute="bottom" constant="8" id="mUy-qE-gtj"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1157,7 +1157,7 @@
                                             <rect key="frame" x="90" y="5" width="290" height="74"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tB0-nv-Gh7">
-                                                    <rect key="frame" x="10" y="1" width="270" height="72"/>
+                                                    <rect key="frame" x="10" y="8" width="270" height="58"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1171,9 +1171,9 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.14307313047233097" green="0.73435433201058209" blue="0.53924260867706919" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="tB0-nv-Gh7" secondAttribute="bottom" constant="1" id="Eac-ek-EIC"/>
+                                                <constraint firstAttribute="bottom" secondItem="tB0-nv-Gh7" secondAttribute="bottom" constant="8" id="Eac-ek-EIC"/>
                                                 <constraint firstItem="tB0-nv-Gh7" firstAttribute="leading" secondItem="ewY-AQ-FfM" secondAttribute="leading" constant="10" id="Vj2-EH-6ae"/>
-                                                <constraint firstItem="tB0-nv-Gh7" firstAttribute="top" secondItem="ewY-AQ-FfM" secondAttribute="top" constant="1" id="k75-nc-edM"/>
+                                                <constraint firstItem="tB0-nv-Gh7" firstAttribute="top" secondItem="ewY-AQ-FfM" secondAttribute="top" constant="8" id="k75-nc-edM"/>
                                                 <constraint firstAttribute="trailing" secondItem="tB0-nv-Gh7" secondAttribute="trailing" constant="10" id="z7K-ew-ekh"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>

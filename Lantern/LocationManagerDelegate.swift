@@ -81,15 +81,14 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
         for beacon in beacons {
             if workRoomBeacon.isEqualToBeacon(beacon as CLBeacon) {
                 println("Found work room beacon")
-                switch beacon.proximity {
-                    
-                case CLProximity.Immediate:
-                    println("You are in immediate proximity")
-                    
-                case CLProximity.Near:
+                if beacon.proximity == CLProximity.Near {
                     println("You are in near proximity")
-                    
-                    
+                } else if beacon.proximity == CLProximity.Immediate {
+                    println("You are in immediate proximity")
+                } else if beacon.proximity == CLProximity.Far {
+                    println("You are in far proximity")
+                } else {
+                    println("You are in unknown proximity")
                 }
 
            }

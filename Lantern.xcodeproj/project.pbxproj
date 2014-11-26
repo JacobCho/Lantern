@@ -50,6 +50,7 @@
 		8490A26B1A1B21AE0043EF1E /* AvailabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */; };
 		8490E02D1A25507100E4F3B9 /* AvailabilityTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490E02C1A25507100E4F3B9 /* AvailabilityTableController.swift */; };
 		8490E02F1A257EF200E4F3B9 /* MapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490E02E1A257EF200E4F3B9 /* MapOverlay.swift */; };
+		8490E0311A25C57A00E4F3B9 /* WorkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490E0301A25C57A00E4F3B9 /* WorkLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityViewController.swift; sourceTree = "<group>"; };
 		8490E02C1A25507100E4F3B9 /* AvailabilityTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityTableController.swift; sourceTree = "<group>"; };
 		8490E02E1A257EF200E4F3B9 /* MapOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapOverlay.swift; sourceTree = "<group>"; };
+		8490E0301A25C57A00E4F3B9 /* WorkLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkLog.swift; sourceTree = "<group>"; };
 		953525A148D80D3F479B3069 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AD2CF3F58CB022D23F4BA652 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B86A648231773E9ACACB88AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,6 +246,7 @@
 			children = (
 				524DC5C51A1B14CC00B359C8 /* User.swift */,
 				522CB10C1A1D91A500B0FC0B /* Messages.swift */,
+				8490E0301A25C57A00E4F3B9 /* WorkLog.swift */,
 				527CBE141A2542DB00416A92 /* Beacon.swift */,
 			);
 			name = Model;
@@ -442,6 +445,7 @@
 				522CB10F1A1DB3B100B0FC0B /* MessageTableViewCell.swift in Sources */,
 				8457C2E81A22ACE1000E719E /* LanternConstants.swift in Sources */,
 				8490A2551A1AC2540043EF1E /* (null) in Sources */,
+				8490E0311A25C57A00E4F3B9 /* WorkLog.swift in Sources */,
 				8490A2621A1AE3100043EF1E /* (null) in Sources */,
 				8457C2EA1A22C962000E719E /* SectionHeader.swift in Sources */,
 				846DCB091A2425FB006416BE /* LocationManagerDelegate.swift in Sources */,
@@ -574,8 +578,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/test/Documents/Development/Swipr,
@@ -584,7 +588,7 @@
 				INFOPLIST_FILE = Lantern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Lantern-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -597,8 +601,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/test/Documents/Development/Swipr,
@@ -607,7 +611,7 @@
 				INFOPLIST_FILE = Lantern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Lantern-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -617,8 +621,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -630,7 +634,7 @@
 				INFOPLIST_FILE = LanternTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lantern.app/Lantern";
 			};
 			name = Debug;
@@ -639,8 +643,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -648,7 +652,7 @@
 				INFOPLIST_FILE = LanternTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lantern.app/Lantern";
 			};
 			name = Release;

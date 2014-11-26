@@ -22,7 +22,6 @@ class Beacon {
         self.UUID = UUID
         self.majorValue = majorValue
         self.minorValue = minorValue
-        
     }
     
     func isEqualToBeacon(beacon : CLBeacon) -> Bool {

@@ -466,7 +466,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="311-sT-62Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2287" y="-463"/>
+            <point key="canvasLocation" x="2081" y="-491"/>
         </scene>
         <!--Availability Table Controller-->
         <scene sceneID="9rE-Yy-MY4">
@@ -759,6 +759,7 @@
                         <segue destination="VRV-IB-GGO" kind="show" identifier="findSelected" id="K2p-Mu-emK"/>
                         <segue destination="zoE-Ud-6fr" kind="presentation" identifier="profileView" id="cwb-X2-nHR"/>
                         <segue destination="lsv-FQ-ezs" kind="presentation" identifier="roomTable" modalTransitionStyle="flipHorizontal" id="1Nf-Rg-gU6"/>
+                        <segue destination="bLY-4o-JJ8" kind="presentation" id="zml-Gt-vSs"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igI-DU-Sf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -766,7 +767,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3I-Ji-qte">
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3I-Ji-qte">
                             <rect key="frame" x="100" y="300" width="300" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWK-LC-dlf">
@@ -890,6 +891,9 @@
                                             <state key="normal" title="Back">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="backButtonPress:" destination="zoE-Ud-6fr" eventType="touchUpInside" id="yIz-nk-Rac"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.039215686270000001" green="0.12549019610000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>

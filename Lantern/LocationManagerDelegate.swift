@@ -8,21 +8,18 @@
 
 import UIKit
 import CoreLocation
+import Parse
+
 
 class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     let lighthouseLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 49.2821103475302, longitude: -123.108108533195)
     
     // Initialize work room beacon
     let workRoomBeacon : Beacon = Beacon(identifier: "workRoom", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 1964, minorValue: 44674)
-
-    func startTracking(manager: CLLocationManager!){
-        if CLLocationManager.locationServicesEnabled() {
-            manager.startUpdatingLocation()
-
-            
-        }
-    }
+    let currentUser:User = User.currentUser()
     
+    
+  
     
     func locationManager(manager: CLLocationManager!,
         didChangeAuthorizationStatus status: CLAuthorizationStatus){
@@ -96,6 +93,11 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
         for beacon in beacons {
             if workRoomBeacon.isEqualToBeacon(beacon as CLBeacon) {
                 println("Found work room beacon")
+                if currentUser.room != RoomNames.LHMain {
+                    currentUser.room = RoomNames.LHMain
+                    currentUser.saveInBackgroundWithBlock(nil)
+                }
+                
                 switch beacon.proximity! {
                 case CLProximity.Far:
                     println("You are in far proximity")
@@ -104,14 +106,12 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                 case CLProximity.Immediate:
                     println("You are in immediate proximity")
                 case CLProximity.Unknown:
+                    println("cant tell how far away you are")
+                
                     return
                 }
             }
-            
-           
         }
-        
-
     }
     
     func locationManager(manager: CLLocationManager!, monitoringDidFailForRegion region: CLRegion!, withError error: NSError!) {

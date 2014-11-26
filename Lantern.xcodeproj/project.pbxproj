@@ -49,6 +49,7 @@
 		8490A2691A1B218B0043EF1E /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490A2681A1B218B0043EF1E /* PersonCell.swift */; };
 		8490A26B1A1B21AE0043EF1E /* AvailabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */; };
 		8490E02D1A25507100E4F3B9 /* AvailabilityTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490E02C1A25507100E4F3B9 /* AvailabilityTableController.swift */; };
+		8490E02F1A257EF200E4F3B9 /* MapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490E02E1A257EF200E4F3B9 /* MapOverlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		8490A2681A1B218B0043EF1E /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityViewController.swift; sourceTree = "<group>"; };
 		8490E02C1A25507100E4F3B9 /* AvailabilityTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityTableController.swift; sourceTree = "<group>"; };
+		8490E02E1A257EF200E4F3B9 /* MapOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapOverlay.swift; sourceTree = "<group>"; };
 		953525A148D80D3F479B3069 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AD2CF3F58CB022D23F4BA652 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B86A648231773E9ACACB88AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +216,7 @@
 				8457C2E91A22C962000E719E /* SectionHeader.swift */,
 				8457C2E51A22893E000E719E /* IndoorMapView.swift */,
 				522CB10E1A1DB3B100B0FC0B /* MessageTableViewCell.swift */,
+				8490E02E1A257EF200E4F3B9 /* MapOverlay.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			files = (
 				524DC5C61A1B14CC00B359C8 /* User.swift in Sources */,
 				8457C2E61A22893E000E719E /* IndoorMapView.swift in Sources */,
+				8490E02F1A257EF200E4F3B9 /* MapOverlay.swift in Sources */,
 				524DC5BF1A1B042800B359C8 /* RegisterViewController.swift in Sources */,
 				846DCB071A2425DA006416BE /* RoomTableViewCell.swift in Sources */,
 				522CB1091A1D20D900B0FC0B /* ChatContainerViewController.swift in Sources */,

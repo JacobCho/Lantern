@@ -28,6 +28,8 @@ private struct mapIconStartingPosition {
     static let LHMain = CGPointMake(818,745)
 }
 
+
+
 class FinderViewController: UIViewController, UIScrollViewDelegate {
     
     
@@ -49,6 +51,7 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
     let kitchen = UIImageView(image: UIImage(named: "Kitchen"))
     let lHoffices = UIImageView(image: UIImage(named: "LHOffices"))
     let lHworkarea = UIImageView(image: UIImage(named: "LHworkarea"))
+    
     
 
     var userToBeFound:User = User()
@@ -141,32 +144,73 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
         
         lAnw.frame = CGRect(x: mapIconStartingPosition.LAnw.x * scale, y: mapIconStartingPosition.LAnw.y * scale, width: 102 * scale, height: 450 * scale )
         lAnw.alpha = 0.2
+        lAnw.hidden = true
         
         lAnorthBoardroom.frame = CGRect(x: mapIconStartingPosition.LAnBoardroom.x * scale, y: mapIconStartingPosition.LAnBoardroom.y * scale, width: 93 * scale, height: 95 * scale)
         lAnorthBoardroom.alpha = 0.2
+        if userToBeFound.room == RoomNames.LANorthWest {
+            lAnorthBoardroom.hidden = false
+        } else {
+            lAnorthBoardroom.hidden = true
+        }
+        
         
         lAsouthwest.frame = CGRect(x: mapIconStartingPosition.LAsw.x * scale, y: mapIconStartingPosition.LAsw.y * scale, width: 199 * scale, height: 211 * scale)
         lAsouthwest.alpha = 0.2
-        
+        if userToBeFound.room == RoomNames.LASouthWest{
+            lAsouthwest.hidden = false
+        } else {
+            lAsouthwest.hidden = true
+        }
+
         lAsouth.frame = CGRect(x: mapIconStartingPosition.LAsouth.x * scale, y: mapIconStartingPosition.LAsouth.y * scale, width: 117 * scale, height: 197 * scale)
         lAsouth.alpha  = 0.2
+        if userToBeFound.room == RoomNames.LASouth{
+            lAsouth.hidden = false
+        } else {
+            lAsouth.hidden = true
+        }
         
+        lAsouth.hidden = true
+
         lAworkarea.frame = CGRect(x: mapIconStartingPosition.LAMain.x * scale, y: mapIconStartingPosition.LAMain.y * scale, width: 178 * scale, height: 354 * scale)
         lAworkarea.alpha  = 0.2
-        
+        if userToBeFound.room == RoomNames.LAMain{
+            lAworkarea.hidden = false
+        } else {
+            lAworkarea.hidden = true
+        }
+
         kitchen.frame = CGRect(x: mapIconStartingPosition.kitchen.x * scale, y: mapIconStartingPosition.kitchen.y * scale, width: 120 * scale, height: 147 * scale)
         kitchen.alpha  = 0.2
-        
+        kitchen.hidden = true
+
         lHoffices.frame = CGRect(x: mapIconStartingPosition.LHoffices.x * scale, y: mapIconStartingPosition.LHoffices.y * scale, width: 134 * scale, height: 293 * scale)
         lHoffices.alpha  = 0.2
+        if userToBeFound.room == RoomNames.LHOffice{
+            lHoffices.hidden = false
+        } else {
+            lHoffices.hidden = true
+        }
         
         lHworkarea.frame = CGRect(x: mapIconStartingPosition.LHMain.x * scale, y: mapIconStartingPosition.LHMain.y * scale, width: 135 * scale, height: 354 * scale)
         lHworkarea.alpha  = 0.2
+        if userToBeFound.room == RoomNames.LHMain{
+            lHworkarea.hidden = false
+        } else {
+            lHworkarea.hidden = true
+        }
         
         kitchen.frame = CGRect(x: mapIconStartingPosition.kitchen.x * scale, y: mapIconStartingPosition.kitchen.y * scale, width: 120 * scale, height: 147 * scale)
         kitchen.alpha = 0.2
-
+        if userToBeFound.room == RoomNames.Kitchen{
+            kitchen.hidden = false
+        } else {
+            kitchen.hidden = true
+        }
+        
     }
+
     
 
 }

@@ -11,14 +11,21 @@ import MapKit
 
 private struct mapIconStartingPosition {
     //all points are relative to a 1500px square map
-    static let wmsWC1 = CGPointMake(847, 735)
-    static let wmsWC2 = CGPointMake(920, 760)
-    static let mnsWC1 = CGPointMake(815, 650)
-    static let bikeRm = CGPointMake(820, 475)
-    static let kitchen = CGPointMake(830, 387)
-    static let exit1 = CGPointMake(402, 510)
-    static let exit2 = CGPointMake(1050,805)
-    
+    static let wmsWC1 = CGPointMake(800, 770)
+    static let wmsWC2 = CGPointMake(845, 770)
+    static let mnsWC1 = CGPointMake(777, 720)
+    static let bikeRm = CGPointMake(750, 630)
+    static let kitchenIcon = CGPointMake(750, 570)
+    static let exit1 = CGPointMake(540, 720)
+    static let exit2 = CGPointMake(930,782)
+    static let LAnw = CGPointMake(503,462)
+    static let LAsw = CGPointMake(503, 888)
+    static let LAsouth = CGPointMake(701,902)
+    static let LAnBoardroom = CGPointMake(604,462)
+    static let kitchen = CGPointMake(699,462)
+    static let LHoffices = CGPointMake(819,462)
+    static let LAMain = CGPointMake(604,558)
+    static let LHMain = CGPointMake(818,745)
 }
 
 class FinderViewController: UIViewController, UIScrollViewDelegate {
@@ -33,6 +40,16 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
     let exitIcon1 = UIImageView(image: UIImage(named: "ExitIcon_1x"))
     let exitIcon2 = UIImageView(image: UIImage(named: "ExitIcon_1x"))
     let kitchenIcon = UIImageView(image: UIImage(named: "KitchenIcon_1x"))
+
+    let lAnw = UIImageView(image: UIImage(named: "LAnorthwest"))
+    let lAnorthBoardroom = UIImageView(image: UIImage(named: "LAnorthBoardroom"))
+    let lAsouthwest = UIImageView(image: UIImage(named: "LAsouthwest"))
+    let lAsouth = UIImageView(image: UIImage(named: "LAsouth"))
+    let lAworkarea = UIImageView(image: UIImage(named: "LAworkarea"))
+    let kitchen = UIImageView(image: UIImage(named: "Kitchen"))
+    let lHoffices = UIImageView(image: UIImage(named: "LHOffices"))
+    let lHworkarea = UIImageView(image: UIImage(named: "LHworkarea"))
+    
 
     var userToBeFound:User = User()
     var person:User!
@@ -56,14 +73,23 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidZoom(scrollView: UIScrollView) {
         
         var scale:CGFloat = self.indoorMap.viewWithTag(1)!.frame.size.width/1500.0
-    self.layoutMapIcons(scale)
+    self.layoutMapOverlays(scale)
         
     }
     
     func configureMap(){
         
-        self.layoutMapIcons(1.0)
+        self.layoutMapOverlays(1.0)
 
+        self.indoorMap.addSubview(lAnw)
+        self.indoorMap.addSubview(lAnorthBoardroom)
+        self.indoorMap.addSubview(lAsouthwest)
+        self.indoorMap.addSubview(lAsouth)
+        self.indoorMap.addSubview(lAworkarea)
+        self.indoorMap.addSubview(lHoffices)
+        self.indoorMap.addSubview(lHworkarea)
+        self.indoorMap.addSubview(kitchen)
+        
         self.indoorMap.addSubview(womensBathroomIcon1)
         self.indoorMap.addSubview(womensBathroomIcon2)
         self.indoorMap.addSubview(mensBathroomIcon)
@@ -71,6 +97,8 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
         self.indoorMap.addSubview(exitIcon1)
         self.indoorMap.addSubview(exitIcon2)
         self.indoorMap.addSubview(kitchenIcon)
+        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,14 +116,55 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
         chatContainer.messageRecipient = userToBeFound
     }
     
-    func layoutMapIcons(scale: CGFloat){
-        womensBathroomIcon1.frame = CGRect(x: mapIconStartingPosition.wmsWC1.x * scale, y: mapIconStartingPosition.wmsWC1.y * scale, width: 60, height: 60)
-        womensBathroomIcon2.frame = CGRect(x: mapIconStartingPosition.wmsWC2.x * scale, y: mapIconStartingPosition.wmsWC2.y * scale, width: 60, height: 60)
-        mensBathroomIcon.frame = CGRect(x: mapIconStartingPosition.mnsWC1.x * scale, y: mapIconStartingPosition.mnsWC1.y * scale, width: 60, height: 60)
-        bikeRoomIcon.frame = CGRect(x: mapIconStartingPosition.bikeRm.x * scale, y: mapIconStartingPosition.bikeRm.y * scale, width: 60, height: 60)
-        exitIcon1.frame = CGRect(x: mapIconStartingPosition.exit1.x * scale, y: mapIconStartingPosition.exit1.y * scale, width: 60, height: 60)
-        exitIcon2.frame = CGRect(x: mapIconStartingPosition.exit2.x * scale, y: mapIconStartingPosition.exit2.y * scale, width: 60, height: 60)
-        kitchenIcon.frame = CGRect(x: mapIconStartingPosition.kitchen.x * scale, y: mapIconStartingPosition.kitchen.y * scale, width: 60, height: 60)
+    func layoutMapOverlays(scale: CGFloat){
+        
+        womensBathroomIcon1.frame.size = CGSize(width: 45, height: 45)
+        womensBathroomIcon1.center = CGPoint(x:mapIconStartingPosition.wmsWC1.x * scale, y:mapIconStartingPosition.wmsWC1.y * scale)
+        
+        womensBathroomIcon2.frame.size = CGSize(width: 45, height: 45)
+        womensBathroomIcon2.center = CGPoint(x: mapIconStartingPosition.wmsWC2.x * scale, y: mapIconStartingPosition.wmsWC2.y * scale)
+        
+        mensBathroomIcon.frame.size = CGSize(width: 45, height: 45)
+        mensBathroomIcon.center = CGPoint(x: mapIconStartingPosition.mnsWC1.x * scale, y: mapIconStartingPosition.mnsWC1.y * scale)
+        
+        bikeRoomIcon.frame.size = CGSize(width: 45, height: 45)
+        bikeRoomIcon.center = CGPoint(x: mapIconStartingPosition.bikeRm.x * scale, y: mapIconStartingPosition.bikeRm.y * scale)
+        
+        exitIcon1.frame.size = CGSize(width: 45, height: 45)
+        exitIcon1.center = CGPoint(x: mapIconStartingPosition.exit1.x * scale, y: mapIconStartingPosition.exit1.y * scale)
+            
+        exitIcon2.frame.size = CGSize(width: 45, height: 45)
+        exitIcon2.center = CGPoint(x: mapIconStartingPosition.exit2.x * scale, y: mapIconStartingPosition.exit2.y * scale)
+        
+        kitchenIcon.frame.size = CGSize(width: 45, height: 45)
+        kitchenIcon.center = CGPoint(x: mapIconStartingPosition.kitchenIcon.x * scale, y: mapIconStartingPosition.kitchenIcon.y * scale)
+        
+        lAnw.frame = CGRect(x: mapIconStartingPosition.LAnw.x * scale, y: mapIconStartingPosition.LAnw.y * scale, width: 102 * scale, height: 450 * scale )
+        lAnw.alpha = 0.2
+        
+        lAnorthBoardroom.frame = CGRect(x: mapIconStartingPosition.LAnBoardroom.x * scale, y: mapIconStartingPosition.LAnBoardroom.y * scale, width: 93 * scale, height: 95 * scale)
+        lAnorthBoardroom.alpha = 0.2
+        
+        lAsouthwest.frame = CGRect(x: mapIconStartingPosition.LAsw.x * scale, y: mapIconStartingPosition.LAsw.y * scale, width: 199 * scale, height: 211 * scale)
+        lAsouthwest.alpha = 0.2
+        
+        lAsouth.frame = CGRect(x: mapIconStartingPosition.LAsouth.x * scale, y: mapIconStartingPosition.LAsouth.y * scale, width: 117 * scale, height: 197 * scale)
+        lAsouth.alpha  = 0.2
+        
+        lAworkarea.frame = CGRect(x: mapIconStartingPosition.LAMain.x * scale, y: mapIconStartingPosition.LAMain.y * scale, width: 178 * scale, height: 354 * scale)
+        lAworkarea.alpha  = 0.2
+        
+        kitchen.frame = CGRect(x: mapIconStartingPosition.kitchen.x * scale, y: mapIconStartingPosition.kitchen.y * scale, width: 120 * scale, height: 147 * scale)
+        kitchen.alpha  = 0.2
+        
+        lHoffices.frame = CGRect(x: mapIconStartingPosition.LHoffices.x * scale, y: mapIconStartingPosition.LHoffices.y * scale, width: 134 * scale, height: 293 * scale)
+        lHoffices.alpha  = 0.2
+        
+        lHworkarea.frame = CGRect(x: mapIconStartingPosition.LHMain.x * scale, y: mapIconStartingPosition.LHMain.y * scale, width: 135 * scale, height: 354 * scale)
+        lHworkarea.alpha  = 0.2
+        
+        kitchen.frame = CGRect(x: mapIconStartingPosition.kitchen.x * scale, y: mapIconStartingPosition.kitchen.y * scale, width: 120 * scale, height: 147 * scale)
+        kitchen.alpha = 0.2
 
     }
     

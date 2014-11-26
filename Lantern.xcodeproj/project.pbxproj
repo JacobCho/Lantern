@@ -48,6 +48,7 @@
 		8490A2621A1AE3100043EF1E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8490A2691A1B218B0043EF1E /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490A2681A1B218B0043EF1E /* PersonCell.swift */; };
 		8490A26B1A1B21AE0043EF1E /* AvailabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */; };
+		8490E02D1A25507100E4F3B9 /* AvailabilityTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490E02C1A25507100E4F3B9 /* AvailabilityTableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		846DCB081A2425FB006416BE /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		8490A2681A1B218B0043EF1E /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityViewController.swift; sourceTree = "<group>"; };
+		8490E02C1A25507100E4F3B9 /* AvailabilityTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityTableController.swift; sourceTree = "<group>"; };
 		953525A148D80D3F479B3069 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AD2CF3F58CB022D23F4BA652 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B86A648231773E9ACACB88AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +221,7 @@
 		524DC5C11A1B050100B359C8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8490E02C1A25507100E4F3B9 /* AvailabilityTableController.swift */,
 				52439D1B1A20061B006E5740 /* LoginViewController.swift */,
 				524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */,
 				8457C2EB1A22FD07000E719E /* ProfileViewController.swift */,
@@ -426,6 +429,7 @@
 				522CB10D1A1D91A500B0FC0B /* Messages.swift in Sources */,
 				8457C2E21A1BF90B000E719E /* PeopleLayout.swift in Sources */,
 				846DCB051A242579006416BE /* RoomTableViewConroller.swift in Sources */,
+				8490E02D1A25507100E4F3B9 /* AvailabilityTableController.swift in Sources */,
 				8457C2DE1A1BDFBE000E719E /* FinderViewController.swift in Sources */,
 				52DE66931A1EB07B00A37753 /* PushNotificationHelper.swift in Sources */,
 				8457C2EC1A22FD08000E719E /* ProfileViewController.swift in Sources */,

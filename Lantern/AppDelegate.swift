@@ -49,8 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         
         locationManager.delegate = locationManagerDelegate
         locationManager.requestAlwaysAuthorization()
-//        locationManager.startUpdatingLocation()
-//        locationManager.startTracking(locationManager)
+
         
         
 

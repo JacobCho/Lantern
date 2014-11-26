@@ -9,7 +9,19 @@
 import Foundation
 
 struct globalConst {
+    
     static let updateSpeed:NSTimeInterval = NSTimeInterval(20)
     
+}
+
+struct RoomNames {
+    
+    static let LANorthWest = "LANorthWest"
+    static let LASouthWest = "LASouthWest"
+    static let LASouth = "LASouth"
+    static let LAMain = "LAMain"
+    static let Kitchen = "Kitchen"
+    static let LHOffice = "LHOffice"
+    static let LHMain = "LHMain"
     
 }

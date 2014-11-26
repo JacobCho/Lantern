@@ -74,6 +74,21 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     }
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
 //        println("Got beacons! \(beacons[0])")
+        if (User.currentUser() != nil) {
+            var currentUser = User.currentUser()
+            
+            // If User is a TA, set to working when in beacon range
+            if currentUser.isIosTA && currentUser.isWebTA {
+                
+                if !currentUser.isWorking {
+                    currentUser.isWorking = true
+                    currentUser.saveInBackgroundWithTarget(nil, selector: nil)
+                    
+                    var workingAlert = UIAlertView(title: "In Beacon range", message: "You are set to working status", delegate: nil, cancelButtonTitle: "Ok")
+                    workingAlert.show()
+                }
+            }
+        }
     
         for beacon in beacons {
             if workRoomBeacon.isEqualToBeacon(beacon as CLBeacon) {

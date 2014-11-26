@@ -25,8 +25,10 @@ class Beacon {
     }
     
     func isEqualToBeacon(beacon : CLBeacon) -> Bool {
+        println(self.minorValue.description)
+        println(beacon.minor)
  
-        if beacon.proximityUUID.UUIDString == self.UUID && beacon.major == self.majorValue.hashValue  {
+        if beacon.proximityUUID.UUIDString == self.UUID && beacon.major == self.majorValue.hashValue && self.minorValue.description.toInt() == beacon.minor {
             println("match")
             return true
             

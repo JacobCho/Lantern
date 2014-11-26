@@ -219,6 +219,7 @@
 				8457C2E51A22893E000E719E /* IndoorMapView.swift */,
 				522CB10E1A1DB3B100B0FC0B /* MessageTableViewCell.swift */,
 				8490E02E1A257EF200E4F3B9 /* MapOverlay.swift */,
+				846DCB061A2425DA006416BE /* RoomTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -232,7 +233,6 @@
 				8457C2EB1A22FD07000E719E /* ProfileViewController.swift */,
 				8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */,
 				846DCB041A242579006416BE /* RoomTableViewConroller.swift */,
-				846DCB061A2425DA006416BE /* RoomTableViewCell.swift */,
 				8457C2DD1A1BDFBE000E719E /* FinderViewController.swift */,
 				522CB1081A1D20D900B0FC0B /* ChatContainerViewController.swift */,
 				522CB10A1A1D88C000B0FC0B /* MessageTableViewController.swift */,

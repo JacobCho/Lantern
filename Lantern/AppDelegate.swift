@@ -23,13 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // Set up Parse
         Parse.setApplicationId("Q230SayuCx1mr0l4oSjoWshPvEv6s53fStpXGZLd", clientKey: "U9eCPygvOE13BFW83GlpINGmzUM4HQ2DmHeIaIPl")
-        
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
         
         // Register for Push Notifications
         var types: UIUserNotificationType = UIUserNotificationType.Badge | UIUserNotificationType.Alert | UIUserNotificationType.Sound
-        
         var settings: UIUserNotificationSettings = UIUserNotificationSettings( forTypes: types, categories: nil )
         
         application.registerUserNotificationSettings( settings )
@@ -39,12 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         application.applicationIconBadgeNumber = 0
         application.cancelAllLocalNotifications()
         
+        // Register Parse subclasses
         User.registerSubclass()
         Messages.registerSubclass()
         
+        // Edit Nav Bar
         let navigationController:UINavigationController = self.window?.rootViewController as UINavigationController
         navigationController.navigationBar.barTintColor = UIColor(red: 12.0/255.0, green: 45.0/255.0, blue: 61.0/255.0, alpha: 1)
-        
         navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     
         application.setStatusBarStyle(.LightContent, animated: true)

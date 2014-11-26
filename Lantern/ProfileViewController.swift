@@ -14,12 +14,19 @@ class ProfileViewController: UITableViewController {
     
     @IBOutlet var profileImage: PFImageView!
     @IBOutlet var nameLabel: UILabel!
+    
+    
+    @IBAction func backButtonPress(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
     var user:User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.profileImage.file = user!.profileImage
-        self.profileImage.loadInBackground(nil)
+//        self.profileImage.file = user!.profileImage
+//        self.profileImage.loadInBackground(nil)
     
     }
 

@@ -16,7 +16,7 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     
     // Initialize work room beacon
     let workRoomBeacon : Beacon = Beacon(identifier: "workRoom", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 1964, minorValue: 44674)
-    let currentUser:User = User.currentUser()
+//    let currentUser:User = User.currentUser()
     
     
   
@@ -74,41 +74,40 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     }
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
 //        println("Got beacons! \(beacons[0])")
-        if (User.currentUser() != nil) {
-            var currentUser = User.currentUser()
+        var currentUser:User? = User.currentUser()
+        if currentUser != nil {
             
             // If User is a TA, set to working when in beacon range
-            if currentUser.isIosTA && currentUser.isWebTA {
+            if currentUser!.isIosTA && currentUser!.isWebTA {
                 
-                if !currentUser.isWorking {
-                    currentUser.isWorking = true
-                    currentUser.saveInBackgroundWithTarget(nil, selector: nil)
+                if !currentUser!.isWorking {
+                    currentUser!.isWorking = true
+                    currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
                     
                     var workingAlert = UIAlertView(title: "In Beacon range", message: "You are set to working status", delegate: nil, cancelButtonTitle: "Ok")
                     workingAlert.show()
                 }
             }
-        }
-    
-        for beacon in beacons {
-            if workRoomBeacon.isEqualToBeacon(beacon as CLBeacon) {
-                println("Found work room beacon")
-                if currentUser.room != RoomNames.LHMain {
-                    currentUser.room = RoomNames.LHMain
-                    currentUser.saveInBackgroundWithBlock(nil)
-                }
-                
-                switch beacon.proximity! {
-                case CLProximity.Far:
-                    println("You are in far proximity")
-                case CLProximity.Near:
-                    println("You are in near proximity")
-                case CLProximity.Immediate:
-                    println("You are in immediate proximity")
-                case CLProximity.Unknown:
-                    println("cant tell how far away you are")
-                
-                    return
+        
+            for beacon in beacons {
+                if workRoomBeacon.isEqualToBeacon(beacon as CLBeacon) {
+                    println("Found work room beacon")
+                    if currentUser!.room != RoomNames.LHMain {
+                        currentUser!.room = RoomNames.LHMain
+                        currentUser!.saveInBackgroundWithTarget(nil, selector: nil)                    }
+                    
+                    switch beacon.proximity! {
+                    case CLProximity.Far:
+                        println("You are in far proximity")
+                    case CLProximity.Near:
+                        println("You are in near proximity")
+                    case CLProximity.Immediate:
+                        println("You are in immediate proximity")
+                    case CLProximity.Unknown:
+                        println("cant tell how far away you are")
+                    
+                        return
+                    }
                 }
             }
         }

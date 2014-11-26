@@ -16,12 +16,12 @@ struct globalConst {
 
 struct RoomNames {
     
-    static let LANorthWest = "LANorthWest"
-    static let LASouthWest = "LASouthWest"
-    static let LASouth = "LASouth"
-    static let LAMain = "LAMain"
+    static let LANorthWest = "Launch Academy Back Offices"
+    static let LASouthWest = "Launch Academy Front Offices"
+    static let LASouth = "Launch Academy Board Room"
+    static let LAMain = "Launch Academy Main Work Area"
     static let Kitchen = "Kitchen"
-    static let LHOffice = "LHOffice"
-    static let LHMain = "LHMain"
+    static let LHOffice = "Lighthouse Labs Office"
+    static let LHMain = "Lighthouse Labs Main Work Area"
     
 }

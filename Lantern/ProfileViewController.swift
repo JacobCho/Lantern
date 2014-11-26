@@ -10,18 +10,17 @@ import UIKit
 import Parse
 
 class ProfileViewController: UITableViewController {
-
+    
+    
     @IBOutlet var profileImage: PFImageView!
     @IBOutlet var nameLabel: UILabel!
+    var user:User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.profileImage.file = user!.profileImage
+        self.profileImage.loadInBackground(nil)
+    
     }
 
     override func didReceiveMemoryWarning() {

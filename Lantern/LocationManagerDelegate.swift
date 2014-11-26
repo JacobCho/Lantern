@@ -14,10 +14,10 @@ import Parse
 class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     let lighthouseLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 49.2821103475302, longitude: -123.108108533195)
     
-    // Initialize work room beacon
+    // Initialize Beacons
     let workRoomBeacon : Beacon = Beacon(identifier: "workRoom", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 1964, minorValue: 44674)
-//    let currentUser:User = User.currentUser()
-    
+    let FBccBeacon : Beacon = Beacon(identifier: "FBcc", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 44898, minorValue: 64346)
+    let ico1Beacon : Beacon = Beacon(identifier: "ico1", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 309, minorValue: 33838)
     
   
     
@@ -27,7 +27,7 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
             
             if status == CLAuthorizationStatus.Authorized {
                 
-                let beaconRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString:workRoomBeacon.UUID), identifier: workRoomBeacon.identifier)
+                let beaconRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString:workRoomBeacon.UUID), identifier: "Lighthouse")
                 manager.startRangingBeaconsInRegion(beaconRegion)
                 
                 manager.startUpdatingLocation()
@@ -94,7 +94,8 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                     println("Found work room beacon")
                     if currentUser!.room != RoomNames.LHMain {
                         currentUser!.room = RoomNames.LHMain
-                        currentUser!.saveInBackgroundWithTarget(nil, selector: nil)                    }
+                        currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
+                    }
                     
                     switch beacon.proximity! {
                     case CLProximity.Far:
@@ -108,6 +109,17 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                     
                         return
                     }
+                }
+                
+                if ico1Beacon.isEqualToBeacon(beacon as CLBeacon) {
+                    println("Found ico1")
+                    
+                    
+                }
+                
+                if FBccBeacon.isEqualToBeacon(beacon as CLBeacon) {
+                    println("Found FBcc")
+                    
                 }
             }
         }

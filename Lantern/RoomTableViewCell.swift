@@ -12,6 +12,8 @@ class RoomTableViewCell: UITableViewCell {
 
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

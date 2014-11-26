@@ -127,8 +127,8 @@ class AvailabilityViewController: UICollectionViewController {
             finderView.userToBeFound = tappedCell.person
         } else if segue.identifier == "profileView" {
             var profileView:ProfileViewController = segue.destinationViewController as ProfileViewController
-        } else if segue.identifier == "roomTable" {
-            var roomView:RoomTableViewController = segue.destinationViewController as RoomTableViewController
+        } else if segue.identifier == "timeTable" {
+            var roomView:AvailabilityTableController = segue.destinationViewController as AvailabilityTableController
             roomView.lighthouseClass = self.lighthouseClass
         }
 
@@ -149,7 +149,7 @@ class AvailabilityViewController: UICollectionViewController {
 //        self.view.sendSubviewToBack(self.collectionView!)
     }
     func peopleButtonPress(sender:UIButton){
-        self.performSegueWithIdentifier("roomTable", sender: nil)
+        self.performSegueWithIdentifier("timeTable", sender: nil)
         
     }
 

@@ -16,30 +16,9 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.addListButton()
-        
-    
     }
     
-//    func addListButton(){
-//        
-//        listButton.layer.anchorPoint = CGPointMake(1, 1)
-//        listButton.frame = CGRectMake(self.view.frame.width-100, self.view.frame.height-60, 100, 60)
-//        listButton.addTarget(self, action: "peopleButtonPress:", forControlEvents: UIControlEvents.TouchUpInside)
-//        
-//        listButton.setImage(UIImage(named: "peopleIcon_1x"), forState: .Normal)
-//        
-//        self.view.addSubview(listButton)
-//        
-//    }
-//    
-//    func peopleButtonPress(sender:UIButton){
-//        self.dismissViewControllerAnimated(true, completion: nil)
-//    }
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
+
     
     // MARK: - Table view data source
     
@@ -56,8 +35,11 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
         return thisSection.count
     }
     
+    @IBAction func collectionViewButtonPress(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("personTableEntry", forIndexPath: indexPath) as RoomTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("PersonEntry", forIndexPath: indexPath) as RoomTableViewCell
         let thisSection = lighthouseClass[indexPath.section]
         let thisUser = thisSection[indexPath.row] as User
         

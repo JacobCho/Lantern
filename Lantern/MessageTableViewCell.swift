@@ -23,7 +23,6 @@ class MessageTableViewCell: PFTableViewCell {
         
 //        println("laying out the subviews for this cell:\(messageTextLabel.text)")
         
-        
     }
     //TODO: find callback
 }

@@ -14,9 +14,10 @@ class AvailabilityViewController: UICollectionViewController {
     var timer:NSTimer?
     
     lazy var lighthouseClass = []
-    
+    var workingButton:UIBarButtonItem = UIBarButtonItem()
     
     var thisUser:User = User.currentUser()
+    let listButton:UIButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +29,33 @@ class AvailabilityViewController: UICollectionViewController {
         } else if thisUser.isWebStudent || thisUser.isWebTA {
             self.title = "\(thisUser.username) Web cohort"
         }
-        var workingButton:UIBarButtonItem = UIBarButtonItem(title: "Working", style: .Plain , target: self, action: "changeWorkStatus")
         
-        self.navigationItem.rightBarButtonItem = workingButton
-        self.addListButton()
+        listButton.frame = CGRectMake(self.view.frame.width-100, self.view.frame.height-60, 100, 60)
+        listButton.addTarget(self, action: "peopleButtonPress:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        listButton.setImage(UIImage(named: "peopleIcon_1x"), forState: .Normal)
+        
+        self.view.addSubview(listButton)
+
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        workingButton = UIBarButtonItem(title: "Working", style: .Plain , target: self, action: "changeWorkStatus")
+        if thisUser.isWorking {
+            workingButton.title = "Stop Working"
+        } else {
+            workingButton.title = "Start working"
+        }
+        self.navigationItem.rightBarButtonItem = workingButton
+
         self.startCheckingForStatusUpdates()
+
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.listButton.frame.origin = CGPoint(x: self.view.frame.width-100, y:self.view.frame.height-60)
+
     }
     
     @IBAction func logoutButtonPress(sender: UIBarButtonItem) {
@@ -57,17 +77,23 @@ class AvailabilityViewController: UICollectionViewController {
                     log.room = room
                 }
                 log.time = now.timeIntervalSinceDate(startedWorking)
-                log.saveInBackgroundWithBlock(nil)
-                
+                log.saveInBackgroundWithTarget(self, selector: "queryForClass")
+                workingButton.title = "Stop Working"
+
                 thisUser.workingSince = nil
             }
             
         } else if thisUser.isWorking == false {
             thisUser.isWorking = true
             thisUser.workingSince = NSDate(timeIntervalSinceNow: 0)
+            workingButton.title = "Start working"
+
+            
         } else {
             thisUser.isWorking = true
             thisUser.workingSince = NSDate(timeIntervalSinceNow: 0)
+            workingButton.title = "Start working"
+
         }
         
         thisUser.saveInBackgroundWithBlock {(success:Bool, error:NSError!) -> Void in
@@ -155,19 +181,8 @@ class AvailabilityViewController: UICollectionViewController {
         
 }
     
-    func addListButton(){
-        let listButton:UIButton = UIButton()
-        listButton.layer.anchorPoint = CGPointMake(1, 1)
-        listButton.frame = CGRectMake(self.view.frame.width-100, self.view.frame.height-30, 100, 60)
-        listButton.addTarget(self, action: "peopleButtonPress:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        listButton.setImage(UIImage(named: "peopleIcon_1x"), forState: .Normal)
-//        listButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        
-        self.view.addSubview(listButton)
 
-//        self.view.sendSubviewToBack(self.collectionView!)
-    }
+    
     func peopleButtonPress(sender:UIButton){
         self.performSegueWithIdentifier("timeTable", sender: nil)
         

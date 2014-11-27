@@ -72,6 +72,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         return true
     }
     
+    func spinLight() {
+        let animation = CABasicAnimation(keyPath: "transform.rotation.y")
+        animation.fromValue = 0
+        animation.toValue = 2 * M_PI
+        animation.repeatCount = MAXFLOAT
+        animation.duration = 5
+        
+        self.lightImageView.layer.addAnimation(animation, forKey: "rotation")
+        
+        var transform:CATransform3D = CATransform3DIdentity
+        transform.m34 = 1.0/500.0
+        self.lightImageView.layer.transform = transform
+
+    }
+    
     func fadeLight() {
         self.lightImageView.alpha = 1
         self.titleLabel.alpha = 1

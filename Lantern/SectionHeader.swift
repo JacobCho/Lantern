@@ -16,7 +16,7 @@ class SectionHeader: UICollectionReusableView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.frame = CGRect(x: 50, y: 25, width: 200, height: 50)
+        contentView.frame = CGRect(x: 10, y: 10, width: 200, height: 50)
         contentView.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
         contentView.layer.cornerRadius = 7
         contentView.clipsToBounds = true

@@ -14,7 +14,7 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     let lighthouseLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 49.2821103475302, longitude: -123.108108533195)
     
     // Initialize Beacons
-    let workRoomBeacon : Beacon = Beacon(identifier: "5rb0", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 1964, minorValue: 44674)
+    let workRoomBeacon : Beacon = Beacon(identifier: "5r b0", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 1964, minorValue: 44674)
     let lamainBeacon : Beacon = Beacon(identifier: "FBcc", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 44898, minorValue: 64346)
     let kitchenBeacon : Beacon = Beacon(identifier: "ico1", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 309, minorValue: 33838)
     

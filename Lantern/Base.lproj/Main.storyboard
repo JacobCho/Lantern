@@ -418,7 +418,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1296" y="1067"/>
+            <point key="canvasLocation" x="1308" y="1055"/>
         </scene>
         <!--Availability Table Controller-->
         <scene sceneID="9rE-Yy-MY4">
@@ -589,7 +589,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnM-DB-qYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2612" y="1055"/>
+            <point key="canvasLocation" x="2665" y="1055"/>
         </scene>
         <!--Availability View Controller-->
         <scene sceneID="1Wz-HU-ynd">
@@ -754,7 +754,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgo-7i-YKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2971" y="337"/>
+            <point key="canvasLocation" x="2665" y="337"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Ys6-NP-VOl">
@@ -853,7 +853,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX0-kc-wka">
-                                                    <rect key="frame" x="199" y="15" width="154" height="20"/>
+                                                    <rect key="frame" x="199" y="13" width="154" height="23"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Location">
                                                             <attributes>
@@ -899,13 +899,17 @@
                                                 <constraint firstItem="wGI-UT-Klz" firstAttribute="top" secondItem="KDf-dm-m4Z" secondAttribute="topMargin" constant="1" id="0B2-yH-vfx"/>
                                                 <constraint firstItem="Y1r-xT-aLi" firstAttribute="leading" secondItem="iyV-l2-iI3" secondAttribute="trailing" constant="10" id="1t5-DT-llP"/>
                                                 <constraint firstItem="Y1r-xT-aLi" firstAttribute="leading" secondItem="iyV-l2-iI3" secondAttribute="trailing" constant="10" id="8Hb-T7-Cny"/>
+                                                <constraint firstItem="bX0-kc-wka" firstAttribute="centerY" secondItem="PAr-Zf-SBJ" secondAttribute="centerY" id="I0t-Tg-txP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bX0-kc-wka" secondAttribute="bottom" constant="5" id="IiB-eK-QQd"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="PAr-Zf-SBJ" secondAttribute="trailing" constant="10" id="KiL-b2-yex"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Y1r-xT-aLi" secondAttribute="bottom" constant="1" id="LZ1-uM-d3T"/>
+                                                <constraint firstItem="bX0-kc-wka" firstAttribute="top" secondItem="KDf-dm-m4Z" secondAttribute="topMargin" constant="5" id="LxL-HP-FFA"/>
                                                 <constraint firstItem="wGI-UT-Klz" firstAttribute="leading" secondItem="bX0-kc-wka" secondAttribute="trailing" constant="30" id="MM3-Ft-h9e"/>
                                                 <constraint firstItem="iyV-l2-iI3" firstAttribute="width" secondItem="bX0-kc-wka" secondAttribute="width" id="NK6-6a-m80"/>
                                                 <constraint firstAttribute="centerY" secondItem="PAr-Zf-SBJ" secondAttribute="centerY" id="OSo-fH-Z6e"/>
                                                 <constraint firstItem="Y1r-xT-aLi" firstAttribute="top" secondItem="KDf-dm-m4Z" secondAttribute="topMargin" constant="1" id="U0h-oN-hBV"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="wGI-UT-Klz" secondAttribute="bottom" constant="1" id="WNC-Re-hJq"/>
+                                                <constraint firstItem="bX0-kc-wka" firstAttribute="centerY" secondItem="iyV-l2-iI3" secondAttribute="centerY" id="YkE-Cl-QNt"/>
                                                 <constraint firstAttribute="centerY" secondItem="iyV-l2-iI3" secondAttribute="centerY" id="eF9-oN-egJ"/>
                                                 <constraint firstItem="bX0-kc-wka" firstAttribute="leading" secondItem="Y1r-xT-aLi" secondAttribute="trailing" constant="10" id="fgY-4y-Fiz"/>
                                                 <constraint firstItem="bX0-kc-wka" firstAttribute="width" secondItem="PAr-Zf-SBJ" secondAttribute="width" id="gCc-hv-Zvf"/>
@@ -913,6 +917,13 @@
                                                 <constraint firstItem="PAr-Zf-SBJ" firstAttribute="leading" secondItem="wGI-UT-Klz" secondAttribute="trailing" constant="10" id="jmh-5Z-nLC"/>
                                                 <constraint firstItem="iyV-l2-iI3" firstAttribute="leading" secondItem="KDf-dm-m4Z" secondAttribute="leading" constant="25" id="zsc-Oq-lb4"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="eF9-oN-egJ"/>
+                                                    <exclude reference="hvO-qD-u33"/>
+                                                    <exclude reference="OSo-fH-Z6e"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="locationLabel" destination="bX0-kc-wka" id="QFT-Ky-O22"/>
@@ -1063,7 +1074,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wR3-Ve-uaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3560" y="494"/>
+            <point key="canvasLocation" x="3268" y="337"/>
         </scene>
         <!--Message Table View Controller-->
         <scene sceneID="AE1-Nl-iMl">
@@ -1217,7 +1228,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXL-uc-Qsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4032" y="494"/>
+            <point key="canvasLocation" x="3760" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DF7-Nx-LKq">

@@ -34,6 +34,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 100.0
+        
         if userForProfile.objectId == User.currentUser().objectId {
             self.makePictureButton(true)
         } else {
@@ -82,7 +85,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let date = formatter.stringFromDate(entry.updatedAt)
         
         cell.nameLabel.text = date
-        cell.locationLabel.text = "working in the \(entry.room)"
+        cell.locationLabel.text = "was working in the \(entry.room)"
         
         cell.timeLabel.text = "for \(entry.time.integerValue/60) minutes"
 //        let timeFormatter = NSNumberFormatter()

@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreLocation
-import Parse
 
 
 class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
@@ -54,7 +53,6 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     
     }
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
-//        println("Got beacons! \(beacons[0])")
         var currentUser:User? = User.currentUser()
         
         if currentUser != nil {
@@ -66,11 +64,8 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                     currentUser!.isWorking = true
                     currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
                     
-//                    var workingAlert = UIAlertView(title: "In Beacon range", message: "You are set to working status", delegate: nil, cancelButtonTitle: "Ok")
-//                    workingAlert.show()
-                    
-                      var workingAlert = RKDropdownAlert()
-                    workingAlert.title("In Beacon Range", message: "You are set to working status", backgroundColor: UIColor(red: 255/255, green: 191/255, blue: 20/255, alpha: 1), textColor: UIColor.whiteColor(), time: 2)
+                    var workingAlert = UIAlertView(title: "In Beacon range", message: "You are set to working status", delegate: nil, cancelButtonTitle: "Ok")
+                    workingAlert.show()
                     
                 }
             }
@@ -84,9 +79,6 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                         currentUser!.room = RoomNames.LHMain
                         currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
                         
-                        var workRoomAlert = RKDropdownAlert()
-                        workRoomAlert.title("Room Change", message: "You are now in the Lighthouse Labs work room", backgroundColor: UIColor(red: 255/255, green: 191/255, blue: 20/255, alpha: 1), textColor: UIColor.whiteColor(), time: 2)
-               
                     }
                     
 //                    switch beacon.proximity! {
@@ -109,8 +101,6 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                         currentUser!.room = RoomNames.Kitchen
                         currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
                         
-                        var kitchenRoomAlert = RKDropdownAlert()
-                        kitchenRoomAlert.title("Room Change", message: "You are now in the kitchen", backgroundColor: UIColor(red: 255/255, green: 191/255, blue: 20/255, alpha: 1), textColor: UIColor.whiteColor(), time: 2)
                     }
                     
                 }
@@ -121,8 +111,6 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                         currentUser!.room = RoomNames.LAMain
                         currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
                         
-                        var launchAcademyAlert = RKDropdownAlert()
-                        launchAcademyAlert.title("Room Change", message: "You are now in the Launch Academy main room", backgroundColor: UIColor(red: 255/255, green: 191/255, blue: 20/255, alpha: 1), textColor: UIColor.whiteColor(), time: 2)
                     }
                     
                 }

@@ -16,6 +16,7 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
     
 
@@ -41,16 +42,29 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
         let userEntry = thisSection[indexPath.row] as User
         
         cell.nameLabel.text = userEntry.username
-        cell.locationLabel.text = "is working in \(userEntry.room?)"
-        let now = NSDate(timeIntervalSinceNow: 0)
-        let dateInterval = NSDateIntervalFormatter()
-        dateInterval.dateStyle = .ShortStyle
-        dateInterval.timeStyle = .ShortStyle
-        
-        if let workStartedDate = userEntry.workingSince {
-        cell.timeLabel.text = dateInterval.stringFromDate(workStartedDate, toDate: now)
+        if userEntry.isWorking {
+            if let workroom = userEntry.room {
+                cell.locationLabel.text = "has been working in \(userEntry.room!)"
+            }
+            let now = NSDate(timeIntervalSinceNow: 0)
+            if let workStartedDate = userEntry.workingSince {
+                let timeWorking:NSTimeInterval = now.timeIntervalSinceDate(workStartedDate)
+                if timeWorking > 60 && timeWorking < 3600 {
+                    cell.timeLabel.text = " for \(timeWorking/60) minutes"
+                } else if timeWorking > 360 {
+                    let hourStr = NSString(format: "%.2f", timeWorking/3600)
+                    cell.timeLabel.text = " for \(hourStr) hours"
+
+                } else {
+                    cell.timeLabel.text = " for \(timeWorking/1) seconds"
+
+                }
+            }
+        } else {
+            cell.locationLabel.text = "is not working right now"
+            cell.locationLabel.textColor = UIColor(red: 1, green: 0.1, blue: 0.1, alpha: 1)
+            cell.timeLabel.text = ""
         }
-        
         
         // Configure the cell...tab
         

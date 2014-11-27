@@ -46,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         let navigationController:UINavigationController = self.window?.rootViewController as UINavigationController
         navigationController.navigationBar.barTintColor = UIColor(red: 12.0/255.0, green: 45.0/255.0, blue: 61.0/255.0, alpha: 1)
         navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController.navigationBar.translucent = false
+        
     
         application.setStatusBarStyle(.LightContent, animated: true)
         

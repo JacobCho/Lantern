@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
         self.profileImageView.clipsToBounds = true
-        
+        self.nameTextLabel.text = userForProfile.username
         self.profileImageView.file = userForProfile.profileImage
         self.profileImageView.loadInBackground(nil)
         self.view.sendSubviewToBack(self.tableView)

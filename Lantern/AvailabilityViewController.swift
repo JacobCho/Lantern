@@ -57,7 +57,7 @@ class AvailabilityViewController: UICollectionViewController {
                     log.room = room
                 }
                 log.time = now.timeIntervalSinceDate(startedWorking)
-                log.saveInBackgroundWithBlock(nil)
+                log.saveInBackgroundWithTarget(self, selector: "queryForClass")
                 
                 thisUser.workingSince = nil
             }

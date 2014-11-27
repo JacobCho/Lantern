@@ -30,10 +30,10 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                 let beaconRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString:workRoomBeacon.UUID), identifier: "Lighthouse")
                 manager.startRangingBeaconsInRegion(beaconRegion)
                 
-                manager.startUpdatingLocation()
-                let range:CLLocationDistance = 20
-                let lighthouseRegion = CLCircularRegion(center: lighthouseLocation, radius: range, identifier: "lighthouseBuilding")
-                manager.startMonitoringForRegion(lighthouseRegion)
+//                manager.startUpdatingLocation()
+//                let range:CLLocationDistance = 20
+//                let lighthouseRegion = CLCircularRegion(center: lighthouseLocation, radius: range, identifier: "lighthouseBuilding")
+//                manager.startMonitoringForRegion(lighthouseRegion)
                 
             } else if status == .Denied {
                 //TODO: show allert that location services wont be working
@@ -42,28 +42,11 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     
     
     
-    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
-        println("did enter region")
-        if region.identifier == "ligthouseBuilding"{
-            println("in the launch academy building")
-        
-        } else if region.identifier == "lighthouseWorkArea" {
-            println("in the lighthouse work area")
-            
-        }
-        
-    }
-    func locationManager(manager: CLLocationManager!, didDetermineState state: CLRegionState, forRegion region: CLRegion!) {
-         println("doing something with this region")
-        if state == CLRegionState.Inside {
-            println("YOU ARE THERE!")
-            
-        }
-    }
+
     
-    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
-        
-    }
+//    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
+//        
+//    }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var currentLocation:CLLocation = locations[0] as CLLocation

@@ -29,8 +29,9 @@ class Beacon {
             println("match")
             return true
             
-        } else {
-            println("Don't match")
+        }
+        else {
+//            println("Don't match")
             return false
         }
     }

@@ -49,13 +49,31 @@ class AvailabilityViewController: UICollectionViewController {
     func changeWorkStatus (){
         if thisUser.isWorking == true {
             thisUser.isWorking = false
+            if let startedWorking = thisUser.workingSince? {
+                let now = NSDate(timeIntervalSinceNow: 0)
+                let log = WorkLog()
+                log.user = thisUser
+                if let room = thisUser.room{
+                    log.room = room
+                }
+                log.time = now.timeIntervalSinceDate(startedWorking)
+                log.saveInBackgroundWithBlock(nil)
+                
+                thisUser.workingSince = nil
+            }
+            
         } else if thisUser.isWorking == false {
             thisUser.isWorking = true
+            thisUser.workingSince = NSDate(timeIntervalSinceNow: 0)
         } else {
             thisUser.isWorking = true
+            thisUser.workingSince = NSDate(timeIntervalSinceNow: 0)
         }
         
         thisUser.saveInBackgroundWithBlock {(success:Bool, error:NSError!) -> Void in
+            if error != nil {
+                println("error! \(error)")
+            }
             if success {
                 println("saved user is working \(self.thisUser.isWorking)")
             }
@@ -111,7 +129,7 @@ class AvailabilityViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         var cell = collectionView.cellForItemAtIndexPath(indexPath) as PersonCell
         if cell.person.objectId == thisUser.objectId {
-            self.performSegueWithIdentifier("profileView", sender: (collectionView.cellForItemAtIndexPath(indexPath)))
+            self.performSegueWithIdentifier("showProfile", sender: (collectionView.cellForItemAtIndexPath(indexPath)))
 
         } else {
             self.performSegueWithIdentifier("findSelected", sender: (collectionView.cellForItemAtIndexPath(indexPath)))
@@ -125,8 +143,10 @@ class AvailabilityViewController: UICollectionViewController {
             var finderView:FinderViewController = segue.destinationViewController as FinderViewController
             var tappedCell = sender as PersonCell
             finderView.userToBeFound = tappedCell.person
-        } else if segue.identifier == "profileView" {
+        } else if segue.identifier == "showProfile" {
             var profileView:ProfileViewController = segue.destinationViewController as ProfileViewController
+            profileView.userForProfile = thisUser
+            
         } else if segue.identifier == "timeTable" {
             var roomView:AvailabilityTableController = segue.destinationViewController as AvailabilityTableController
             roomView.lighthouseClass = self.lighthouseClass

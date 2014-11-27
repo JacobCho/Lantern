@@ -9,24 +9,38 @@
 import UIKit
 import Parse
 
-class ProfileViewController: UITableViewController {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    @IBOutlet var nameTextLabel: UILabel!
+    @IBOutlet var profileImageView: PFImageView!
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var headerView: UIView!
+    
+    var userForProfile:User = User()
+    
+    var userWorkLogs:Array<WorkLog> = []
     
     
-    @IBOutlet var profileImage: PFImageView!
-    @IBOutlet var nameLabel: UILabel!
     
-    
-    @IBAction func backButtonPress(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+
+    @IBAction func pictureButtonPress(sender: AnyObject) {
         
     }
-    
-    var user:User?
-    
+    @IBAction func escapePress(sender: AnyObject) {
+                self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.profileImage.file = user!.profileImage
-//        self.profileImage.loadInBackground(nil)
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
+        self.profileImageView.clipsToBounds = true
+
+        self.profileImageView.file = userForProfile.profileImage
+        self.profileImageView.loadInBackground(nil)
+        self.view.sendSubviewToBack(self.tableView)
+        
+        self.queryForWorkLog()
+//        self.profileImageView.sendSubviewToBack(self.profileImageView)
     
     }
 
@@ -37,27 +51,42 @@ class ProfileViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.userWorkLogs.count
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel?.text = "WORK"
+        
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
+    func queryForWorkLog() {
+        let query:PFQuery = PFQuery(className: WorkLog.parseClassName())
+        query.whereKey("user", equalTo: userForProfile)
+        query.findObjectsInBackgroundWithBlock { (results:[AnyObject]!, error:NSError!) -> Void in
+            
+            self.userWorkLogs = results as [WorkLog]
+            println("downloaded work logs for \(self.userForProfile.username)")
+            self.tableView.reloadData()
+            
+        }
+        
+    }
+
 
     /*
     // Override to support conditional editing of the table view.

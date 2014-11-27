@@ -19,8 +19,8 @@ class WorkLog: PFObject, PFSubclassing {
         self.registerSubclass()
     }
     
-    @NSManaged var user: String
+    @NSManaged var user: User
     @NSManaged var room: String
-    @NSManaged var startTime: NSDate
+    @NSManaged var time: NSNumber
 
 }

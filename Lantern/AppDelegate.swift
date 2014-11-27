@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
             var topViewController : UIViewController = navigationController.topViewController
             
              var pushAlert = SCLAlertView()
-             pushAlert.showInfo(topViewController, title: "New Message", subTitle: message, closeButtonTitle: "Ok", duration: 0)
+             pushAlert.showCustom(topViewController, image: UIImage(named: "lighthouseOn"), color: UIColor(red: 47/255, green: 177/255, blue: 118/255, alpha: 1), title: "New Message", subTitle: message, closeButtonTitle: "Ok", duration: 0)
         }
 
     }

@@ -65,8 +65,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel?.text = "WORK"
+        let cell = tableView.dequeueReusableCellWithIdentifier("workLogEntry", forIndexPath: indexPath) as RoomTableViewCell
+        let entry = self.userWorkLogs[indexPath.row]
+        cell.nameLabel.text = "\(entry.updatedAt)"
+        cell.locationLabel.text = entry.room
+        cell.timeLabel.text = "working for \(entry.time)"
         
 
         // Configure the cell...

@@ -2,3 +2,4 @@
 
 pod 'AFNetworking', '~> 2.5'
 pod 'SCLAlertView-Objective-C', '~> 0.3.4'
+pod 'RKDropdownAlert'

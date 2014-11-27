@@ -25,6 +25,26 @@ class User: PFUser, PFSubclassing {
     @NSManaged var profileImage: PFFile?
 //    @NSManaged var secondsAtWork: NSNumber?
     
+    
+    func isTeacher() -> Bool {
+        
+        if self.isIosTA || self.isWebTA {
+             return true
+        } else {
+            
+            return false
+        }
+        
+    }
+    
+    func isStudent() -> Bool {
+        
+        if !self.isTeacher() {
+            return true
+        } else {
+            return false
+        }
+    }
    
 
 }

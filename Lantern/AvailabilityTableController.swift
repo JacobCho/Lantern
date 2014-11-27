@@ -9,13 +9,16 @@
 import UIKit
 
 class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObjectProtocol, UIScrollViewDelegate, UITableViewDataSource {
-
+    
+    @IBOutlet var tableView:UITableView!
+    
     lazy var lighthouseClass = []
     let listButton:UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 100.0;
         
     }
     
@@ -45,6 +48,12 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
         if userEntry.isWorking {
             if let workroom = userEntry.room {
                 cell.locationLabel.text = "has been working in \(userEntry.room!)"
+                if workroom == "" {
+                    cell.locationLabel.text = "has been working out beacon range"
+                }
+            } else {
+                cell.locationLabel.text = "has been working out beacon range"
+
             }
             let now = NSDate(timeIntervalSinceNow: 0)
             if let workStartedDate = userEntry.workingSince {

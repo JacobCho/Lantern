@@ -74,6 +74,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
             let newPhotoPicker:UIImagePickerController = UIImagePickerController()
             newPhotoPicker.delegate=self
             newPhotoPicker.sourceType = .Camera
+            newPhotoPicker.allowsEditing = true
             self.presentViewController(newPhotoPicker, animated: true, completion: { () -> Void in
                 println("opening user's camera")
             })
@@ -81,6 +82,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
             let oldPhotoPicker:UIImagePickerController = UIImagePickerController()
             oldPhotoPicker.delegate = self
             oldPhotoPicker.sourceType = .SavedPhotosAlbum
+            oldPhotoPicker.allowsEditing = true
             self.presentViewController(oldPhotoPicker, animated: true, completion: { () -> Void in
                 println("opening user's saved photos")
             })
@@ -97,6 +99,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
         pictureImageView.image = image
         pictureImageView.alpha = 1.0
             println("user picked a photo!")
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     

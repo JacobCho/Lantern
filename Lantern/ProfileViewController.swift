@@ -125,6 +125,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             let newPhotoPicker:UIImagePickerController = UIImagePickerController()
             newPhotoPicker.delegate = self
             newPhotoPicker.sourceType = .Camera
+            newPhotoPicker.allowsEditing = true
             self.presentViewController(newPhotoPicker, animated: true, completion: { () -> Void in
                 println("opening user's camera")
             })
@@ -142,11 +143,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     }
     
-//    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-//        
-//        actionSheet.dismissWithClickedButtonIndex(buttonIndex, animated: true)
-//        
-//            }
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+
     
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         self.dismissViewControllerAnimated(true, completion: { () -> Void in

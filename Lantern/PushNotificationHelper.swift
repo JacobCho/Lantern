@@ -18,7 +18,7 @@ import Parse
         
     }
 
-    func handlePushMessage(message : String) {
+    func handlePushMessage(message : String) -> User {
         
         var userName : String = ""
         var user : User = User()
@@ -43,8 +43,9 @@ import Parse
             if (error == nil) {
             var user: User = users[0] as User
                 println(user.username)
-
+                
             }
             
         }
+        return user
     }

@@ -2,4 +2,108 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Lantern/ChatContainerViewController.swift"
+            timestampString = "438755413.045484"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ChatContainerViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lantern.ChatContainerViewController.messageRecipient.getter : Swift.ImplicitlyUnwrappedOptional&lt;Lantern.User&gt;"
+                  moduleName = "Lantern"
+                  urlString = "file:///Users/test/Documents/Development/Lantern/Lantern/ChatContainerViewController.swift"
+                  timestampString = "438756376.650186"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lantern.ChatContainerViewController.messageRecipient.setter : Swift.ImplicitlyUnwrappedOptional&lt;Lantern.User&gt;"
+                  moduleName = "Lantern"
+                  urlString = "file:///Users/test/Documents/Development/Lantern/Lantern/ChatContainerViewController.swift"
+                  timestampString = "438756376.650415"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lantern.ChatContainerViewController.messageRecipient.materializeForSet : Swift.ImplicitlyUnwrappedOptional&lt;Lantern.User&gt;"
+                  moduleName = "Lantern"
+                  urlString = "file:///Users/test/Documents/Development/Lantern/Lantern/ChatContainerViewController.swift"
+                  timestampString = "438756376.650557"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lantern.ChatContainerViewController.init (Lantern.ChatContainerViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; Lantern.ChatContainerViewController"
+                  moduleName = "Lantern"
+                  urlString = "file:///Users/test/Documents/Development/Lantern/Lantern/ChatContainerViewController.swift"
+                  timestampString = "438756376.650695"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lantern.ChatContainerViewController.init (Lantern.ChatContainerViewController.Type)() -&gt; Lantern.ChatContainerViewController"
+                  moduleName = "Lantern"
+                  urlString = "file:///Users/test/Documents/Development/Lantern/Lantern/ChatContainerViewController.swift"
+                  timestampString = "438756376.650823"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lantern.ChatContainerViewController.init (Lantern.ChatContainerViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; Lantern.ChatContainerViewController"
+                  moduleName = "Lantern"
+                  urlString = "file:///Users/test/Documents/Development/Lantern/Lantern/ChatContainerViewController.swift"
+                  timestampString = "438756376.650958"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "156">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

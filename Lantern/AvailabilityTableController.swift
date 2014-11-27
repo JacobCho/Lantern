@@ -88,6 +88,13 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
         
         return cell
     }
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let thisSection: AnyObject = lighthouseClass[indexPath.section]
+        var profile = self.storyboard?.instantiateViewControllerWithIdentifier("Profile") as ProfileViewController
+        profile.userForProfile = thisSection[indexPath.row] as User
+        self.presentViewController(profile, animated: true, completion: nil)
+        
+    }
 
     
 

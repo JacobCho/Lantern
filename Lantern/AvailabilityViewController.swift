@@ -29,6 +29,7 @@ class AvailabilityViewController: UICollectionViewController {
         } else if thisUser.isWebStudent || thisUser.isWebTA {
             self.title = "\(thisUser.username) Web cohort"
         }
+        self.collectionView?.registerClass(SectionHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "UserGroup")
         
         listButton.frame = CGRectMake(self.view.frame.width-100, self.view.frame.height-60, 100, 60)
         listButton.addTarget(self, action: "peopleButtonPress:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -116,13 +117,31 @@ class AvailabilityViewController: UICollectionViewController {
         return thisSection.count
     }
 
-//    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-//        
-//        let sectionHeader = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "sectionHeader", forIndexPath: indexPath)
-////        sectionHeader.headerTitleLabel.text = "Section"
-//
-//        return sectionHeader as UICollectionReusableView
-//    }
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let sectionHeader = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "UserGroup", forIndexPath: indexPath) as SectionHeader
+        let font = UIFont(name: "Helvetica-Bold", size: 20)
+        
+        switch indexPath.section {
+        case 0 :
+            let text = NSAttributedString(string: "TAs", attributes: NSDictionary(object: font!, forKey: NSFontAttributeName))
+            sectionHeader.titleLabel.attributedText = text
+            
+        case 1 :
+            let text = NSAttributedString(string: "Students", attributes: NSDictionary(object: font!, forKey: NSFontAttributeName))
+            sectionHeader.titleLabel.attributedText = text
+            
+        case 2 :
+            let text = NSAttributedString(string: "Your Profile", attributes: NSDictionary(object: font!, forKey: NSFontAttributeName))
+
+            sectionHeader.titleLabel.attributedText = text
+            
+        default:()
+            
+        }
+        
+
+        return sectionHeader as UICollectionReusableView
+    }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("personCell", forIndexPath: indexPath) as PersonCell

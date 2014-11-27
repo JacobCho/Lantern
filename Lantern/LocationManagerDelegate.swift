@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreLocation
-import Parse
 
 
 class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
@@ -54,12 +53,12 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     
     }
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
-//        println("Got beacons! \(beacons[0])")
         var currentUser:User? = User.currentUser()
+        
         if currentUser != nil {
             
             // If User is a TA, set to working when in beacon range
-            if currentUser!.isIosTA && currentUser!.isWebTA {
+            if currentUser!.isTeacher() {
                 
                 if !currentUser!.isWorking {
                     currentUser!.isWorking = true
@@ -67,6 +66,7 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                     
                     var workingAlert = UIAlertView(title: "In Beacon range", message: "You are set to working status", delegate: nil, cancelButtonTitle: "Ok")
                     workingAlert.show()
+                    
                 }
             }
         
@@ -75,11 +75,10 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
 //                    println("Found work room beacon")
                     if currentUser!.room != RoomNames.LHMain {
                         
-
                         currentUser?.updatedAt
                         currentUser!.room = RoomNames.LHMain
                         currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
-               
+                        
                     }
                     
 //                    switch beacon.proximity! {
@@ -101,6 +100,7 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                     if currentUser!.room != RoomNames.Kitchen {
                         currentUser!.room = RoomNames.Kitchen
                         currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
+                        
                     }
                     
                 }
@@ -110,6 +110,7 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                     if currentUser!.room != RoomNames.LAMain {
                         currentUser!.room = RoomNames.LAMain
                         currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
+                        
                     }
                     
                 }

@@ -15,9 +15,9 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     let lighthouseLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 49.2821103475302, longitude: -123.108108533195)
     
     // Initialize Beacons
-    let workRoomBeacon : Beacon = Beacon(identifier: "workRoom", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 1964, minorValue: 44674)
-    let FBccBeacon : Beacon = Beacon(identifier: "FBcc", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 44898, minorValue: 64346)
-    let ico1Beacon : Beacon = Beacon(identifier: "ico1", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 309, minorValue: 33838)
+    let workRoomBeacon : Beacon = Beacon(identifier: "5rb0", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 1964, minorValue: 44674)
+    let lamainBeacon : Beacon = Beacon(identifier: "FBcc", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 44898, minorValue: 64346)
+    let kitchenBeacon : Beacon = Beacon(identifier: "ico1", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 309, minorValue: 33838)
     
   
     
@@ -91,34 +91,41 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
         
             for beacon in beacons {
                 if workRoomBeacon.isEqualToBeacon(beacon as CLBeacon) {
-                    println("Found work room beacon")
+//                    println("Found work room beacon")
                     if currentUser!.room != RoomNames.LHMain {
                         currentUser!.room = RoomNames.LHMain
                         currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
                     }
                     
-                    switch beacon.proximity! {
-                    case CLProximity.Far:
-                        println("You are in far proximity")
-                    case CLProximity.Near:
-                        println("You are in near proximity")
-                    case CLProximity.Immediate:
-                        println("You are in immediate proximity")
-                    case CLProximity.Unknown:
-                        println("cant tell how far away you are")
-                    
-                        return
+//                    switch beacon.proximity! {
+//                    case CLProximity.Far:
+//                        println("You are in far proximity")
+//                    case CLProximity.Near:
+//                        println("You are in near proximity")
+//                    case CLProximity.Immediate:
+//                        println("You are in immediate proximity")
+//                    case CLProximity.Unknown:
+//                        println("cant tell how far away you are")
+//                    
+//                        return
+//                    }
+                }
+                
+                if kitchenBeacon.isEqualToBeacon(beacon as CLBeacon) {
+//                    println("Found kitchen beacon")
+                    if currentUser!.room != RoomNames.Kitchen {
+                        currentUser!.room = RoomNames.Kitchen
+                        currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
                     }
-                }
-                
-                if ico1Beacon.isEqualToBeacon(beacon as CLBeacon) {
-                    println("Found ico1")
-                    
                     
                 }
                 
-                if FBccBeacon.isEqualToBeacon(beacon as CLBeacon) {
-                    println("Found FBcc")
+                if lamainBeacon.isEqualToBeacon(beacon as CLBeacon) {
+//                    println("Found LA main beacon")
+                    if currentUser!.room != RoomNames.LAMain {
+                        currentUser!.room = RoomNames.LAMain
+                        currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
+                    }
                     
                 }
             }

@@ -18,20 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W8c-Ix-swl">
-                                <rect key="frame" x="89" y="333" width="200" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="QUH-2r-buU"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="YyB-7f-yph"/>
-                                    <constraint firstAttribute="height" constant="30" id="cxk-Vv-BZT"/>
-                                </constraints>
-                                <color key="textColor" red="0.12549019610000001" green="0.51372549020000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="85" y="138" width="232" height="30"/>
-                                </variation>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gYP-Ff-GmD">
                                 <rect key="frame" x="89" y="371" width="200" height="30"/>
                                 <constraints>
@@ -40,6 +26,9 @@
                                 <color key="textColor" red="0.12549019610000001" green="0.51372549020000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="89" y="371" width="200" height="0.0"/>
+                                </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="85" y="209" width="232" height="30"/>
                                 </variation>
@@ -71,14 +60,14 @@
                                     <constraint firstAttribute="height" constant="317" id="ptC-0f-7Ro"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Light" translatesAutoresizingMaskIntoConstraints="NO" id="pt4-ts-aya">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Light" translatesAutoresizingMaskIntoConstraints="NO" id="pt4-ts-aya">
                                 <rect key="frame" x="89" y="127" width="328" height="156"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="156" id="LOP-KL-Rdx"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="328" id="Mnv-Iy-vUq"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Lantern" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUp-7F-wtl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lantern" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUp-7F-wtl">
                                 <rect key="frame" x="121" y="170" width="191" height="70"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,6 +88,9 @@
                                         <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="239" y="360" width="50" height="30"/>
+                                </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="226" y="279" width="91" height="30"/>
                                 </variation>
@@ -106,19 +98,38 @@
                                     <action selector="loginButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="p0r-l8-1vp"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W8c-Ix-swl">
+                                <rect key="frame" x="89" y="333" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="QUH-2r-buU"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="YyB-7f-yph"/>
+                                    <constraint firstAttribute="height" constant="30" id="cxk-Vv-BZT"/>
+                                </constraints>
+                                <color key="textColor" red="0.12549019610000001" green="0.51372549020000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="89" y="333" width="200" height="9"/>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="85" y="138" width="232" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="W8c-Ix-swl" firstAttribute="width" secondItem="gYP-Ff-GmD" secondAttribute="width" id="0SJ-gR-RLJ"/>
-                            <constraint firstItem="kqg-x9-WpY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pt4-ts-aya" secondAttribute="trailing" constant="20" id="2PQ-3G-JIt"/>
+                            <constraint firstItem="pt4-ts-aya" firstAttribute="leading" secondItem="BUp-7F-wtl" secondAttribute="trailing" constant="-223" id="14q-jm-gHH"/>
+                            <constraint firstItem="kqg-x9-WpY" firstAttribute="leading" secondItem="pt4-ts-aya" secondAttribute="trailing" constant="20" id="2PQ-3G-JIt"/>
                             <constraint firstItem="W8c-Ix-swl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PQl-WF-y2U" secondAttribute="leadingMargin" constant="10" id="Cou-kQ-FWX"/>
-                            <constraint firstItem="BUp-7F-wtl" firstAttribute="top" secondItem="okw-tp-2mw" secondAttribute="bottom" constant="106" id="EUC-LW-14j"/>
+                            <constraint firstItem="BUp-7F-wtl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="okw-tp-2mw" secondAttribute="bottom" constant="106" id="EUC-LW-14j"/>
                             <constraint firstItem="BUp-7F-wtl" firstAttribute="width" secondItem="pt4-ts-aya" secondAttribute="height" multiplier="191:156" id="Eoi-ub-xVo"/>
-                            <constraint firstItem="PsI-sd-eKc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WdI-vk-JPf" secondAttribute="bottom" constant="159" id="Hik-kI-w8b"/>
+                            <constraint firstItem="PsI-sd-eKc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WdI-vk-JPf" secondAttribute="bottom" constant="10" id="Hik-kI-w8b"/>
                             <constraint firstItem="kqg-x9-WpY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BUp-7F-wtl" secondAttribute="trailing" constant="10" id="JWK-k3-ETr"/>
                             <constraint firstItem="W8c-Ix-swl" firstAttribute="top" secondItem="okw-tp-2mw" secondAttribute="bottom" constant="272" id="Kob-G9-dab"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kqg-x9-WpY" secondAttribute="trailing" constant="10" id="NmX-CD-32Y"/>
                             <constraint firstAttribute="centerX" secondItem="Y6n-WV-jrh" secondAttribute="centerX" id="RV4-MK-QqG"/>
+                            <constraint firstItem="BUp-7F-wtl" firstAttribute="top" secondItem="pt4-ts-aya" secondAttribute="bottom" constant="-105" id="SAv-ge-ibq"/>
                             <constraint firstItem="pt4-ts-aya" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PQl-WF-y2U" secondAttribute="leadingMargin" constant="10" id="SzH-jn-GWa"/>
                             <constraint firstItem="pt4-ts-aya" firstAttribute="top" secondItem="okw-tp-2mw" secondAttribute="bottom" constant="63" id="Xpb-xv-UN5"/>
                             <constraint firstItem="WdI-vk-JPf" firstAttribute="trailing" secondItem="gYP-Ff-GmD" secondAttribute="trailing" id="ZIb-Ds-xNg"/>
@@ -133,6 +144,11 @@
                             <constraint firstItem="BUp-7F-wtl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PQl-WF-y2U" secondAttribute="leadingMargin" constant="20" id="wLw-nC-STj"/>
                             <constraint firstItem="Y6n-WV-jrh" firstAttribute="top" secondItem="Uyu-79-oBf" secondAttribute="bottom" constant="8" id="wPa-og-ehN"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="EUC-LW-14j"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="j8L-tj-e49"/>
                     <connections>

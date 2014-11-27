@@ -69,11 +69,12 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-        if DeviceType.IS_IPHONE_6P {
-            self.indoorMap.contentSize = CGSizeMake(1024, 1024)
-            self.indoorMap.setContentOffset(CGPointMake(500, 800), animated: true)
+//        if DeviceType.IS_IPHONE_6P {
+            self.indoorMap.contentSize = CGSizeMake(1500 ,1500)
+            let windowSize = self.view.frame.size
+            self.indoorMap.setContentOffset(CGPointMake(750 - windowSize.width/2, 750 - windowSize.height/2), animated: true)
             
-        }
+//        }
     }
     
     override func viewDidLayoutSubviews() {

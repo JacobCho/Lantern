@@ -30,6 +30,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if userForProfile.objectId == User.currentUser().objectId {
+            self.makePictureButton(true)
+        } else {
+            self.makePictureButton(false)
+        }
+        
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
         self.profileImageView.clipsToBounds = true
         
@@ -38,8 +45,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.view.sendSubviewToBack(self.tableView)
         
         self.queryForWorkLog()
-//        self.profileImageView.sendSubviewToBack(self.profileImageView)
-    
+
+        
     }
 
     override func didReceiveMemoryWarning() {

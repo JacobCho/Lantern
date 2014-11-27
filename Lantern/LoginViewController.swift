@@ -24,8 +24,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
         
-        var dropdownalert = DropdownAlert()
+        var notification = UILocalNotification()
+        notification.alertBody = "Test"
+        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
         
+        
+
     }
     
     override func viewDidAppear(animated: Bool) {

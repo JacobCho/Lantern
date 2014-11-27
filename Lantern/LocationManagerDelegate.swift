@@ -63,11 +63,9 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                 if !currentUser!.isWorking {
                     currentUser!.isWorking = true
                     currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
-                    
-//                    var workingAlert = UIAlertView(title: "In Beacon range", message: "You are set to working status", delegate: nil, cancelButtonTitle: "Ok")
-//                    workingAlert.show()
-                    
-                    var workingAlert = RKDropdownAlert.title("In Beacon range", message: "You are set to working status")
+
+                        var workingAlert = RKDropdownAlert.title("In Beacon range", message: "You are set to working status")
+
                     
                 }
             }
@@ -80,8 +78,9 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                         currentUser?.updatedAt
                         currentUser!.room = RoomNames.LHMain
                         currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
-                        
-                        var workRoomAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Lighthouse Labs main work room")
+                        if beacon.proximity == CLProximity.Near {
+                            var workRoomAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Lighthouse Labs main work room")
+                        }
                         
                     }
                     
@@ -104,8 +103,9 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                     if currentUser!.room != RoomNames.Kitchen {
                         currentUser!.room = RoomNames.Kitchen
                         currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
-                        
-                        var kitchenAlert = RKDropdownAlert.title("Room Change", message: "You are now in the kitchen")
+                        if beacon.proximity == CLProximity.Near  {
+                            var kitchenAlert = RKDropdownAlert.title("Room Change", message: "You are now in the kitchen")
+                        }
                     }
                     
                 }
@@ -115,9 +115,9 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                     if currentUser!.room != RoomNames.LAMain {
                         currentUser!.room = RoomNames.LAMain
                         currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
-                        
-                        var launchAcademyAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Launch Academy main room")
-                        
+                        if beacon.proximity == CLProximity.Near {
+                            var launchAcademyAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Launch Academy main room")
+                        }
                     }
                     
                 }

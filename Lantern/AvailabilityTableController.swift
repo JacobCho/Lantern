@@ -41,10 +41,18 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PersonEntry", forIndexPath: indexPath) as RoomTableViewCell
         let thisSection = lighthouseClass[indexPath.section]
-        let thisUser = thisSection[indexPath.row] as User
+        let userEntry = thisSection[indexPath.row] as User
         
-        cell.nameLabel.text = thisUser.username
-        cell.locationLabel.text = thisUser.room?
+        cell.nameLabel.text = userEntry.username
+        cell.locationLabel.text = "is working in \(userEntry.room?)"
+        let now = NSDate(timeIntervalSinceNow: 0)
+        let dateInterval = NSDateIntervalFormatter()
+        dateInterval.dateStyle = .ShortStyle
+        dateInterval.timeStyle = .ShortStyle
+        
+        if let workStartedDate = userEntry.workingSince {
+        cell.timeLabel.text = dateInterval.stringFromDate(workStartedDate, toDate: now)
+        }
         
         
         // Configure the cell...tab

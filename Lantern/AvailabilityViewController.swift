@@ -197,7 +197,7 @@ class AvailabilityViewController: UICollectionViewController {
             
             query = PFQuery.orQueryWithSubqueries([studentsQuery,teachersQuery])
         }
-        query.selectKeys(["username","isIosStudent","isIosTA","isWebStudent","isWebTA","profileImage","isWorking","room"])
+        query.selectKeys(["username","isIosStudent","isIosTA","isWebStudent","isWebTA","profileImage","isWorking","room","workingSince"])
         
         query.findObjectsInBackgroundWithBlock { (results:[AnyObject]!, error:NSError!) -> Void in
             if (error == nil) {

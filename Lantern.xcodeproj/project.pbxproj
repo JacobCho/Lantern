@@ -226,11 +226,11 @@
 		524DC5C11A1B050100B359C8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8490E02C1A25507100E4F3B9 /* AvailabilityTableController.swift */,
 				52439D1B1A20061B006E5740 /* LoginViewController.swift */,
 				524DC5BE1A1B042800B359C8 /* RegisterViewController.swift */,
 				8457C2EB1A22FD07000E719E /* ProfileViewController.swift */,
 				8490A26A1A1B21AE0043EF1E /* AvailabilityViewController.swift */,
+				8490E02C1A25507100E4F3B9 /* AvailabilityTableController.swift */,
 				8457C2DD1A1BDFBE000E719E /* FinderViewController.swift */,
 				522CB1081A1D20D900B0FC0B /* ChatContainerViewController.swift */,
 				522CB10A1A1D88C000B0FC0B /* MessageTableViewController.swift */,

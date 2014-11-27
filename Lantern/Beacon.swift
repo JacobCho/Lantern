@@ -28,9 +28,7 @@ class Beacon {
         if beacon.proximityUUID.UUIDString == self.UUID && beacon.major == self.majorValue.description.toInt()! && self.minorValue.description.toInt()! == beacon.minor {
             return true
             
-        }
-        else {
-//            println("Don't match")
+        } else {
             return false
         }
     }

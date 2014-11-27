@@ -15,14 +15,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var profileImageView: PFImageView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet var pictureButton:UIButton!
     
     var userForProfile:User = User()
     
     var userWorkLogs:Array<WorkLog> = []
     
-    
-    
-
     @IBAction func pictureButtonPress(sender: AnyObject) {
         
     }
@@ -34,7 +32,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
         self.profileImageView.clipsToBounds = true
-
+        
         self.profileImageView.file = userForProfile.profileImage
         self.profileImageView.loadInBackground(nil)
         self.view.sendSubviewToBack(self.tableView)
@@ -67,9 +65,22 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("workLogEntry", forIndexPath: indexPath) as RoomTableViewCell
         let entry = self.userWorkLogs[indexPath.row]
-        cell.nameLabel.text = "\(entry.updatedAt)"
-        cell.locationLabel.text = entry.room
-        cell.timeLabel.text = "working for \(entry.time)"
+        
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .ShortStyle
+        
+
+        
+        let date = formatter.stringFromDate(entry.updatedAt)
+        
+        cell.nameLabel.text = date
+        cell.locationLabel.text = "working in the \(entry.room)"
+        
+        cell.timeLabel.text = "for \(entry.time.integerValue/60) minutes"
+//        let timeFormatter = NSNumberFormatter()
+//        timeFormatter.maximumFractionDigits = 2
+//        timeFormatter.stringFromNumber(entry.time.integerValue/60)
+
         
 
         // Configure the cell...
@@ -90,50 +101,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    func makePictureButton(visible:Bool){
+        if visible{
+        self.pictureButton.hidden = false
+        self.pictureButton.userInteractionEnabled = true
+        } else if !visible {
+            self.pictureButton.hidden = true
+            self.pictureButton.userInteractionEnabled = false
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

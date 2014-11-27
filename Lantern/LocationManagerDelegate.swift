@@ -103,16 +103,34 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                     
 //                    switch beacon.proximity! {
 //                    case CLProximity.Far:
-////                        println("You are in far proximity")
+//                        println("You are in far proximity")
 //                    case CLProximity.Near:
-////                        println("You are in near proximity")
+//                        println("You are in near proximity")
 //                    case CLProximity.Immediate:
-////                        println("You are in immediate proximity")
+//                        println("You are in immediate proximity")
 //                    case CLProximity.Unknown:
-////                        println("cant tell how far away you are")
+//                        println("cant tell how far away you are")
 //                    
 //                        return
 //                    }
+                }
+                
+                if kitchenBeacon.isEqualToBeacon(beacon as CLBeacon) {
+//                    println("Found kitchen beacon")
+                    if currentUser!.room != RoomNames.Kitchen {
+                        currentUser!.room = RoomNames.Kitchen
+                        currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
+                    }
+                    
+                }
+                
+                if lamainBeacon.isEqualToBeacon(beacon as CLBeacon) {
+//                    println("Found LA main beacon")
+                    if currentUser!.room != RoomNames.LAMain {
+                        currentUser!.room = RoomNames.LAMain
+                        currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
+                    }
+                    
                 }
             }
         }

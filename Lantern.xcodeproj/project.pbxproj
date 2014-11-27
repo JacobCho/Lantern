@@ -337,7 +337,6 @@
 				TargetAttributes = {
 					524DC5781A1A957F00B359C8 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 6D3ETKGB5Z;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -591,7 +590,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Lantern-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lantern/Lantern-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -614,7 +613,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Lantern-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lantern/Lantern-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

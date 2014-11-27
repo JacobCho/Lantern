@@ -11,14 +11,22 @@ import UIKit
 class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObjectProtocol, UIScrollViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView:UITableView!
+    @IBOutlet var cohortLabel: UILabel!
     
     lazy var lighthouseClass = []
     let listButton:UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.rowHeight = UITableViewAutomaticDimension;
-        self.tableView.estimatedRowHeight = 100.0;
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 60.0
+        let firstSection: AnyObject = lighthouseClass[0]
+        let firstUser = firstSection[0] as User
+        if firstUser.isWebTA || firstUser.isWebStudent {
+            self.cohortLabel.text = "Web Cohort"
+        } else if firstUser.isIosStudent || firstUser.isIosTA {
+            self.cohortLabel.text = "iOS Cohort"
+        }
         
     }
     
@@ -59,7 +67,8 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
             if let workStartedDate = userEntry.workingSince {
                 let timeWorking:NSTimeInterval = now.timeIntervalSinceDate(workStartedDate)
                 if timeWorking > 60 && timeWorking < 3600 {
-                    cell.timeLabel.text = " for \(timeWorking/60) minutes"
+                    let minStr = NSString(format: "%.1f", timeWorking/60)
+                    cell.timeLabel.text = " for \(minStr) minutes"
                 } else if timeWorking > 360 {
                     let hourStr = NSString(format: "%.2f", timeWorking/3600)
                     cell.timeLabel.text = " for \(hourStr) hours"

@@ -37,8 +37,8 @@ class MessageTableViewController: PFQueryTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.rowHeight = UITableViewAutomaticDimension;
-        self.tableView.estimatedRowHeight = 100.0;
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 100.0
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.startCheckingForNewMessages()
 

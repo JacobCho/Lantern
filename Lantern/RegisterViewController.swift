@@ -67,7 +67,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
         photoPickerActionSheet.showInView(self.view)
     
     }
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+    func actionSheet(actionSheet: UIActionSheet, didDismissWithButtonIndex buttonIndex: Int) {
         println("user clicked button at index:\(buttonIndex)")
         switch buttonIndex{
         case 1:

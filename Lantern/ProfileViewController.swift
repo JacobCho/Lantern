@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var nameTextLabel: UILabel!
     @IBOutlet var profileImageView: PFImageView!
@@ -22,6 +22,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var userWorkLogs:Array<WorkLog> = []
     
     @IBAction func pictureButtonPress(sender: AnyObject) {
+        let photoPickerActionSheet:UIActionSheet = UIActionSheet(title: "Take new photo or use existing", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Take new photo", "Use photo from library")
+
+        photoPickerActionSheet.showInView(self.view)
         
     }
     @IBAction func escapePress(sender: AnyObject) {
@@ -76,8 +79,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let formatter = NSDateFormatter()
         formatter.dateStyle = .ShortStyle
         
-
-        
         let date = formatter.stringFromDate(entry.updatedAt)
         
         cell.nameLabel.text = date
@@ -117,5 +118,46 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.pictureButton.userInteractionEnabled = false
         }
     }
+    
+    func actionSheet(actionSheet: UIActionSheet, didDismissWithButtonIndex buttonIndex: Int) {
+        switch buttonIndex{
+        case 1:
+            let newPhotoPicker:UIImagePickerController = UIImagePickerController()
+            newPhotoPicker.delegate = self
+            newPhotoPicker.sourceType = .Camera
+            self.presentViewController(newPhotoPicker, animated: true, completion: { () -> Void in
+                println("opening user's camera")
+            })
+        case 2:
+            let oldPhotoPicker:UIImagePickerController = UIImagePickerController()
+            oldPhotoPicker.delegate = self
+            oldPhotoPicker.sourceType = .SavedPhotosAlbum
+            self.presentViewController(oldPhotoPicker, animated: true, completion: { () -> Void in
+                println("opening user's saved photos")
+            })
+            
+        default:()
+        
+        }
+
+    }
+    
+//    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+//        
+//        actionSheet.dismissWithClickedButtonIndex(buttonIndex, animated: true)
+//        
+//            }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            println("THIS PHOTO")
+        })
+        let imageFile = PFFile(data: UIImageJPEGRepresentation(image, 0.5))
+        userForProfile.profileImage = imageFile
+        profileImageView.image = image
+        userForProfile.saveInBackgroundWithBlock(nil)
+        
+    }
+
 
 }

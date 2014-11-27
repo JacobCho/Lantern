@@ -69,6 +69,7 @@
 		522CB10C1A1D91A500B0FC0B /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		522CB10E1A1DB3B100B0FC0B /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		52439D1B1A20061B006E5740 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		524D02E91A26CD7500FAEC6F /* Lantern-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lantern-Bridging-Header.h"; sourceTree = "<group>"; };
 		524DC5791A1A957F00B359C8 /* Lantern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lantern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524DC57D1A1A957F00B359C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524DC57E1A1A957F00B359C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +186,7 @@
 		524DC57C1A1A957F00B359C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				524D02E91A26CD7500FAEC6F /* Lantern-Bridging-Header.h */,
 				524DC57E1A1A957F00B359C8 /* AppDelegate.swift */,
 				524DC57D1A1A957F00B359C8 /* Info.plist */,
 			);
@@ -218,7 +220,6 @@
 				8457C2E91A22C962000E719E /* SectionHeader.swift */,
 				8457C2E51A22893E000E719E /* IndoorMapView.swift */,
 				522CB10E1A1DB3B100B0FC0B /* MessageTableViewCell.swift */,
-				8490E02E1A257EF200E4F3B9 /* MapOverlay.swift */,
 				846DCB061A2425DA006416BE /* RoomTableViewCell.swift */,
 			);
 			name = Views;
@@ -248,6 +249,7 @@
 				522CB10C1A1D91A500B0FC0B /* Messages.swift */,
 				8490E0301A25C57A00E4F3B9 /* WorkLog.swift */,
 				527CBE141A2542DB00416A92 /* Beacon.swift */,
+				8490E02E1A257EF200E4F3B9 /* MapOverlay.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";

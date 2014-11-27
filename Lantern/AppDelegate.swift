@@ -64,13 +64,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+        let navigationController:UINavigationController = self.window?.rootViewController as UINavigationController
 
         if let message = userInfo["aps"]?["alert"] as String? {
             println(message)
             
-            var alertView = UIAlertView(title: "New Message", message: message, delegate: nil, cancelButtonTitle: "Cancel")
-            alertView.show()
+            var topViewController : UIViewController = navigationController.topViewController
             
+             var pushAlert = SCLAlertView()
+             pushAlert.showCustom(topViewController, image: UIImage(named: "lighthouseOn"), color: UIColor(red: 47/255, green: 177/255, blue: 118/255, alpha: 1), title: "New Message", subTitle: message, closeButtonTitle: "Ok", duration: 0)
         }
 
     }

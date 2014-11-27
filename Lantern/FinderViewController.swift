@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+
+
 private struct mapIconStartingPosition {
     //all points are relative to a 1500px square map
     static let wmsWC1 = CGPointMake(800, 770)
@@ -60,8 +62,18 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title=userToBeFound.username
+        
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if DeviceType.IS_IPHONE_6P {
+            self.indoorMap.contentSize = CGSizeMake(1024, 1024)
+            self.indoorMap.setContentOffset(CGPointMake(500, 800), animated: true)
+            
+        }
     }
     
     override func viewDidLayoutSubviews() {

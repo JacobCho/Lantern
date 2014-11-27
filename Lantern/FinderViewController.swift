@@ -69,11 +69,12 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-        if DeviceType.IS_IPHONE_6P {
-            self.indoorMap.contentSize = CGSizeMake(1024, 1024)
-            self.indoorMap.setContentOffset(CGPointMake(500, 800), animated: true)
+//        if DeviceType.IS_IPHONE_6P {
+            self.indoorMap.contentSize = CGSizeMake(1500 ,1500)
+            let windowSize = self.view.frame.size
+            self.indoorMap.setContentOffset(CGPointMake(750 - windowSize.width/2, 750 - windowSize.height/2), animated: true)
             
-        }
+//        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -95,7 +96,7 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
     func configureMap(){
         
         self.layoutMapOverlays(1.0)
-
+        //add overlays
         self.indoorMap.addSubview(lAnw)
         self.indoorMap.addSubview(lAnorthBoardroom)
         self.indoorMap.addSubview(lAsouthwest)
@@ -104,7 +105,7 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
         self.indoorMap.addSubview(lHoffices)
         self.indoorMap.addSubview(lHworkarea)
         self.indoorMap.addSubview(kitchen)
-        
+        //add icons
         self.indoorMap.addSubview(womensBathroomIcon1)
         self.indoorMap.addSubview(womensBathroomIcon2)
         self.indoorMap.addSubview(mensBathroomIcon)
@@ -122,8 +123,9 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
     }
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
-//        println("I see scrolling!")
-        
+        //if the scroll view is on the edges of the screen bounce it back towards the center
+//        var contentOffset = scrollView.contentOffset
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

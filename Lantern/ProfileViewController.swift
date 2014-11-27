@@ -89,7 +89,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 //        timeFormatter.maximumFractionDigits = 2
 //        timeFormatter.stringFromNumber(entry.time.integerValue/60)
 
-        
 
         // Configure the cell...
 

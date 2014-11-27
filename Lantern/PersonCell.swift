@@ -25,8 +25,8 @@ class PersonCell: UICollectionViewCell {
         pulseView.backgroundColor = UIColor(red: 26.0/255.0, green: 188.0/255.0, blue: 156.0/255.0, alpha: 1)
         pulseView.layer.cornerRadius = self.imageView.frame.width/2
         
-        self.addSubview(pulseView)
-        self.sendSubviewToBack(pulseView)
+        self.contentView.addSubview(pulseView)
+        self.contentView.sendSubviewToBack(pulseView)
         // Add the pulse animation
         let scaleAnimation = CABasicAnimation()
         scaleAnimation.keyPath = "transform.scale"
@@ -36,6 +36,11 @@ class PersonCell: UICollectionViewCell {
         scaleAnimation.fromValue = 1.1
         scaleAnimation.toValue = 0.8
         pulseView.layer.addAnimation(scaleAnimation, forKey: "scale")
+        
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
         
     }
     

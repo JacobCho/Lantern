@@ -23,4 +23,5 @@ class PeopleLayout: UICollectionViewFlowLayout {
 
     }
 
+
 }

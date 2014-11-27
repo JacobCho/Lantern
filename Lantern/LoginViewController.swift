@@ -28,7 +28,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         notification.alertBody = "Test"
         UIApplication.sharedApplication().presentLocalNotificationNow(notification)
         
-        
 
     }
     

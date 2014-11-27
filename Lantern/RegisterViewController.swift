@@ -105,9 +105,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
         // Check if textfields are empty
         if self.usernameTextField.text.isEmpty || self.emailTextField.text.isEmpty || self.passwordTextField.text.isEmpty || self.confirmPasswordTextField.text.isEmpty || self.profileImageData == nil {
             // Show Alert
-            var incompleteAlert = UIAlertController(title: "Could Not Log In", message: "Please fill out all textfields and add a profile picture", preferredStyle: UIAlertControllerStyle.Alert)
-            incompleteAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
-            self.presentViewController(incompleteAlert, animated: true, completion: nil)
+            var incompleteAlert = SCLAlertView()
+            incompleteAlert.showError(self, title: "Could Not Log In", subTitle: "Please fill out all textfields and add a profile picture", closeButtonTitle: "Ok", duration: 0)
+            
             
         } else {
             self.checkPasswordsMatch()
@@ -120,9 +120,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
         }
         else {
             // Show Alert
-            var passwordsAlert = UIAlertController(title: "Could Not Log In", message: "Your passwords do not match", preferredStyle: UIAlertControllerStyle.Alert)
-            passwordsAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
-            self.presentViewController(passwordsAlert, animated: true, completion: nil)
+            var passwordsAlert = SCLAlertView()
+            passwordsAlert.showError(self, title: "Could Not Register", subTitle: "Your passwords do not match", closeButtonTitle: "Ok", duration: 0)
 
         }
     }

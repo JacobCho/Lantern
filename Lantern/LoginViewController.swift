@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
+
 class LoginViewController: UIViewController, UITextFieldDelegate
 {
     @IBOutlet weak var usernameTextField: UITextField!
@@ -47,19 +48,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate
                     self.passwordTextField.text = nil
                 } else {
                     // If login unsuccessful
-                    var loginErrorAlert = UIAlertController(title: "Error", message: "There was a problem logging in", preferredStyle: UIAlertControllerStyle.Alert)
-                    loginErrorAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
-                    self.presentViewController(loginErrorAlert, animated: true, completion: nil)
+                    var loginErrorAlert = SCLAlertView()
+                    loginErrorAlert.showError(self, title: "Error", subTitle: "There was a problem logging in", closeButtonTitle: "Ok", duration: 0)
+                
                 }
             })
             
         }
         // If textfields are empty show alert
         else {
-            
-            var incompleteAlert = UIAlertController(title: "Could Not Log In", message: "Please fill out all textfields", preferredStyle: UIAlertControllerStyle.Alert)
-            incompleteAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
-            self.presentViewController(incompleteAlert, animated: true, completion: nil)
+            var incompleteAlert = SCLAlertView()
+            incompleteAlert.showError(self, title: "Could Not Log In", subTitle: "Please fill out all textfields", closeButtonTitle: "Ok", duration: 0)
         }
         
     }

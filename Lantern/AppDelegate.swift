@@ -64,13 +64,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+        let navigationController:UINavigationController = self.window?.rootViewController as UINavigationController
 
         if let message = userInfo["aps"]?["alert"] as String? {
             println(message)
             
-            var alertView = UIAlertView(title: "New Message", message: message, delegate: nil, cancelButtonTitle: "Cancel")
-            alertView.show()
+            var topViewController : UIViewController = navigationController.topViewController
             
+             var pushAlert = SCLAlertView()
+             pushAlert.showInfo(topViewController, title: "New Message", subTitle: message, closeButtonTitle: "Ok", duration: 0)
         }
 
     }

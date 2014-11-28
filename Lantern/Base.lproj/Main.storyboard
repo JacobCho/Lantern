@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nEV-1r-NYL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nEV-1r-NYL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -1097,10 +1097,10 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMG-I6-eT8">
-                                            <rect key="frame" x="20" y="5" width="282" height="70"/>
+                                            <rect key="frame" x="80" y="5" width="222" height="70"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czl-tI-h9u">
-                                                    <rect key="frame" x="10" y="8" width="262" height="54"/>
+                                                    <rect key="frame" x="10" y="8" width="202" height="54"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1128,7 +1128,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="bH1-Oa-ad5" firstAttribute="top" secondItem="Q46-ze-I2c" secondAttribute="top" constant="5" id="Fob-Gd-l1o"/>
-                                        <constraint firstItem="uMG-I6-eT8" firstAttribute="leading" secondItem="Q46-ze-I2c" secondAttribute="leading" constant="20" id="IWk-de-id1"/>
+                                        <constraint firstItem="uMG-I6-eT8" firstAttribute="leading" secondItem="Q46-ze-I2c" secondAttribute="leading" constant="80" id="IWk-de-id1"/>
                                         <constraint firstItem="Asc-q3-rkX" firstAttribute="leading" secondItem="uMG-I6-eT8" secondAttribute="trailing" id="Nvm-oQ-gLY"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="bH1-Oa-ad5" secondAttribute="trailing" constant="5" id="ZQk-EG-MWB"/>
                                         <constraint firstItem="uMG-I6-eT8" firstAttribute="top" secondItem="Q46-ze-I2c" secondAttribute="top" constant="5" id="jdL-l4-Hc1"/>
@@ -1164,10 +1164,10 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewY-AQ-FfM">
-                                            <rect key="frame" x="90" y="5" width="290" height="74"/>
+                                            <rect key="frame" x="90" y="5" width="230" height="74"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tB0-nv-Gh7">
-                                                    <rect key="frame" x="10" y="8" width="270" height="58"/>
+                                                    <rect key="frame" x="10" y="8" width="210" height="58"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1197,7 +1197,7 @@
                                         <constraint firstItem="ewY-AQ-FfM" firstAttribute="top" secondItem="Y5j-gO-rWV" secondAttribute="top" constant="5" id="35g-9h-IkZ"/>
                                         <constraint firstItem="ewY-AQ-FfM" firstAttribute="leading" secondItem="iLs-J1-EZe" secondAttribute="trailing" id="OZm-Rr-hwA"/>
                                         <constraint firstItem="iLs-J1-EZe" firstAttribute="top" secondItem="Y5j-gO-rWV" secondAttribute="topMargin" constant="2" id="OnH-Jz-FDU"/>
-                                        <constraint firstAttribute="trailing" secondItem="ewY-AQ-FfM" secondAttribute="trailing" constant="20" id="PFx-CI-Bkz"/>
+                                        <constraint firstAttribute="trailing" secondItem="ewY-AQ-FfM" secondAttribute="trailing" constant="80" id="PFx-CI-Bkz"/>
                                         <constraint firstItem="lgL-2l-izl" firstAttribute="top" secondItem="Y5j-gO-rWV" secondAttribute="top" constant="5" id="PyE-kk-OHW"/>
                                         <constraint firstAttribute="bottom" secondItem="ewY-AQ-FfM" secondAttribute="bottom" constant="5" id="hil-rv-KZI"/>
                                         <constraint firstItem="lgL-2l-izl" firstAttribute="leading" secondItem="Y5j-gO-rWV" secondAttribute="leading" constant="5" id="lvN-iD-c3T"/>

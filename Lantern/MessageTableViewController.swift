@@ -59,6 +59,7 @@ class MessageTableViewController: PFQueryTableViewController {
         
         //Add subquery to main query
         query = PFQuery.orQueryWithSubqueries([senderQuery, selfRecipientQuery])
+        query.orderByAscending("createdAt")
         
         return query
     }

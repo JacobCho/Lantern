@@ -224,6 +224,18 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
         }
         
     }
+    
+//    func animateView(){
+//        
+//        UIView.animateWithDuration(2.0, delay: 0.1, options: UIViewAnimationOptions.Repeat, animations: { () -> Void in
+//            self.lightImageView.alpha = 0
+//            self.titleLabel.alpha = 0
+//            }) { (flag: Bool) -> Void in
+//                UIView.animateWithDuration(2.0, animations: { () -> Void in
+//                    self.lightImageView.alpha = 1
+//                })
+//        }
+//    }
 
     
 

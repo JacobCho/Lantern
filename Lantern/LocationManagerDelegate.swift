@@ -39,14 +39,7 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                 //TODO: show allert that location services wont be working
             }
     }
-    
-    
-    
 
-    
-//    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
-//        
-//    }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var currentLocation:CLLocation = locations[0] as CLLocation
@@ -75,7 +68,6 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
 //            }
         
             for beacon in beacons {
-                println("user in \(currentUser!.room!)")
                 
                 if workRoomBeacon.isEqualToBeacon(beacon as CLBeacon) {
 //                    println("Found work room beacon")
@@ -90,9 +82,7 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                             currentUser!.saveInBackgroundWithBlock(nil)
                             var workRoomAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Lighthouse Labs main work room")
                         }
-                        
                     }
-                    
                 }
                 
                 if kitchenBeacon.isEqualToBeacon(beacon as CLBeacon) {
@@ -106,7 +96,6 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                             var kitchenAlert = RKDropdownAlert.title("Room Change", message: "You are now in the kitchen")
                         }
                     }
-                    
                 }
                 
                 if lamainBeacon.isEqualToBeacon(beacon as CLBeacon) {
@@ -119,10 +108,8 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                                 var launchAcademyAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Launch Academy main room")
                         }
                     }
-                    
                 }
             }
-
     }
     
     func locationManager(manager: CLLocationManager!, monitoringDidFailForRegion region: CLRegion!, withError error: NSError!) {

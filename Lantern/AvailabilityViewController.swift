@@ -37,7 +37,9 @@ class AvailabilityViewController: UICollectionViewController {
         listButton.setImage(UIImage(named: "peopleIcon_1x"), forState: .Normal)
         
         self.view.addSubview(listButton)
+        
         let beaconRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString:"F7826DA6-4FA2-4E98-8024-BC5B71E0893E"), identifier: "Lighthouse")
+        
         let appDel = UIApplication.sharedApplication().delegate as AppDelegate
         appDel.locationManager.startRangingBeaconsInRegion(beaconRegion)
 
@@ -47,6 +49,7 @@ class AvailabilityViewController: UICollectionViewController {
         super.viewDidAppear(animated)
         
         workingButton = UIBarButtonItem(title: "Working", style: .Plain , target: self, action: "changeWorkStatus")
+        
         if thisUser.isWorking {
             workingButton.title = "Stop Working"
         } else {

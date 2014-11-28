@@ -112,10 +112,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func makePictureButton(visible:Bool){
-        if visible{
+        if visible == true {
         self.pictureButton.hidden = false
         self.pictureButton.userInteractionEnabled = true
-        } else if !visible {
+        } else if visible == false {
             self.pictureButton.hidden = true
             self.pictureButton.userInteractionEnabled = false
         }

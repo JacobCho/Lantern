@@ -67,39 +67,22 @@ class MessageTableViewController: PFQueryTableViewController {
         
         var message = object as Messages
         var messageCounter:Int = 0
-    
+        var cell:MessageTableViewCell!
         if message.senderName == thisUser.username {
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageSent) as MessageTableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageSent) as MessageTableViewCell
+            cell = self.configureCellForUser(cell, user: thisUser, indexPath: indexPath)
             
-            cell.messageTextLabel.text = message.message
-            
-            if message.senderName != lastMessagePostedBy{
-                    cell.profileImageView.file = thisUser.profileImage?
-                    cell.profileImageView.loadInBackground(nil)
-                    self.hideOrUnhideCellContent(cell, hide: false)
-                } else {
-                //this message is chained 
-                    self.hideOrUnhideCellContent(cell, hide: true)
-            }
-            lastMessagePostedBy = message.senderName
-            return cell
-        } else {
+        } else if message.senderName == messageRecipient.username {
             //deque a recieved message cell
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageRecieved) as MessageTableViewCell
-            cell.messageTextLabel.text = message.message
-            
-            if message.senderName != lastMessagePostedBy {
-                cell.profileImageView.file = self.messageRecipient.profileImage?
-                cell.profileImageView.loadInBackground(nil)
-                self.hideOrUnhideCellContent(cell, hide: false)
-            
-            } else {
-                self.hideOrUnhideCellContent(cell, hide: true)
-            }
-            lastMessagePostedBy = message.senderName
-            return cell
+            cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageRecieved) as MessageTableViewCell
+            cell = self.configureCellForUser(cell, user: messageRecipient , indexPath: indexPath)
         }
-    }
+        cell.messageTextLabel.text = message.message
+
+
+    return cell
+        
+}
 
     func startCheckingForNewMessages(){
         timer = NSTimer.scheduledTimerWithTimeInterval(globalConst.updateSpeed, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
@@ -114,6 +97,21 @@ class MessageTableViewController: PFQueryTableViewController {
     override func viewWillDisappear(animated: Bool) {
         self.timer?.invalidate()
     }
+    
+    func configureCellForUser(cell:MessageTableViewCell, user:User, indexPath:NSIndexPath)->MessageTableViewCell{
+        cell.profileImageView.file = user.profileImage?
+        cell.profileImageView.loadInBackground(nil)
+        if indexPath.row > 0 {
+            let previousMessage = self.objects[indexPath.row-1] as Messages
+            if previousMessage.senderName == user.username{
+                self.hideOrUnhideCellContent(cell, hide: true)
+            }
+        } else {
+            self.hideOrUnhideCellContent(cell, hide: false)
+        }
+        return cell
+    }
+    
     
     func hideOrUnhideCellContent(cell:MessageTableViewCell, hide:Bool){
 

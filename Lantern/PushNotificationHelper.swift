@@ -11,6 +11,7 @@ import Parse
 
     func pushMessageToUser(userName : String, andMessage message : String, withSenderName senderName : String) {
     
+        println("username: \(userName) + sendername: \(senderName) + message: \(message)")
         var push : PFPush = PFPush()
         push.setChannel(userName)
         push.setMessage(senderName + ": " + message)

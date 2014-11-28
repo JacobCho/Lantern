@@ -87,7 +87,7 @@ class ChatContainerViewController: UIViewController, UITextFieldDelegate {
             var logEntry = WorkLog()
             
         // Push Notification to message recipient
-        pushMessageToUser(messageRecipient.username, andMessage: message.message)
+            pushMessageToUser(messageRecipient.username, andMessage: message.message, withSenderName:message.senderName)
         
         self.chatTextField.text = nil
         }

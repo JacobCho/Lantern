@@ -22,9 +22,9 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
         self.tableView.estimatedRowHeight = 60.0
         let firstSection: AnyObject = lighthouseClass[0]
         let firstUser = firstSection[0] as User
-        if firstUser.isWebTA || firstUser.isWebStudent {
+        if firstUser.doesWeb() {
             self.cohortLabel.text = "Web Cohort"
-        } else if firstUser.isIosStudent || firstUser.isIosTA {
+        } else if firstUser.doesIos() {
             self.cohortLabel.text = "iOS Cohort"
         }
         

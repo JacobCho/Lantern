@@ -45,6 +45,24 @@ class User: PFUser, PFSubclassing {
             return false
         }
     }
+    
+    func doesIos() -> Bool {
+        
+        if self.isIosStudent || self.isIosTA {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func doesWeb() -> Bool {
+        
+        if self.isWebStudent || self.isWebTA {
+            return true
+        } else {
+            return false
+        }
+    }
    
 
 }

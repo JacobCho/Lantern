@@ -47,6 +47,7 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
     @IBAction func collectionViewButtonPress(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PersonEntry", forIndexPath: indexPath) as RoomTableViewCell
         let thisSection = lighthouseClass[indexPath.section]
@@ -83,16 +84,16 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
             cell.locationLabel.textColor = UIColor(red: 1, green: 0.1, blue: 0.1, alpha: 1)
             cell.timeLabel.text = ""
         }
-        
-        // Configure the cell...tab
-        
         return cell
     }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let thisSection: AnyObject = lighthouseClass[indexPath.section]
         var profile = self.storyboard?.instantiateViewControllerWithIdentifier("Profile") as ProfileViewController
         profile.userForProfile = thisSection[indexPath.row] as User
-        self.presentViewController(profile, animated: true, completion: nil)
+        self.presentViewController(profile, animated: true) { () -> Void in
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
         
     }
 

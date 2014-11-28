@@ -71,41 +71,48 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                 
                 if workRoomBeacon.isEqualToBeacon(beacon as CLBeacon) {
 //                    println("Found work room beacon")
-                    if currentUser!.room! != RoomNames.LHMain {
-                   
-                        if beacon.proximity == CLProximity.Near {
-
-                            println("USER UPDATE TO LHMAIN from\(currentUser!.room!) equal to \(RoomNames.LHMain)")
+                    if let room = currentUser?.room {
+                        if room != RoomNames.LHMain {
                             
-                            currentUser!.room = RoomNames.LHMain
-                            
-                            currentUser!.saveInBackgroundWithBlock(nil)
-                            var workRoomAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Lighthouse Labs main work room")
+                            if beacon.proximity == CLProximity.Near {
+                                
+                                println("USER UPDATE TO LHMAIN from\(currentUser!.room!) equal to \(RoomNames.LHMain)")
+                                
+                                currentUser!.room = RoomNames.LHMain
+                                
+                                currentUser!.saveInBackgroundWithBlock(nil)
+                                var workRoomAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Lighthouse Labs main work room")
+                            }
                         }
+  
                     }
-                }
+                                   }
                 
                 if kitchenBeacon.isEqualToBeacon(beacon as CLBeacon) {
 //                    println("Found kitchen beacon")
-                    if currentUser!.room! != RoomNames.Kitchen {
+                    if let room = currentUser?.room{
+                        if room != RoomNames.Kitchen {
 
-                        if beacon.proximity == CLProximity.Near  {
-                            println("USER UPDATE TO KITCHEN from \(currentUser!.room!) equal to \(RoomNames.Kitchen)")
-                            currentUser!.room = RoomNames.Kitchen
-                            currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
-                            var kitchenAlert = RKDropdownAlert.title("Room Change", message: "You are now in the kitchen")
+                            if beacon.proximity == CLProximity.Near  {
+                                println("USER UPDATE TO KITCHEN from \(currentUser!.room!) equal to \(RoomNames.Kitchen)")
+                                currentUser!.room = RoomNames.Kitchen
+                                currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
+                                var kitchenAlert = RKDropdownAlert.title("Room Change", message: "You are now in the kitchen")
+                            }
                         }
                     }
                 }
                 
                 if lamainBeacon.isEqualToBeacon(beacon as CLBeacon) {
 //                    println("Found LA main beacon")
-                    if currentUser!.room! != RoomNames.LAMain {
-                            if beacon.proximity == CLProximity.Near {
-                                println("USER UPDATE TO LAMAIN from \(currentUser!.room!) equal to \(RoomNames.LAMain)")
-                                currentUser!.room = RoomNames.LAMain
-                                currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
-                                var launchAcademyAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Launch Academy main room")
+                    if let room = currentUser?.room{
+                        if room != RoomNames.LAMain {
+                                if beacon.proximity == CLProximity.Near {
+                                    println("USER UPDATE TO LAMAIN from \(currentUser!.room!) equal to \(RoomNames.LAMain)")
+                                    currentUser!.room = RoomNames.LAMain
+                                    currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
+                                    var launchAcademyAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Launch Academy main room")
+                            }
                         }
                     }
                 }

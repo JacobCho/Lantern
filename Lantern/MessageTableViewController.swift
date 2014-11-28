@@ -64,23 +64,25 @@ class MessageTableViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!, object: PFObject!) -> PFTableViewCell! {
-        
-        var message = object as Messages
-        var messageCounter:Int = 0
-        var cell:MessageTableViewCell!
-        if message.senderName == thisUser.username {
-            cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageSent) as MessageTableViewCell
-            cell = self.configureCellForUser(cell, user: thisUser, indexPath: indexPath)
-            
-        } else if message.senderName == messageRecipient.username {
-            //deque a recieved message cell
-            cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageRecieved) as MessageTableViewCell
-            cell = self.configureCellForUser(cell, user: messageRecipient , indexPath: indexPath)
+        if let message = object as? Messages{
+            var messageCounter:Int = 0
+            var cell:MessageTableViewCell!
+            if message.senderName == thisUser.username {
+                cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageSent) as MessageTableViewCell
+                cell = self.configureCellForUser(cell, user: thisUser, indexPath: indexPath)
+                
+            } else if message.senderName == messageRecipient.username {
+                //deque a recieved message cell
+                cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIDMessageRecieved) as MessageTableViewCell
+                cell = self.configureCellForUser(cell, user: messageRecipient , indexPath: indexPath)
+            }
+
+            cell.messageTextLabel.text = message.message
+            return cell
         }
-        cell.messageTextLabel.text = message.message
+        println("NO MESSAGE FOR YOU")
+        return nil
 
-
-    return cell
         
 }
 

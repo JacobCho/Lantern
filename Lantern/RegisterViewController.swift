@@ -19,7 +19,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
     @IBOutlet var pictureImageView: UIImageView!
     @IBOutlet var teacher: UIButton!
     
-    var user = User()
+    var user:User = User()
     var profileImageData:NSData?
     
 
@@ -39,6 +39,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
         user.isIosTA = false
         user.isWebStudent = false
         user.isWebTA = false
+        user.room = RoomNames.None
     }
     
     

@@ -24,7 +24,10 @@ class AvailabilityViewController: UICollectionViewController {
         self.collectionView!.backgroundColor = UIColor.whiteColor()
         self.collectionView!.dataSource = self
         self.queryForClass()
+        
+
         if thisUser.doesIos() {
+            
             self.title = "\(thisUser.username) - iOS cohort"
         } else if thisUser.isWebStudent || thisUser.isWebTA {
             self.title = "\(thisUser.username) Web cohort"
@@ -127,7 +130,7 @@ class AvailabilityViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let sectionHeader = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "UserGroup", forIndexPath: indexPath) as SectionHeader
-        let font = UIFont(name: "Helvetica-Bold", size: 20)
+        let font = UIFont(name: "Helvetica-Bold", size: 17)
         
         switch indexPath.section {
         case 0 :

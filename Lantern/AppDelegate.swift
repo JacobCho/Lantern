@@ -48,7 +48,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController.navigationBar.translucent = false
         
-    
+        let font = UIFont(name: "Helvetica-Bold", size: 20)
+        let color = UIColor.whiteColor()
+        if let realFont = font{
+            var attributeDict:Dictionary<NSObject,AnyObject> = [NSFontAttributeName: realFont,  NSForegroundColorAttributeName : color]
+            UINavigationBar.appearance().titleTextAttributes = attributeDict
+
+
+        }
+        
+        
+//        var attributes:NSDictionary = attributeDict
+        
+        
+        
+        //NSDictionary(object: font!, forKey: NSFontAttributeName)
+
+//        NSDictionary = [NSFontAttributeName: font, NSForegroundColorAttributeName: color]
+        
+        //NSForegroundColorAttributeName : UIColor.whiteColor()
+//            NSDictionary(object: font!, forKey: NSFontAttributeName)
+        
+
         application.setStatusBarStyle(.LightContent, animated: true)
         
         
@@ -69,6 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         
         let navigationController:UINavigationController = self.window?.rootViewController as UINavigationController
+  
 
         if let message = userInfo["aps"]?["alert"] as String? {
             var topViewController : UIViewController = navigationController.topViewController

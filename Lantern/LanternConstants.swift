@@ -23,6 +23,7 @@ struct RoomNames {
     static let Kitchen = "Kitchen"
     static let LHOffice = "Lighthouse Labs Office"
     static let LHMain = "Lighthouse Labs Main Work Area"
+    static let None = "somewhere out of range"
     
 }
 

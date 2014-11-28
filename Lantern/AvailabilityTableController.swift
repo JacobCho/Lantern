@@ -22,9 +22,9 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
         self.tableView.estimatedRowHeight = 60.0
         let firstSection: AnyObject = lighthouseClass[0]
         let firstUser = firstSection[0] as User
-        if firstUser.isWebTA || firstUser.isWebStudent {
+        if firstUser.doesWeb() {
             self.cohortLabel.text = "Web Cohort"
-        } else if firstUser.isIosStudent || firstUser.isIosTA {
+        } else if firstUser.doesIos() {
             self.cohortLabel.text = "iOS Cohort"
         }
         
@@ -88,7 +88,7 @@ class AvailabilityTableController: UIViewController, UITableViewDelegate, NSObje
         
         return cell
     }
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let thisSection: AnyObject = lighthouseClass[indexPath.section]
         var profile = self.storyboard?.instantiateViewControllerWithIdentifier("Profile") as ProfileViewController
         profile.userForProfile = thisSection[indexPath.row] as User

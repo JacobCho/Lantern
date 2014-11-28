@@ -24,7 +24,7 @@ class AvailabilityViewController: UICollectionViewController {
         self.collectionView!.backgroundColor = UIColor.whiteColor()
         self.collectionView!.dataSource = self
         self.queryForClass()
-        if thisUser.isIosStudent || thisUser.isIosTA {
+        if thisUser.doesIos() {
             self.title = "\(thisUser.username) - iOS cohort"
         } else if thisUser.isWebStudent || thisUser.isWebTA {
             self.title = "\(thisUser.username) Web cohort"
@@ -216,7 +216,7 @@ class AvailabilityViewController: UICollectionViewController {
         
         var query = PFQuery(className: "_User")
         
-        if thisUser.isIosStudent || thisUser.isIosTA {
+        if thisUser.doesIos() {
             
             let studentsQuery = PFQuery(className: "_User")
             studentsQuery.whereKey("isIosStudent", equalTo: true)
@@ -225,7 +225,7 @@ class AvailabilityViewController: UICollectionViewController {
             teachersQuery.whereKey("isIosTA", equalTo: true)
             
             query = PFQuery.orQueryWithSubqueries([studentsQuery,teachersQuery])
-        }   else if thisUser.isWebStudent || thisUser.isWebTA {
+        }   else if thisUser.doesWeb() {
             
             let studentsQuery = PFQuery(className: "_User")
             studentsQuery.whereKey("isWebStudent", equalTo: true)
@@ -250,9 +250,9 @@ class AvailabilityViewController: UICollectionViewController {
                     let aPerson:User! = results[index] as User
                     if aPerson.objectId == self.thisUser.objectId{
                         me.append(aPerson)
-                    } else if aPerson.isWebTA || aPerson.isIosTA {
+                    } else if aPerson.isTeacher() {
                         teachers.append(aPerson)
-                    } else if aPerson.isIosStudent || aPerson.isWebStudent {
+                    } else if aPerson.isStudent() {
                         students.append(aPerson)
                     }
                 }

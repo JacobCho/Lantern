@@ -54,6 +54,7 @@ class PersonCell: UICollectionViewCell {
     }
     
     func pulseColorByRoom() -> UIColor {
+        if self.person.room != nil {
         
         switch self.person.room! {
             
@@ -69,6 +70,10 @@ class PersonCell: UICollectionViewCell {
         default:
             return PulseColor.defaultColor
             
+        }
+        }
+        else {
+            return PulseColor.defaultColor
         }
         
         

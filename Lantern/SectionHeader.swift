@@ -27,13 +27,6 @@ class SectionHeader: UICollectionReusableView {
 
     }
     
-//    override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes! {
-//        self.addSubview(titleLabel)
-//        titleLabel.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
-//        titleLabel.frame = CGRect(x: 50, y: 25, width: 200, height: 50)
-//        
-//        return layoutAttributes
-//    }
     
     override func prepareForReuse() {
         self.addSubview(titleLabel)

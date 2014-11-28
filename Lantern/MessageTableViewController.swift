@@ -20,9 +20,7 @@ class MessageTableViewController: PFQueryTableViewController {
     var thisUser:User = User.currentUser()
     var lastMessagePostedBy:String?
     var timer:NSTimer?
-    
-    let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-    
+
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.parseClassName = Messages.parseClassName()
@@ -42,10 +40,6 @@ class MessageTableViewController: PFQueryTableViewController {
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.startCheckingForNewMessages()
 
-//        appDel.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        
-        
-//        self.tableView.contentOffset 
         
     }
 // MARK: parse query stuff

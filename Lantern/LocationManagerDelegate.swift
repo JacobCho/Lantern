@@ -13,6 +13,8 @@ import CoreLocation
 class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     let lighthouseLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 49.2821103475302, longitude: -123.108108533195)
     
+    var currentUser:User?
+    
     // Initialize Beacons
     let workRoomBeacon : Beacon = Beacon(identifier: "5r b0", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 1964, minorValue: 44674)
     let lamainBeacon : Beacon = Beacon(identifier: "FBcc", UUID: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E", majorValue: 44898, minorValue: 64346)
@@ -24,8 +26,8 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
             
             if status == CLAuthorizationStatus.Authorized {
                 
-                let beaconRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString:workRoomBeacon.UUID), identifier: "Lighthouse")
-                manager.startRangingBeaconsInRegion(beaconRegion)
+//                let beaconRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString:workRoomBeacon.UUID), identifier: "Lighthouse")
+//                manager.startRangingBeaconsInRegion(beaconRegion)
                 
 //                manager.startUpdatingLocation()
 //                let range:CLLocationDistance = 20
@@ -53,57 +55,53 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
     
     }
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
-        var currentUser:User? = User.currentUser()
+        if currentUser == nil {
+            currentUser = User.currentUser()
+        }
         
-        if currentUser != nil {
-            
             // If User is a TA, set to working when in beacon range
-            if currentUser!.isTeacher() {
-                
-                if !currentUser!.isWorking {
-                    currentUser!.isWorking = true
-                    currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
-
-                        var workingAlert = RKDropdownAlert.title("In Beacon range", message: "You are set to working status")
-
-                    
-                }
-            }
+            
+//            if currentUser!.isTeacher() {
+//                
+//                if !currentUser!.isWorking {
+//                    currentUser!.isWorking = true
+//                    currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
+//
+//                        var workingAlert = RKDropdownAlert.title("In Beacon range", message: "You are set to working status")
+//
+//                    
+//                }
+//            }
         
             for beacon in beacons {
+                println("user in \(currentUser!.room!)")
+                
                 if workRoomBeacon.isEqualToBeacon(beacon as CLBeacon) {
 //                    println("Found work room beacon")
-                    if currentUser!.room != RoomNames.LHMain {
-                        
-                        currentUser?.updatedAt
-                        currentUser!.room = RoomNames.LHMain
-                        currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
+                    if currentUser!.room! != RoomNames.LHMain {
+                   
                         if beacon.proximity == CLProximity.Near {
+
+                            println("USER UPDATE TO LHMAIN from\(currentUser!.room!) equal to \(RoomNames.LHMain)")
+                            
+                            currentUser!.room = RoomNames.LHMain
+                            
+                            currentUser!.saveInBackgroundWithBlock(nil)
                             var workRoomAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Lighthouse Labs main work room")
                         }
                         
                     }
                     
-//                    switch beacon.proximity! {
-//                    case CLProximity.Far:
-//                        println("You are in far proximity")
-//                    case CLProximity.Near:
-//                        println("You are in near proximity")
-//                    case CLProximity.Immediate:
-//                        println("You are in immediate proximity")
-//                    case CLProximity.Unknown:
-//                        println("cant tell how far away you are")
-//                    
-//                        return
-//                    }
                 }
                 
                 if kitchenBeacon.isEqualToBeacon(beacon as CLBeacon) {
 //                    println("Found kitchen beacon")
-                    if currentUser!.room != RoomNames.Kitchen {
-                        currentUser!.room = RoomNames.Kitchen
-                        currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
+                    if currentUser!.room! != RoomNames.Kitchen {
+
                         if beacon.proximity == CLProximity.Near  {
+                            println("USER UPDATE TO KITCHEN from \(currentUser!.room!) equal to \(RoomNames.Kitchen)")
+                            currentUser!.room = RoomNames.Kitchen
+                            currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
                             var kitchenAlert = RKDropdownAlert.title("Room Change", message: "You are now in the kitchen")
                         }
                     }
@@ -112,17 +110,18 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate  {
                 
                 if lamainBeacon.isEqualToBeacon(beacon as CLBeacon) {
 //                    println("Found LA main beacon")
-                    if currentUser!.room != RoomNames.LAMain {
-                        currentUser!.room = RoomNames.LAMain
-                        currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
-                        if beacon.proximity == CLProximity.Near {
-                            var launchAcademyAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Launch Academy main room")
+                    if currentUser!.room! != RoomNames.LAMain {
+                            if beacon.proximity == CLProximity.Near {
+                                println("USER UPDATE TO LAMAIN from \(currentUser!.room!) equal to \(RoomNames.LAMain)")
+                                currentUser!.room = RoomNames.LAMain
+                                currentUser!.saveInBackgroundWithTarget(nil, selector: nil)
+                                var launchAcademyAlert = RKDropdownAlert.title("Room Change", message: "You are now in the Launch Academy main room")
                         }
                     }
                     
                 }
             }
-        }
+
     }
     
     func locationManager(manager: CLLocationManager!, monitoringDidFailForRegion region: CLRegion!, withError error: NSError!) {

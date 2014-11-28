@@ -51,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     
         application.setStatusBarStyle(.LightContent, animated: true)
         
+        
         locationManager.delegate = locationManagerDelegate
         locationManager.requestAlwaysAuthorization()
 

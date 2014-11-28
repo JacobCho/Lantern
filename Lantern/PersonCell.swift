@@ -13,9 +13,9 @@ import QuartzCore
 struct PulseColor {
     
     static let defaultColor = UIColor(red: 26.0/255.0, green: 188.0/255.0, blue: 156.0/255.0, alpha: 1)
-    static let blueColor = UIColor(red: 82.0/255.0, green: 141.0/255.0, blue: 250.0/255.0, alpha: 1)
+    static let orangeColor = UIColor(red: 242.0/255.0, green: 90.0/255.0, blue: 44.0/255.0, alpha: 1)
     
-    static let redColor = UIColor(red: 222.0/255.0, green: 91.0/255.0, blue: 108.0/255.0, alpha: 1)
+    static let blueColor = UIColor(red: 44.0/255.0, green: 196.0/255.0, blue: 242.0/255.0, alpha: 1)
     
 }
 
@@ -59,13 +59,13 @@ class PersonCell: UICollectionViewCell {
         switch self.person.room! {
             
         case RoomNames.LAMain:
-            return PulseColor.defaultColor
+            return PulseColor.orangeColor
         
         case RoomNames.LHMain:
-            return PulseColor.blueColor
+            return PulseColor.defaultColor
             
         case RoomNames.Kitchen:
-            return PulseColor.redColor
+            return PulseColor.blueColor
             
         default:
             return PulseColor.defaultColor

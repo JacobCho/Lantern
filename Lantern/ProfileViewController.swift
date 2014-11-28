@@ -87,7 +87,21 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.nameLabel.text = date
         cell.locationLabel.text = "was working in the \(entry.room)"
         
-        cell.timeLabel.text = "for \(entry.time.integerValue/60) minutes"
+        if entry.time.integerValue > 60 && entry.time.integerValue < 3600 {
+            let minutes = entry.time.floatValue/60
+            let minStr = NSString(format: "%.1f", minutes)
+            cell.timeLabel.text = " for \(minStr) minutes"
+        } else if entry.time.integerValue > 3600 {
+            let hours = entry.time.floatValue/3600
+            let hourStr = NSString(format: "%.2f",hours)
+            cell.timeLabel.text = " for \(hourStr) hours"
+            
+        } else {
+            cell.timeLabel.text = " for \(entry.time.integerValue) seconds"
+            
+        }
+
+        
 //        let timeFormatter = NSNumberFormatter()
 //        timeFormatter.maximumFractionDigits = 2
 //        timeFormatter.stringFromNumber(entry.time.integerValue/60)

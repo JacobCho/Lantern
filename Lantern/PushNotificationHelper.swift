@@ -9,11 +9,11 @@
 import Foundation
 import Parse
 
-    func pushMessageToUser(userName : String, andMessage message : String) {
-        
+    func pushMessageToUser(userName : String, andMessage message : String, withSenderName senderName : String) {
+    
         var push : PFPush = PFPush()
         push.setChannel(userName)
-        push.setMessage(userName + ": " + message)
+        push.setMessage(senderName + ": " + message)
         push.sendPushInBackgroundWithTarget(nil, selector: nil)
         
     }

@@ -86,7 +86,7 @@ class AvailabilityViewController: UICollectionViewController {
                 }
                 log.time = now.timeIntervalSinceDate(startedWorking)
                 log.saveInBackgroundWithTarget(self, selector: "queryForClass")
-                workingButton.title = "Stop Working"
+                workingButton.title = "Start working"
 
                 thisUser.workingSince = nil
             }
@@ -94,13 +94,13 @@ class AvailabilityViewController: UICollectionViewController {
         } else if thisUser.isWorking == false {
             thisUser.isWorking = true
             thisUser.workingSince = NSDate(timeIntervalSinceNow: 0)
-            workingButton.title = "Start working"
+            workingButton.title = "Stop Working"
 
             
         } else {
             thisUser.isWorking = true
             thisUser.workingSince = NSDate(timeIntervalSinceNow: 0)
-            workingButton.title = "Start working"
+            workingButton.title = "Stop working"
 
         }
         
@@ -110,6 +110,7 @@ class AvailabilityViewController: UICollectionViewController {
             }
             if success {
                 println("saved user is working \(self.thisUser.isWorking)")
+                self.queryForClass()
             }
         }
         

@@ -747,7 +747,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="35P-g7-nTb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="35P-g7-nTb">
                                 <rect key="frame" x="10" y="0.0" width="565" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="qoe-q9-Z2e">
@@ -996,7 +996,7 @@
                                 <rect key="frame" x="0.0" y="560" width="400" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXv-ea-sOo">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
+                                        <rect key="frame" x="20" y="0.0" width="315" height="40"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1017,12 +1017,12 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Xag-1T-HAG" secondAttribute="trailing" id="DCe-bR-Kmh"/>
                                     <constraint firstAttribute="bottom" secondItem="Xag-1T-HAG" secondAttribute="bottom" id="IYV-pA-wbw"/>
                                     <constraint firstAttribute="bottom" secondItem="aXv-ea-sOo" secondAttribute="bottom" id="K3f-c9-gHK"/>
-                                    <constraint firstItem="aXv-ea-sOo" firstAttribute="leading" secondItem="1Wh-95-Mtn" secondAttribute="leading" id="KaZ-Dj-sZA"/>
+                                    <constraint firstItem="aXv-ea-sOo" firstAttribute="leading" secondItem="1Wh-95-Mtn" secondAttribute="leading" constant="20" id="KaZ-Dj-sZA"/>
                                     <constraint firstItem="Xag-1T-HAG" firstAttribute="leading" secondItem="aXv-ea-sOo" secondAttribute="trailing" id="UGq-8G-VXc"/>
                                     <constraint firstItem="aXv-ea-sOo" firstAttribute="height" secondItem="1Wh-95-Mtn" secondAttribute="height" id="hfQ-Ol-hTm"/>
                                     <constraint firstAttribute="height" constant="40" id="j1a-P5-X83"/>
@@ -1064,7 +1064,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCellYou" rowHeight="80" id="x2Q-k8-Rl6" customClass="MessageTableViewCell" customModule="Lantern" customModuleProvider="target">
+                            <tableViewCell opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCellYou" rowHeight="80" id="x2Q-k8-Rl6" customClass="MessageTableViewCell" customModule="Lantern" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x2Q-k8-Rl6" id="Q46-ze-I2c">
@@ -1077,7 +1077,7 @@
                                                 <constraint firstAttribute="width" constant="10" id="XEo-Za-y4u"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="bH1-Oa-ad5" customClass="PFImageView">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="bH1-Oa-ad5" customClass="PFImageView">
                                             <rect key="frame" x="317" y="5" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="m7a-lN-3N7"/>
@@ -1131,13 +1131,13 @@
                                     <outlet property="profileImageView" destination="bH1-Oa-ad5" id="RZc-C6-3sA"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCellMe" rowHeight="84" id="bsA-g9-gB8" customClass="MessageTableViewCell" customModule="Lantern" customModuleProvider="target">
+                            <tableViewCell opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCellMe" rowHeight="84" id="bsA-g9-gB8" customClass="MessageTableViewCell" customModule="Lantern" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bsA-g9-gB8" id="Y5j-gO-rWV">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="lgL-2l-izl" customClass="PFImageView">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="lgL-2l-izl" customClass="PFImageView">
                                             <rect key="frame" x="5" y="5" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="5n3-gF-crR"/>

@@ -156,7 +156,7 @@ class AvailabilityViewController: UICollectionViewController {
         
         let thisSection: Array = lighthouseClass[indexPath.section] as Array <User>
         let thisPerson: User! = thisSection[indexPath.row] as User
-        
+        cell.person = thisPerson!
         cell.imageView.image = UIImage(named: "person")
         cell.imageView.file = thisPerson.profileImage?
         cell.imageView.loadInBackground(nil)
@@ -173,7 +173,7 @@ class AvailabilityViewController: UICollectionViewController {
         cell.imageView.clipsToBounds = true
         
         cell.nameLabel.text = thisPerson.username
-        cell.person = thisPerson!
+        
         
         return cell
 

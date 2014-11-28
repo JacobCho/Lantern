@@ -10,6 +10,15 @@ import UIKit
 import Parse
 import QuartzCore
 
+struct PulseColor {
+    
+    static let defaultColor = UIColor(red: 26.0/255.0, green: 188.0/255.0, blue: 156.0/255.0, alpha: 1)
+    static let blueColor = UIColor(red: 82.0/255.0, green: 141.0/255.0, blue: 250.0/255.0, alpha: 1)
+    
+    static let redColor = UIColor(red: 222.0/255.0, green: 91.0/255.0, blue: 108.0/255.0, alpha: 1)
+    
+}
+
 class PersonCell: UICollectionViewCell {
     
     var person:User!
@@ -22,7 +31,7 @@ class PersonCell: UICollectionViewCell {
         // Make the background circle
         let pulseView = UIView()
         pulseView.frame = self.imageView.frame
-        pulseView.backgroundColor = UIColor(red: 26.0/255.0, green: 188.0/255.0, blue: 156.0/255.0, alpha: 1)
+        pulseView.backgroundColor = pulseColorByRoom()
         pulseView.layer.cornerRadius = self.imageView.frame.width/2
         
         self.contentView.addSubview(pulseView)
@@ -40,6 +49,27 @@ class PersonCell: UICollectionViewCell {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        
+    }
+    
+    func pulseColorByRoom() -> UIColor {
+        
+        switch self.person.room! {
+            
+        case RoomNames.LAMain:
+            return PulseColor.defaultColor
+        
+        case RoomNames.LHMain:
+            return PulseColor.blueColor
+            
+        case RoomNames.Kitchen:
+            return PulseColor.redColor
+            
+        default:
+            return PulseColor.defaultColor
+            
+        }
         
         
     }

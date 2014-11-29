@@ -167,7 +167,7 @@ class AvailabilityViewController: UICollectionViewController {
         if thisPerson.isWorking {
             cell.contentView.alpha = 1
             cell.userInteractionEnabled = true
-            cell.addPulses(2.6)
+            cell.addPulses()
         } else {
             cell.contentView.alpha = 0.5
             cell.userInteractionEnabled = false

@@ -15,8 +15,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
 {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var lightImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+
 
     
     override func viewDidLoad() {
@@ -33,7 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             self.performSegueWithIdentifier("loginSegue", sender: self)
         }
         
-        self.fadeLight()
+//        self.fadeLight()
     }
 
     @IBAction func loginButtonPressed(sender: UIButton) {
@@ -73,34 +72,34 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         return true
     }
     
-    func spinLight() {
-        let animation = CABasicAnimation(keyPath: "transform.rotation.y")
-        animation.fromValue = 0
-        animation.toValue = 2 * M_PI
-        animation.repeatCount = MAXFLOAT
-        animation.duration = 5
-        
-        self.lightImageView.layer.addAnimation(animation, forKey: "rotation")
-        
-        var transform:CATransform3D = CATransform3DIdentity
-        transform.m34 = 1.0/500.0
-        self.lightImageView.layer.transform = transform
-
-    }
-    
-    func fadeLight() {
-        self.lightImageView.alpha = 1
-        self.titleLabel.alpha = 1
-        UIView.animateWithDuration(2.0, delay: 0.1, options: UIViewAnimationOptions.Repeat, animations: { () -> Void in
-            self.lightImageView.alpha = 0
-            self.titleLabel.alpha = 0
-            }) { (flag: Bool) -> Void in
-                UIView.animateWithDuration(2.0, animations: { () -> Void in
-                    self.lightImageView.alpha = 1
-                })
-        }
-        
-    }
+//    func spinLight() {
+//        let animation = CABasicAnimation(keyPath: "transform.rotation.y")
+//        animation.fromValue = 0
+//        animation.toValue = 2 * M_PI
+//        animation.repeatCount = MAXFLOAT
+//        animation.duration = 5
+//        
+//        self.lightImageView.layer.addAnimation(animation, forKey: "rotation")
+//        
+//        var transform:CATransform3D = CATransform3DIdentity
+//        transform.m34 = 1.0/500.0
+//        self.lightImageView.layer.transform = transform
+//
+//    }
+//    
+//    func fadeLight() {
+//        self.lightImageView.alpha = 1
+//        self.titleLabel.alpha = 1
+//        UIView.animateWithDuration(2.0, delay: 0.1, options: UIViewAnimationOptions.Repeat, animations: { () -> Void in
+//            self.lightImageView.alpha = 0
+//            self.titleLabel.alpha = 0
+//            }) { (flag: Bool) -> Void in
+//                UIView.animateWithDuration(2.0, animations: { () -> Void in
+//                    self.lightImageView.alpha = 1
+//                })
+//        }
+//        
+//    }
     
     
 }

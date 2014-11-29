@@ -39,7 +39,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIActionShe
         user.isIosTA = false
         user.isWebStudent = false
         user.isWebTA = false
-        user.room = RoomNames.None
+//        user.room = RoomNames.None
     }
     
     

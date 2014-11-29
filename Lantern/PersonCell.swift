@@ -27,7 +27,7 @@ class PersonCell: UICollectionViewCell {
     @IBOutlet var nameLabel: UILabel!
     
     /* Adds background pulse to imageviews */
-    func addPulses(quantity:Float) {
+    func addPulses() {
         // Make the background circle
         let pulseView = UIView()
         pulseView.frame = self.imageView.frame
@@ -40,7 +40,7 @@ class PersonCell: UICollectionViewCell {
         let scaleAnimation = CABasicAnimation()
         scaleAnimation.keyPath = "transform.scale"
         scaleAnimation.duration = 0.5
-        scaleAnimation.repeatCount = quantity
+        scaleAnimation.repeatCount = 500
         scaleAnimation.autoreverses = true
         scaleAnimation.fromValue = 1.1
         scaleAnimation.toValue = 0.8

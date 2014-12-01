@@ -1,6 +1,5 @@
 #Lantern
 =======
-
 ####An iOS app that utilizes iBeacons to find Lighthouse Labs TA's around the building.  
 
 ####Built with Swift and utilizes Parse

@@ -4,6 +4,8 @@
 
 ####Built with Swift and utilizes Parse
 
+[http://www.boxkite.co/lantern.html](http://www.boxkite.co/lantern.html)
+
 ![alt text](http://i.imgur.com/bvJAc8x.png "Lantern image 1") 
 
 ![alt text](http://i.imgur.com/AHB0lmv.png "Lantern image 2")

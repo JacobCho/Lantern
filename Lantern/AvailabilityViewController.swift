@@ -163,13 +163,15 @@ class AvailabilityViewController: UICollectionViewController {
         cell.imageView.image = UIImage(named: "person")
         cell.imageView.file = thisPerson.profileImage?
         cell.imageView.loadInBackground(nil)
-        
+
         if thisPerson.isWorking {
             cell.contentView.alpha = 1
+            cell.cellBackground.alpha = 1
             cell.userInteractionEnabled = true
-            cell.addPulses()
+            
         } else {
             cell.contentView.alpha = 0.5
+            cell.cellBackground.alpha = 0
             cell.userInteractionEnabled = false
         }
         cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2

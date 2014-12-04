@@ -189,8 +189,8 @@
                                             <rect key="frame" x="20" y="82" width="760" height="42"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lantern is an app written by Lighthouse Labs students..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8G-nG-6Ui">
-                                        <rect key="frame" x="40" y="134" width="540" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lantern is an app written by Lighthouse Labs students to help connect students and teachers spread around a large workspace." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8G-nG-6Ui">
+                                        <rect key="frame" x="40" y="134" width="540" height="40"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -616,6 +616,12 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gd6-Vo-1Fl">
+                                            <rect key="frame" x="-2" y="-5" width="129" height="129"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="gd6-Vo-1Fl" secondAttribute="height" multiplier="1:1" id="dER-Vt-Lg9"/>
+                                            </constraints>
+                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7f-OZ-rZw" customClass="PFImageView">
                                             <rect key="frame" x="3" y="0.0" width="119" height="119"/>
                                             <constraints>
@@ -627,15 +633,21 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="m7f-OZ-rZw" firstAttribute="centerX" secondItem="gd6-Vo-1Fl" secondAttribute="centerX" id="I5a-5Z-YhP"/>
                                     <constraint firstItem="aEs-cG-B3H" firstAttribute="width" secondItem="m7f-OZ-rZw" secondAttribute="width" constant="6" id="Muy-Jt-crM"/>
+                                    <constraint firstItem="m7f-OZ-rZw" firstAttribute="width" secondItem="gd6-Vo-1Fl" secondAttribute="width" constant="-10" id="UIw-xY-Byy"/>
+                                    <constraint firstItem="m7f-OZ-rZw" firstAttribute="centerY" secondItem="gd6-Vo-1Fl" secondAttribute="centerY" id="UyJ-7c-LTy"/>
                                     <constraint firstItem="m7f-OZ-rZw" firstAttribute="top" secondItem="Yb9-ds-Ka6" secondAttribute="top" id="V5U-rc-vgp"/>
                                     <constraint firstItem="aEs-cG-B3H" firstAttribute="top" secondItem="m7f-OZ-rZw" secondAttribute="bottom" constant="1" id="W71-Tj-pkF"/>
                                     <constraint firstAttribute="centerX" secondItem="m7f-OZ-rZw" secondAttribute="centerX" id="XDV-k0-Jfl"/>
+                                    <constraint firstItem="gd6-Vo-1Fl" firstAttribute="width" secondItem="gd6-Vo-1Fl" secondAttribute="height" multiplier="1:1" id="biO-NY-wBW"/>
                                     <constraint firstAttribute="centerY" secondItem="m7f-OZ-rZw" secondAttribute="centerY" constant="10" id="iXH-uh-8sn"/>
+                                    <constraint firstItem="m7f-OZ-rZw" firstAttribute="height" secondItem="gd6-Vo-1Fl" secondAttribute="height" constant="-10" id="uQK-l4-9D3"/>
                                     <constraint firstItem="aEs-cG-B3H" firstAttribute="centerX" secondItem="m7f-OZ-rZw" secondAttribute="centerX" id="zgH-hU-8hi"/>
                                 </constraints>
                                 <size key="customSize" width="125" height="140"/>
                                 <connections>
+                                    <outlet property="cellBackground" destination="gd6-Vo-1Fl" id="STK-TN-qDJ"/>
                                     <outlet property="imageView" destination="m7f-OZ-rZw" id="OzR-An-Iwa"/>
                                     <outlet property="nameLabel" destination="aEs-cG-B3H" id="pqo-XO-tby"/>
                                 </connections>

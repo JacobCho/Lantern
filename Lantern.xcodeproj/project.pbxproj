@@ -576,8 +576,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/test/Documents/Development/Swipr,
@@ -586,7 +586,7 @@
 				INFOPLIST_FILE = Lantern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Lantern/Lantern-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -599,8 +599,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/test/Documents/Development/Swipr,
@@ -609,7 +609,7 @@
 				INFOPLIST_FILE = Lantern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Lantern/Lantern-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -619,8 +619,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -632,7 +632,7 @@
 				INFOPLIST_FILE = LanternTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lantern.app/Lantern";
 			};
 			name = Debug;
@@ -641,8 +641,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacob Cho (VL24PDHK88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacob Cho (VL24PDHK88)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -650,7 +650,7 @@
 				INFOPLIST_FILE = LanternTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a25b1d8a-3b27-40c1-ac1c-8d6866d6765f";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lantern.app/Lantern";
 			};
 			name = Release;

@@ -225,6 +225,11 @@ class FinderViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    func queryForUserLocation(){
+        
+        
+    }
+    
 //    func animateView(){
 //        
 //        UIView.animateWithDuration(2.0, delay: 0.1, options: UIViewAnimationOptions.Repeat, animations: { () -> Void in

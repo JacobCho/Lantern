@@ -14,7 +14,6 @@ struct PulseColor {
     
     static let defaultColor = UIColor(red: 26.0/255.0, green: 188.0/255.0, blue: 156.0/255.0, alpha: 1)
     static let orangeColor = UIColor(red: 242.0/255.0, green: 90.0/255.0, blue: 44.0/255.0, alpha: 1)
-    
     static let blueColor = UIColor(red: 44.0/255.0, green: 196.0/255.0, blue: 242.0/255.0, alpha: 1)
     
 }
@@ -26,57 +25,47 @@ class PersonCell: UICollectionViewCell {
     @IBOutlet var imageView: PFImageView!
     @IBOutlet var nameLabel: UILabel!
     
+    @IBOutlet var cellBackground: UIImageView!
+    
+    
     /* Adds background pulse to imageviews */
-    func addPulses() {
-        // Make the background circle
-        let pulseView = UIView()
-        pulseView.frame = self.imageView.frame
-        pulseView.backgroundColor = pulseColorByRoom()
-        pulseView.layer.cornerRadius = self.imageView.frame.width/2
-        
-        self.contentView.addSubview(pulseView)
-        self.contentView.sendSubviewToBack(pulseView)
-        // Add the pulse animation
-        let scaleAnimation = CABasicAnimation()
-        scaleAnimation.keyPath = "transform.scale"
-        scaleAnimation.duration = 0.5
-        scaleAnimation.repeatCount = 500
-        scaleAnimation.autoreverses = true
-        scaleAnimation.fromValue = 1.1
-        scaleAnimation.toValue = 0.8
-        pulseView.layer.addAnimation(scaleAnimation, forKey: "scale")
-        
-    }
+//    func addPulses(pulses:Float) {
+//        // Make the background circle
+//        let pulseView = UIView()
+//        pulseView.frame = self.imageView.frame
+//        pulseView.backgroundColor = pulseColorByRoom()
+//        pulseView.layer.cornerRadius = self.imageView.frame.width/2
+//        
+//        self.contentView.addSubview(pulseView)
+//        self.contentView.sendSubviewToBack(pulseView)
+//        // Add the pulse animation
+//        let scaleAnimation = CABasicAnimation()
+//        scaleAnimation.keyPath = "transform.scale"
+//        scaleAnimation.duration = 0.5
+//        scaleAnimation.repeatCount = pulses
+//        scaleAnimation.autoreverses = true
+//        scaleAnimation.fromValue = 1
+//        scaleAnimation.toValue = 1.1
+//        pulseView.layer.addAnimation(scaleAnimation, forKey: "scale")
+//        
+//    }
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        
+        self.cellBackground.layer.cornerRadius = self.cellBackground.frame.width/2
+        self.cellBackground.clipsToBounds = true
+       
+        if let room = self.person.room {
+            
+            if room == RoomNames.LHMain {
+                self.cellBackground.backgroundColor = PulseColor.defaultColor
+            } else if room == RoomNames.Kitchen {
+                self.cellBackground.backgroundColor = PulseColor.orangeColor
+            } else if room == RoomNames.LAMain {
+                self.cellBackground.backgroundColor = PulseColor.blueColor
+            } else {
+                self.cellBackground.backgroundColor = UIColor.grayColor()
+            }
+            
+        }
     }
-    
-    func pulseColorByRoom() -> UIColor {
-        if self.person.room != nil {
-        
-        switch self.person.room! {
-            
-        case RoomNames.LAMain:
-            return PulseColor.orangeColor
-        
-        case RoomNames.LHMain:
-            return PulseColor.defaultColor
-            
-        case RoomNames.Kitchen:
-            return PulseColor.blueColor
-            
-        default:
-            return PulseColor.defaultColor
-            
-        }
-        }
-        else {
-            return PulseColor.defaultColor
-        }
-        
-        
-    }
-    
 }

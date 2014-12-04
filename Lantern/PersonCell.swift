@@ -13,7 +13,7 @@ import QuartzCore
 struct PulseColor {
     
     static let defaultColor = UIColor(red: 26.0/255.0, green: 188.0/255.0, blue: 156.0/255.0, alpha: 1)
-    static let orangeColor = UIColor(red: 242.0/255.0, green: 90.0/255.0, blue: 44.0/255.0, alpha: 1)
+    static let orangeColor = UIColor(red: 241.0/255.0, green: 196.0/255.0, blue: 15.0/255.0, alpha: 1)
     static let blueColor = UIColor(red: 44.0/255.0, green: 196.0/255.0, blue: 242.0/255.0, alpha: 1)
     
 }
